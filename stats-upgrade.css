@@ -1,3 +1,4 @@
+@import url('./analytics-polish.css?v=20260927-1444');
 /* CASA BANKO polished Stats dashboard */
 #stats .statsHero{background:linear-gradient(145deg,#1b1508,#0b0a07 65%,#211807);border-color:#8b681d;overflow:hidden}
 #stats .statsHeroTop{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-top:14px;padding-bottom:16px;border-bottom:1px solid #332814}
