@@ -1,7 +1,9 @@
-/* CASA BANKO Analytics polish — intentionally keeps Stats and Analytics visually consistent while Analytics stays focused on deeper setup data. */
+/* CASA BANKO Analytics polish — Stats owns the repeated performance summaries; Analytics focuses on deeper setup data. */
 #analytics .card{overflow:hidden}
 #analyticsCharts{display:block}
 #analyticsCharts>.card{margin-bottom:14px}
+/* Normal Analytics view order: 4 Results, 5 Entry Model, 6 Session, 7 Phase, 12 Direction, 13 Grade duplicate Stats. */
+#analyticsCharts:not(:has(.singleTrade))>.card:nth-child(4),#analyticsCharts:not(:has(.singleTrade))>.card:nth-child(5),#analyticsCharts:not(:has(.singleTrade))>.card:nth-child(6),#analyticsCharts:not(:has(.singleTrade))>.card:nth-child(7),#analyticsCharts:not(:has(.singleTrade))>.card:nth-child(12),#analyticsCharts:not(:has(.singleTrade))>.card:nth-child(13){display:none}
 #analyticsCharts .title{font-size:20px;letter-spacing:.2px}
 #analyticsCharts .hint{line-height:1.45}
 #analyticsCharts .analyticsGrid{gap:10px}
@@ -22,6 +24,5 @@
 #analyticsCharts .fill{border-radius:20px}
 #analytics .filterRow{margin-top:16px}
 #analytics .rangeLabel{margin-top:14px;text-transform:uppercase;letter-spacing:.5px}
-.analyticsDeepNote{font-size:11px;color:#a99e87;margin:8px 0 0;line-height:1.45}
 @media(max-width:520px){#analyticsCharts .lineChart{min-height:180px;padding:8px}#analyticsCharts .metric .v{font-size:24px}#analyticsCharts .donutRow{grid-template-columns:112px 1fr;gap:12px}.donut{width:104px;height:104px}.donut:after{width:62px;height:62px}}
-@media(min-width:900px){#analyticsCharts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}#analyticsCharts>.card{margin-bottom:0}#analyticsCharts>.card.analyticsWide{grid-column:1/-1}}
+@media(min-width:900px){#analyticsCharts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}#analyticsCharts>.card{margin-bottom:0}#analyticsCharts>.card:first-child,#analyticsCharts>.card:nth-child(2),#analyticsCharts>.card:nth-child(3){grid-column:1/-1}}
