@@ -1,0 +1,35 @@
+/* CASA BANKO mobile-only containment fixes. Desktop is intentionally untouched. */
+@media (max-width:899px){
+  html,body{max-width:100%;overflow-x:hidden}
+  .app,main,.screen,.card{width:100%;max-width:100%;min-width:0}
+  main{overflow-x:hidden}
+
+  /* Calendar: data must shrink inside the same 8-column grid instead of widening it. */
+  #calendar .calendarMain{overflow:hidden}
+  #calendar .weekdays,#calendar .calendarGrid{grid-template-columns:repeat(8,minmax(0,1fr));gap:4px;width:100%;min-width:0}
+  #calendar .weekdays>*,#calendar .calendarGrid>*{min-width:0;max-width:100%;overflow:hidden}
+  #calendar .day,#calendar .weekSummary{min-width:0;padding:5px 3px}
+  #calendar .dn{font-size:10px}
+  #calendar .dp,#calendar .weekSummary .wp{font-size:8px;line-height:1.15;overflow-wrap:anywhere;word-break:break-word}
+  #calendar .dc,#calendar .weekSummary .wk{font-size:7px;line-height:1.15;overflow-wrap:anywhere}
+  #calendar .calMonthStats{gap:8px;min-width:0}
+  #calendar .calMetric{min-width:0;flex:1}
+  #calendar .calMetric.main{flex:1.35 1 0}
+  #calendar .calMetric b{max-width:100%;font-size:12px;overflow-wrap:anywhere}
+  #calendar .calMetric.main b{font-size:16px}
+
+  /* Synced/manual journal editor: override the desktop-style 3-column inline grid on phones. */
+  #journal #manualBox .fieldGrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:9px!important;width:100%;min-width:0}
+  #journal #manualBox .detailFieldWrap{grid-column:auto!important;grid-row:auto!important;min-width:0!important;max-width:100%}
+  #journal #manualBox .detailFieldWrap .field{width:100%!important;min-width:0!important;max-width:100%!important}
+  #journal #manualBox .detail-tradeDate,#journal #manualBox .syncedCloseTimeWrap{grid-column:span 1!important}
+  #journal .grid,#journal .toggle{min-width:0}
+  #journal button,#journal input,#journal select,#journal textarea{max-width:100%}
+}
+
+@media (max-width:390px){
+  #calendar .weekdays,#calendar .calendarGrid{gap:3px}
+  #calendar .day,#calendar .weekSummary{padding:4px 2px}
+  #calendar .dp,#calendar .weekSummary .wp{font-size:7px}
+  #journal #manualBox .fieldGrid{grid-template-columns:minmax(0,1fr)!important}
+}
