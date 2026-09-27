@@ -1,0 +1,27 @@
+/* CASA BANKO Analytics polish — intentionally keeps Stats and Analytics visually consistent while Analytics stays focused on deeper setup data. */
+#analytics .card{overflow:hidden}
+#analyticsCharts{display:block}
+#analyticsCharts>.card{margin-bottom:14px}
+#analyticsCharts .title{font-size:20px;letter-spacing:.2px}
+#analyticsCharts .hint{line-height:1.45}
+#analyticsCharts .analyticsGrid{gap:10px}
+#analyticsCharts .metric{min-height:92px;display:flex;flex-direction:column;justify-content:center}
+#analyticsCharts .metric .v{font-size:27px}
+#analyticsCharts .lineChart{margin-top:12px;min-height:210px;display:flex;align-items:center}
+#analyticsCharts .lineChart svg{width:100%;max-height:230px}
+#analyticsCharts .lineChart text{display:none}
+#analyticsCharts .viz{height:190px;gap:3px;overflow:hidden;padding-left:2px;padding-right:2px}
+#analyticsCharts .barLabel{display:none}
+#analyticsCharts .barWrap{min-width:2px}
+#analyticsCharts .donutRow{margin-top:12px}
+#analyticsCharts .aRow{padding:13px 0;margin:0;border-bottom:1px solid #292419}
+#analyticsCharts .aRow:last-child{border-bottom:0;padding-bottom:0}
+#analyticsCharts .aTop{font-size:13px}
+#analyticsCharts .aMeta{font-size:11px;margin-top:5px}
+#analyticsCharts .track{height:9px;margin-top:10px}
+#analyticsCharts .fill{border-radius:20px}
+#analytics .filterRow{margin-top:16px}
+#analytics .rangeLabel{margin-top:14px;text-transform:uppercase;letter-spacing:.5px}
+.analyticsDeepNote{font-size:11px;color:#a99e87;margin:8px 0 0;line-height:1.45}
+@media(max-width:520px){#analyticsCharts .lineChart{min-height:180px;padding:8px}#analyticsCharts .metric .v{font-size:24px}#analyticsCharts .donutRow{grid-template-columns:112px 1fr;gap:12px}.donut{width:104px;height:104px}.donut:after{width:62px;height:62px}}
+@media(min-width:900px){#analyticsCharts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}#analyticsCharts>.card{margin-bottom:0}#analyticsCharts>.card.analyticsWide{grid-column:1/-1}}
