@@ -1,0 +1,27 @@
+/* CASA BANKO finished Stats dashboard */
+#stats .statsHero{background:linear-gradient(145deg,#1b1508,#0b0a07 65%,#211807);border-color:#8b681d}
+#stats .statsHeroTop{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-top:14px}
+#stats .statsHeroPnl .k,#stats .statsHeroSide .k{font-size:9px;color:#9f947d;font-weight:900;letter-spacing:.7px}
+#stats .statsHeroPnl .v{font-size:32px;font-weight:1000;color:#f2cc60;margin-top:5px}
+#stats .statsHeroSide{text-align:right}
+#stats .statsHeroSide .v{font-size:20px;font-weight:1000;margin-top:5px}
+#stats .statsHeroPnl .v.pos,#stats .stat .v.pos{color:#35d99a}
+#stats .statsHeroPnl .v.neg,#stats .stat .v.neg{color:#ff6262}
+#stats .statsQuick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+#stats .statsQuickBox{background:#0a0906;border:1px solid #403116;border-radius:12px;padding:11px;min-width:0}
+#stats .statsQuickBox .k{font-size:8px;color:#918773;font-weight:900}
+#stats .statsQuickBox .v{font-size:14px;font-weight:1000;margin-top:5px;overflow-wrap:anywhere}
+#stats .statsSectionTitle{color:#f2cc60;font-weight:1000;font-size:16px;margin-bottom:8px}
+#stats .statsBreakRow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid #292419}
+#stats .statsBreakRow:last-child{border-bottom:0}
+#stats .statsBreakName{font-size:12px;font-weight:900}
+#stats .statsBreakMeta{font-size:9px;color:#9d9585;margin-top:4px}
+#stats .statsBreakValue{text-align:right;font-weight:1000;color:#f2cc60;font-size:13px}
+#stats .statsBreakValue small{display:block;color:#9d9585;font-size:8px;margin-top:3px}
+#stats .statsEmpty{font-size:11px;color:#a99e87;padding:12px 0}
+#stats .statsStreakGrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
+#stats .statsStreak{background:#0a0906;border:1px solid #403116;border-radius:12px;padding:13px}
+#stats .statsStreak .k{font-size:9px;color:#9f947d;font-weight:900}
+#stats .statsStreak .v{font-size:20px;color:#f2cc60;font-weight:1000;margin-top:6px}
+@media(min-width:900px){#stats.screen.active{grid-template-columns:minmax(0,1.45fr) minmax(300px,.75fr)}#stats .statsHero{grid-column:1/-1}#stats .statsQuick{grid-template-columns:repeat(6,1fr)}#stats .statsHeroPnl .v{font-size:38px}}
+@media(max-width:390px){#stats .statsQuick{grid-template-columns:repeat(2,1fr)}#stats .statsHeroPnl .v{font-size:27px}}
