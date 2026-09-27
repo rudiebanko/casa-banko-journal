@@ -29,6 +29,7 @@
   const manualDetailsLabel=manualBox?.querySelector('.label');
   if(manualDetailsLabel)manualDetailsLabel.textContent='TRADE DETAILS';
   const directionGroup=document.querySelector('.single[data-k="direction"]');
+  const sessionGroup=document.querySelector('.single[data-k="session"]');
 
   const detailLabels={symbol:'SYMBOL',tradeDate:'OPEN TIME',entryPrice:'ENTRY',exitPrice:'CLOSE',stopLoss:'STOP LOSS',pnlInput:'P&L',rInput:'RISK $',result:'RESULT'};
   Object.entries(detailLabels).forEach(([id,text])=>{
@@ -53,16 +54,15 @@
     }
   }
 
-  // Keep execution details compact and intentionally ordered.
+  // Exact compact 3x3 execution-detail layout.
   const detailsGrid=manualBox?.querySelector('.fieldGrid');
   if(detailsGrid){
-    detailsGrid.style.gridTemplateColumns='minmax(90px,.65fr) minmax(190px,1.35fr) minmax(190px,1.35fr)';
+    detailsGrid.style.display='grid';
+    detailsGrid.style.gridTemplateColumns='minmax(95px,.7fr) minmax(170px,1.3fr) minmax(170px,1.3fr)';
     detailsGrid.style.gap='9px 10px';
     const ordered=['symbol','tradeDate','closeTimeDisplay','entryPrice','exitPrice','pnlInput','stopLoss','rInput','result'];
-    ordered.forEach(id=>{const el=$(id);const wrap=el?.closest('.detailFieldWrap');if(wrap)detailsGrid.appendChild(wrap)});
-    const compact=['symbol','entryPrice','exitPrice','pnlInput','stopLoss','rInput','result'];
-    compact.forEach(id=>{const el=$(id);if(el){el.style.width='100%';el.style.minWidth='0'}});
-    ['tradeDate','closeTimeDisplay'].forEach(id=>{const el=$(id);if(el){el.style.width='100%';el.style.minWidth='0'}});
+    ordered.forEach((id,pos)=>{const el=$(id);const wrap=el?.closest('.detailFieldWrap');if(wrap){wrap.style.gridColumn=String((pos%3)+1);wrap.style.gridRow=String(Math.floor(pos/3)+1);detailsGrid.appendChild(wrap)}});
+    ordered.forEach(id=>{const el=$(id);if(el){el.style.width='100%';el.style.minWidth='0';el.style.boxSizing='border-box'}});
   }
 
   const editorNodes=[];let n=manual.nextElementSibling;while(n){editorNodes.push(n);n=n.nextElementSibling}
@@ -72,6 +72,7 @@
   function setVal(id,v){const e=$(id);if(e)e.value=v??''}
   function lock(id,on){const e=$(id);if(!e)return;e.readOnly=!!on;e.classList.toggle('executionLocked',!!on)}
   function lockDirection(on){if(!directionGroup)return;directionGroup.querySelectorAll('button').forEach(b=>{b.disabled=!!on;b.style.pointerEvents=on?'none':'';b.style.cursor=on?'default':'';b.setAttribute('aria-disabled',on?'true':'false')})}
+  function lockSession(on){if(!sessionGroup)return;sessionGroup.querySelectorAll('button').forEach(b=>{b.disabled=!!on;b.style.pointerEvents=on?'none':'';b.style.cursor=on?'default':'';b.setAttribute('aria-disabled',on?'true':'false')})}
   function one(key,val){const g=document.querySelector('.single[data-k="'+key+'"]');if(!g)return;g.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.textContent===val));S[key]=val||''}
   function many(key,val){const g=document.querySelector('.many[data-k="'+key+'"]');if(!g)return;const vals=Array.isArray(val)?val:(val?[val]:[]);g.querySelectorAll('button').forEach(b=>b.classList.toggle('on',vals.includes(b.textContent)));S[key]=vals}
   function multi(key,val){const g=document.querySelector('.multi[data-k="'+key+'"]');if(!g)return;const vals=Array.isArray(val)?val:(val?[val]:[]);g.querySelectorAll('.drop button').forEach(b=>b.classList.toggle('on',vals.includes(b.textContent)));const top=g.querySelector('.multiTop');if(top)top.textContent=(vals.length?vals.join(' • '):'Select timeframes')+' ▾';S[key]=vals}
@@ -94,9 +95,9 @@
     if(closeTimeInput){const close=fullCloseTime(t);closeTimeInput.value=close||'—';closeTimeInput.title=close||'Close time not available yet'}
     setVal('entryPrice',first(t,['entry','entryPrice','openPrice','open_price']));setVal('exitPrice',first(t,['exit','exitPrice','closePrice','close_price']));setVal('stopLoss',t.stopLoss);setVal('pnlInput',t.pnl);setVal('rInput',t.riskAmount??t.riskDollar??'');setVal('result',t.result);
     ['tradeDate','entryPrice','exitPrice','stopLoss','pnlInput'].forEach(id=>lock(id,true));lock('symbol',false);lock('rInput',false);updateRPreview();one('direction',t.direction);lockDirection(true);
-    const autoSession=sessionFromOpenTime(t);one('session',autoSession);one('phase',t.phase);one('liq',t.liq);one('plan',t.plan);one('grade',t.grade);many('model',t.model);multi('keyLevel',t.keyLevel);multi('bosTF',t.bosTF);multi('entryTF',t.entryTF);setVal('notes',t.notes||'');$('shotName').textContent=t.screenshotName||'No screenshot selected.';save.textContent='SAVE JOURNAL ENTRY';$('status').textContent='';card.scrollIntoView({behavior:'smooth',block:'start'});
+    const autoSession=sessionFromOpenTime(t);one('session',autoSession);lockSession(true);one('phase',t.phase);one('liq',t.liq);one('plan',t.plan);one('grade',t.grade);many('model',t.model);multi('keyLevel',t.keyLevel);multi('bosTF',t.bosTF);multi('entryTF',t.entryTF);setVal('notes',t.notes||'');$('shotName').textContent=t.screenshotName||'No screenshot selected.';save.textContent='SAVE JOURNAL ENTRY';$('status').textContent='';card.scrollIntoView({behavior:'smooth',block:'start'});
   }
   history.addEventListener('click',e=>{const row=e.target.closest('.manageRow');if(!row)return;const rows=[...history.querySelectorAll('.manageRow')],i=rows.indexOf(row);if(i<0)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();openTrade(i)},true);
-  manual.onclick=()=>{editingIndex=null;manualMode=true;showEditor(true);manual.style.display='none';if(manualDetailsLabel)manualDetailsLabel.textContent='MANUAL TRADE DETAILS';hint.textContent='Manual fallback entry — use this only for a trade that is not coming from TradeLocker.';const td=$('tradeDate');if(td){td.type='datetime-local';td.style.minWidth='0';td.title='';td.value=''}if(closeTimeInput)closeTimeInput.closest('.syncedCloseTimeWrap').style.display='none';['tradeDate','entryPrice','exitPrice','stopLoss','pnlInput','symbol','rInput'].forEach(id=>lock(id,false));const rLab=$('rInput')?.parentElement?.querySelector('.detailFieldMiniLabel');if(rLab)rLab.textContent='R RESULT';const rOut=$('autoRResult');if(rOut)rOut.style.display='none';lockDirection(false);S.source='MANUAL';save.textContent='SAVE MANUAL TRADE'};
-  save.onclick=function(e){if(manualMode){return originalSave?.call(this,e)}if(editingIndex===null)return;const a=trades(),old=a[editingIndex];if(!old)return;const risk=Math.abs(parseFloat($('rInput').value));const calculatedR=updateRPreview();const updated={...old,symbol:$('symbol').value.trim()||old.symbol,riskAmount:Number.isFinite(risk)&&risk>0?risk:null,r:calculatedR,result:$('result').value||old.result,session:S.session||sessionFromOpenTime(old)||old.session,phase:S.phase||old.phase,keyLevel:S.keyLevel||old.keyLevel,bosTF:S.bosTF||old.bosTF,entryTF:S.entryTF||old.entryTF,liq:S.liq||old.liq,model:S.model||old.model,plan:S.plan||old.plan,grade:S.grade||old.grade,notes:$('notes').value,screenshotName:$('shot').files[0]?.name||old.screenshotName||'',journalUpdatedAt:new Date().toISOString()};a[editingIndex]=updated;write(a);$('status').textContent='✓ Journal entry saved — R calculated from P&L ÷ intended Risk $.';if(typeof refreshAll==='function')refreshAll()};
+  manual.onclick=()=>{editingIndex=null;manualMode=true;showEditor(true);manual.style.display='none';if(manualDetailsLabel)manualDetailsLabel.textContent='MANUAL TRADE DETAILS';hint.textContent='Manual fallback entry — use this only for a trade that is not coming from TradeLocker.';const td=$('tradeDate');if(td){td.type='datetime-local';td.style.minWidth='0';td.title='';td.value=''}if(closeTimeInput)closeTimeInput.closest('.syncedCloseTimeWrap').style.display='none';['tradeDate','entryPrice','exitPrice','stopLoss','pnlInput','symbol','rInput'].forEach(id=>lock(id,false));const rLab=$('rInput')?.parentElement?.querySelector('.detailFieldMiniLabel');if(rLab)rLab.textContent='R RESULT';const rOut=$('autoRResult');if(rOut)rOut.style.display='none';lockDirection(false);lockSession(false);S.source='MANUAL';save.textContent='SAVE MANUAL TRADE'};
+  save.onclick=function(e){if(manualMode){return originalSave?.call(this,e)}if(editingIndex===null)return;const a=trades(),old=a[editingIndex];if(!old)return;const risk=Math.abs(parseFloat($('rInput').value));const calculatedR=updateRPreview();const updated={...old,symbol:$('symbol').value.trim()||old.symbol,riskAmount:Number.isFinite(risk)&&risk>0?risk:null,r:calculatedR,result:$('result').value||old.result,session:sessionFromOpenTime(old)||old.session,phase:S.phase||old.phase,keyLevel:S.keyLevel||old.keyLevel,bosTF:S.bosTF||old.bosTF,entryTF:S.entryTF||old.entryTF,liq:S.liq||old.liq,model:S.model||old.model,plan:S.plan||old.plan,grade:S.grade||old.grade,notes:$('notes').value,screenshotName:$('shot').files[0]?.name||old.screenshotName||'',journalUpdatedAt:new Date().toISOString()};a[editingIndex]=updated;write(a);$('status').textContent='✓ Journal entry saved — R calculated from P&L ÷ intended Risk $.';if(typeof refreshAll==='function')refreshAll()};
 })();
