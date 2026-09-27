@@ -1,4 +1,4 @@
-/* CASA BANKO Rewards + combined Stats/Analytics */
+/* CASA BANKO Rewards tab */
 (function(){
  const $=id=>document.getElementById(id), trades=()=>{try{return JSON.parse(localStorage.getItem('casaBankoTrades')||'[]')}catch(e){return[]}};
  const arr=v=>Array.isArray(v)?v:(v?[v]:[]);
@@ -16,8 +16,9 @@
  h+='<section class="card rewardWide"><div class="title">👑 LEVEL ROAD</div><div class="levelRoad">'+li.levels.map((x,i)=>'<div class="levelStep '+(i<li.i?'done':i===li.i?'current':'')+'"><div class="levelNum">LV '+(i+1)+'</div><div class="levelName">'+x[0]+'</div><div class="levelReq">'+x[1].toLocaleString()+' BANKOS '+(i<li.i?'✓':i===li.i?'•':'🔒')+'</div></div>').join('')+'</div></section>';
  if($('analyticsCharts'))$('analyticsCharts').innerHTML=h;
  }
- function moveAnalyticsIntoStats(){let s=$('stats');if(!s||$('statsDeepAnalytics'))return;let d=document.createElement('div');d.id='statsDeepAnalytics';d.innerHTML='<section class="card"><div class="title">DEEP PERFORMANCE ANALYTICS</div><div class="hint">Setup, timeframe, liquidity and execution breakdowns use the same journal data as Stats.</div></section>';s.appendChild(d)}
- const oldOpen=window.openScreen;window.openScreen=function(name,remember=true){if(oldOpen)oldOpen(name,remember);if(name==='analytics')setTimeout(renderRewards,0)};
- document.addEventListener('DOMContentLoaded',()=>{moveAnalyticsIntoStats();let nav=document.querySelector('nav button[data-screen="analytics"]');if(nav)nav.innerHTML='🏆<br>REWARDS';let title=document.querySelector('#analytics>.card .title');if(title)title.textContent='REWARDS';let controls=document.querySelector('#analytics>.card');if(controls)controls.style.display='none';renderRewards()});
+ /* The old Analytics renderer is called by refreshAll(). Replace it at the source so it can never repaint the Rewards tab with old analytics content. */
+ window.renderAnalytics=renderRewards;
+ const oldOpen=window.openScreen;window.openScreen=function(name,remember=true){if(oldOpen)oldOpen(name,remember);if(name==='analytics')renderRewards()};
+ document.addEventListener('DOMContentLoaded',()=>{let nav=document.querySelector('nav button[data-screen="analytics"]');if(nav)nav.innerHTML='🏆<br>REWARDS';let controls=document.querySelector('#analytics>.card');if(controls)controls.style.display='none';window.renderAnalytics=renderRewards;renderRewards();});
  window.renderRewards=renderRewards;
 })();
