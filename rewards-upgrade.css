@@ -32,10 +32,10 @@
 #analytics .levelReq{font-size:9px;color:#9f947d;text-align:right}
 nav button[data-screen="analytics"]{color:#8c8475!important;filter:grayscale(1)!important;opacity:.88}
 nav button[data-screen="analytics"].active{color:#f0c34d!important;filter:none!important;opacity:1}
-/* Settings nav: match the visual size/baseline of the other four tabs */
-nav button[data-screen="settings"]{font-size:0!important;color:#8c8475!important;padding-top:0!important;padding-bottom:0!important;transform:translateY(-2px)}
-nav button[data-screen="settings"]::before{content:'⚙︎';display:block;font-family:Arial,sans-serif;font-size:27px;font-weight:400;line-height:25px;height:25px;color:currentColor;margin:0 0 1px}
-nav button[data-screen="settings"]::after{content:'SETTINGS';display:block;font-family:Arial,sans-serif;font-size:11px;font-weight:900;line-height:13px;height:13px;color:currentColor;margin:0}
+/* Settings nav: use the real icon span, same layout/size as every other tab. */
+nav button[data-screen="settings"]{color:#8c8475!important;font-size:9px!important;transform:none!important;padding:11px 5px!important;line-height:normal!important}
+nav button[data-screen="settings"]::before,nav button[data-screen="settings"]::after{content:none!important;display:none!important}
+nav button[data-screen="settings"] .settingsNavIcon{display:inline-block!important;font-family:Arial,sans-serif!important;font-size:20px!important;font-weight:400!important;line-height:11px!important;height:11px!important;vertical-align:baseline!important;color:currentColor!important;-webkit-text-fill-color:currentColor!important;transform:translateY(0)!important;margin:0!important}
 nav button[data-screen="settings"].active{color:#f0c34d!important}
 @media(max-width:360px){#analytics .rewardBalance{font-size:27px}#analytics .achievementGrid{grid-template-columns:1fr}}
 @media(min-width:900px){#analytics.screen.active{display:block;max-width:1000px;margin:0 auto}#analyticsCharts{display:grid;grid-template-columns:1fr 1fr;gap:20px}#analyticsCharts>.card{margin:0}#analyticsCharts>.rewardsHero,#analyticsCharts>.rewardWide{grid-column:1/-1}#analytics .achievementGrid{grid-template-columns:repeat(4,1fr)}}
