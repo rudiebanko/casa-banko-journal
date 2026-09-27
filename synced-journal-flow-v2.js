@@ -30,7 +30,17 @@
   if(manualDetailsLabel)manualDetailsLabel.textContent='TRADE DETAILS';
   const directionGroup=document.querySelector('.single[data-k="direction"]');
 
-  // Everything after our fallback button through the save/status area is the journal editor.
+  // Add compact field labels without changing the existing field layout.
+  const detailLabels={symbol:'SYMBOL',tradeDate:'OPEN TIME',entryPrice:'ENTRY',exitPrice:'CLOSE',stopLoss:'STOP LOSS',pnlInput:'P&L',rInput:'R RESULT',result:'RESULT'};
+  Object.entries(detailLabels).forEach(([id,text])=>{
+    const input=$(id); if(!input||input.parentElement?.classList.contains('detailFieldWrap'))return;
+    const wrap=document.createElement('div'); wrap.className='detailFieldWrap';
+    wrap.style.cssText='min-width:0;display:flex;flex-direction:column;gap:5px';
+    const lab=document.createElement('div'); lab.textContent=text; lab.className='detailFieldMiniLabel';
+    lab.style.cssText='font-size:9px;letter-spacing:.08em;font-weight:700;color:#9f947a;padding-left:2px';
+    input.parentNode.insertBefore(wrap,input); wrap.append(lab,input);
+  });
+
   const editorNodes=[];
   let n=manual.nextElementSibling;
   while(n){editorNodes.push(n);n=n.nextElementSibling}
@@ -46,7 +56,11 @@
   function many(key,val){const g=document.querySelector('.many[data-k="'+key+'"]');if(!g)return;const vals=Array.isArray(val)?val:(val?[val]:[]);g.querySelectorAll('button').forEach(b=>b.classList.toggle('on',vals.includes(b.textContent)));S[key]=vals}
   function multi(key,val){const g=document.querySelector('.multi[data-k="'+key+'"]');if(!g)return;const vals=Array.isArray(val)?val:(val?[val]:[]);g.querySelectorAll('.drop button').forEach(b=>b.classList.toggle('on',vals.includes(b.textContent)));const top=g.querySelector('.multiTop');if(top)top.textContent=(vals.length?vals.join(' • '):'Select timeframes')+' ▾';S[key]=vals}
   function first(t,names){for(const k of names){if(t?.[k]!==undefined&&t?.[k]!==null&&t[k]!=='')return t[k]}return''}
-  function localDateValue(t){const raw=first(t,['openTime','open_time','openTimestamp','open_timestamp','openDate','open_date','entryTime','entry_time','date','savedAt']);if(!raw)return'';const d=new Date(raw);if(isNaN(d))return String(raw).slice(0,16);const z=new Date(d.getTime()-d.getTimezoneOffset()*60000);return z.toISOString().slice(0,16)}
+  function rawOpenTime(t){return first(t,['openTime','open_time','openTimestamp','open_timestamp','openDate','open_date','entryTime','entry_time','date','savedAt'])}
+  function openDate(t){const raw=rawOpenTime(t);if(!raw)return null;const d=new Date(raw);return isNaN(d)?null:d}
+  function localDateValue(t){const d=openDate(t);if(!d)return String(rawOpenTime(t)||'').slice(0,16);const z=new Date(d.getTime()-d.getTimezoneOffset()*60000);return z.toISOString().slice(0,16)}
+  // User-defined local trading sessions: Asia 3PM–11PM, London 11PM–4AM, New York 4AM–2PM.
+  function sessionFromOpenTime(t){const d=openDate(t);if(!d)return t.session||'';const mins=d.getHours()*60+d.getMinutes();if(mins>=15*60&&mins<23*60)return'ASIA';if(mins>=23*60||mins<4*60)return'LONDON';if(mins>=4*60&&mins<14*60)return'NEW YORK';return t.session||''}
   function openTrade(i){
     const a=trades(),t=a[i];if(!t)return;
     editingIndex=i;manualMode=false;showEditor(true);manual.style.display='none';
@@ -59,13 +73,12 @@
     ['tradeDate','entryPrice','exitPrice','stopLoss','pnlInput'].forEach(id=>lock(id,true));
     lock('symbol',false);lock('rInput',false);
     one('direction',t.direction);lockDirection(true);
-    one('session',t.session);one('phase',t.phase);one('liq',t.liq);one('plan',t.plan);one('grade',t.grade);many('model',t.model);multi('keyLevel',t.keyLevel);multi('bosTF',t.bosTF);multi('entryTF',t.entryTF);
+    const autoSession=sessionFromOpenTime(t);one('session',autoSession);one('phase',t.phase);one('liq',t.liq);one('plan',t.plan);one('grade',t.grade);many('model',t.model);multi('keyLevel',t.keyLevel);multi('bosTF',t.bosTF);multi('entryTF',t.entryTF);
     setVal('notes',t.notes||'');$('shotName').textContent=t.screenshotName||'No screenshot selected.';
     save.textContent='SAVE JOURNAL ENTRY';$('status').textContent='';
     card.scrollIntoView({behavior:'smooth',block:'start'});
   }
 
-  // Capture Trade History clicks before the old "open Stats" behavior.
   history.addEventListener('click',e=>{
     const row=e.target.closest('.manageRow');if(!row)return;
     const rows=[...history.querySelectorAll('.manageRow')],i=rows.indexOf(row);if(i<0)return;
@@ -88,12 +101,11 @@
       symbol:$('symbol').value.trim()||old.symbol,
       r:$('rInput').value===''?null:+$('rInput').value,
       result:$('result').value||old.result,
-      session:S.session||old.session,phase:S.phase||old.phase,keyLevel:S.keyLevel||old.keyLevel,
+      session:S.session||sessionFromOpenTime(old)||old.session,phase:S.phase||old.phase,keyLevel:S.keyLevel||old.keyLevel,
       bosTF:S.bosTF||old.bosTF,entryTF:S.entryTF||old.entryTF,liq:S.liq||old.liq,
       model:S.model||old.model,plan:S.plan||old.plan,grade:S.grade||old.grade,
       notes:$('notes').value,screenshotName:$('shot').files[0]?.name||old.screenshotName||'',journalUpdatedAt:new Date().toISOString()
     };
-    // Intentionally preserve synced direction plus TradeLocker/Genesis identity, timestamps, prices, volume and exact/estimated P&L fields.
     a[editingIndex]=updated;write(a);$('status').textContent='✓ Journal entry saved to this synced trade.';
     if(typeof refreshAll==='function')refreshAll();
   };
