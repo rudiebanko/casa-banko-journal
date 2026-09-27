@@ -11,5 +11,6 @@ function addButton(){
   try{const r=await fetch(SB_URL+'/functions/v1/tradelocker-financials-diagnostic',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+session.access_token,'apikey':PUB},body:JSON.stringify({account})});const o=await r.json();if(!r.ok)throw new Error(o.error||'TradeLocker financials test failed');s.textContent='✓ TRADELOCKER FINANCIALS TEST COMPLETE — NO JOURNAL TRADES CHANGED';s.className='status ok'}catch(e){s.textContent=e?.message||'TradeLocker financials test failed';s.className='status bad'}finally{b.disabled=false;b.textContent='RUN TRADELOCKER FINANCIALS TEST'}
  });
 }
-new MutationObserver(addButton).observe(document.documentElement,{childList:true,subtree:true});if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',addButton);else addButton();
+function loadCalendarColors(){if(document.getElementById('calendarColorsScript'))return;const s=document.createElement('script');s.id='calendarColorsScript';s.src='calendar-colors.js?v=20260927-1124-redgreen';document.body.appendChild(s)}
+new MutationObserver(addButton).observe(document.documentElement,{childList:true,subtree:true});if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>{addButton();loadCalendarColors()});else{addButton();loadCalendarColors()}
 })();
