@@ -32,5 +32,6 @@
 #analytics .levelReq{font-size:9px;color:#9f947d;text-align:right}
 nav button[data-screen="analytics"]{color:#8c8475!important}
 nav button[data-screen="analytics"].active{color:#f0c34d!important}
+nav button[data-screen="analytics"] *{color:inherit!important}
 @media(max-width:360px){#analytics .rewardBalance{font-size:27px}#analytics .achievementGrid{grid-template-columns:1fr}}
 @media(min-width:900px){#analytics.screen.active{display:block;max-width:1000px;margin:0 auto}#analyticsCharts{display:grid;grid-template-columns:1fr 1fr;gap:20px}#analyticsCharts>.card{margin:0}#analyticsCharts>.rewardsHero,#analyticsCharts>.rewardWide{grid-column:1/-1}#analytics .achievementGrid{grid-template-columns:repeat(4,1fr)}}
