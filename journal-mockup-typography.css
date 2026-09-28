@@ -68,3 +68,10 @@ nav button {
 #journal .gameV {letter-spacing:.2px !important;}
 #journal .earned {letter-spacing:.2px !important;}
 nav button {letter-spacing:.05px !important;}
+
+/* Approved hero lockup spacing adjustment — visual only. */
+@media (max-width:899px){
+  .hero>div{width:76vw !important;height:24.2vw !important;}
+  .hero{border-bottom-color:transparent !important;}
+  main{box-shadow:none !important;}
+}
