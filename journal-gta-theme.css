@@ -1,33 +1,18 @@
 /* CASA BANKO — APPROVED MIAMI / GTA JOURNAL SKIN
    VISUAL SKIN ONLY. Existing component dimensions / data / behavior stay locked. */
 :root{--cb-gold:#d8aa3d;--cb-gold-hi:#f4d777;--cb-cream:#f5eedf;--cb-muted:#b8ae99;--cb-glass:rgba(5,8,8,.88);--cb-glass-deep:rgba(2,4,4,.95)}
-
-/* The artwork is ONE page layer. On phones it is sized from viewport WIDTH,
-   not cover, so the portrait artwork keeps its original composition instead
-   of zooming/cropping the woman. */
 body{color:var(--cb-cream);background:#050707;position:relative}
-body:before{content:"";position:absolute;left:0;right:0;top:0;height:calc(100vw * 2.045);pointer-events:none;z-index:-2;background:#050707 url("journal-miami-bg.png?v=protected-hero-2132") center top/100% auto no-repeat}
+body:before{content:"";position:absolute;left:0;right:0;top:0;height:calc(100vw * 2.045);pointer-events:none;z-index:-2;background:#050707 url("journal-miami-bg.png?v=mockup-measured-2136") center top/100% auto no-repeat}
 body:after{content:"";position:absolute;left:0;right:0;top:0;height:calc(100vw * 2.045);pointer-events:none;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.01) 0%,rgba(0,0,0,.03) 32%,rgba(0,0,0,.10) 48%,rgba(2,4,4,.34) 72%,#050707 100%)}
-
 .hero{position:relative;overflow:visible;isolation:auto;background:transparent!important;border-bottom-color:rgba(216,170,61,.72)}
 .hero:before,.hero:after{content:none!important;display:none!important}
 .brand{color:var(--cb-gold-hi);font-family:Impact,"Arial Narrow",sans-serif;letter-spacing:.5px;text-shadow:2px 3px 0 #382006,0 0 12px rgba(239,195,85,.20)}
 .sub{color:#fff8e9;font-family:"Arial Narrow",Arial,sans-serif;font-weight:800;letter-spacing:4px;text-shadow:0 2px 8px rgba(0,0,0,.95)}
-main{background:transparent!important;box-shadow:inset 0 1px 0 rgba(240,198,91,.22)}
-#journal{background:transparent!important}
-
-/* Mobile composition guard: reserve the same upper art zone seen in the
-   approved mockup before the first real card begins. This changes only the
-   Journal section's starting position; card sizes / internals are untouched. */
-@media (max-width:899px){
-  .hero{height:calc(100vw * .66)!important;min-height:0!important;padding-top:0!important;padding-bottom:0!important;align-items:flex-end!important}
-  .hero>div{padding-bottom:18px}
-  #journal{padding-top:14px!important}
-}
-@media (min-width:900px){
-  body:before,body:after{height:1450px;background-size:auto 1450px}
-}
-
+main{background:transparent!important;box-shadow:inset 0 1px 0 rgba(240,198,91,.22)}#journal{background:transparent!important}
+/* Measured against the approved 709x1536 mockup: increase only the protected
+   artwork clearance so the first card begins below the woman. Card geometry is untouched. */
+@media (max-width:899px){.hero{height:calc(100vw * .82)!important;min-height:0!important;padding-top:0!important;padding-bottom:0!important;align-items:flex-end!important}.hero>div{padding-bottom:18px}#journal{padding-top:14px!important}}
+@media (min-width:900px){body:before,body:after{height:1450px;background-size:auto 1450px}}
 #journal .card{background:linear-gradient(150deg,rgba(10,14,14,.91),rgba(3,6,6,.95));border-color:rgba(216,170,61,.78);box-shadow:0 12px 28px rgba(0,0,0,.40),inset 0 1px 0 rgba(255,232,163,.07);backdrop-filter:blur(5px) saturate(.9);-webkit-backdrop-filter:blur(5px) saturate(.9)}
 #journal .bankoCard{background:linear-gradient(145deg,rgba(9,13,13,.91),rgba(2,5,5,.96) 62%,rgba(14,10,4,.92));border-color:var(--cb-gold);box-shadow:0 14px 34px rgba(0,0,0,.45),0 0 18px rgba(216,170,61,.07),inset 0 1px 0 rgba(255,232,163,.08)}
 #journal .title{color:var(--cb-gold-hi);font-family:Impact,"Arial Narrow",sans-serif;letter-spacing:.6px;text-shadow:2px 2px 0 #3a2207,0 0 10px rgba(236,180,51,.14)}#journal .bankoBalance{color:var(--cb-gold-hi);font-family:Impact,"Arial Narrow",sans-serif;letter-spacing:.7px;text-shadow:2px 2px 0 #352005}#journal .label,#journal .gameK{color:#d9cfba;font-family:"Arial Narrow",Arial,sans-serif;font-weight:900;letter-spacing:.9px}#journal .hint,#journal .rangeLabel{color:var(--cb-muted)}#journal .gameV{font-family:"Arial Narrow",Arial,sans-serif;font-weight:900;letter-spacing:.4px}
