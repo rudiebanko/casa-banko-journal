@@ -1,77 +1,124 @@
-/* CASA BANKO Journal — visual theme test only.
-   Intentionally scoped to the Journal screen + hero. No data/logic/layout foundation changes. */
+/* CASA BANKO — JOURNAL GTA / MIAMI SKIN
+   SKIN ONLY. No sizing, grid, spacing, position, DOM, data, or behavior rules here.
+   The existing coded layout remains the geometry source of truth. */
 
-/* Hero: daytime GTA/Miami-inspired reskin without changing its existing dimensions. */
+/* Daytime GTA/Miami atmosphere on the EXISTING 180px hero. */
 .hero{
   position:relative;
   overflow:hidden;
   isolation:isolate;
   background:
-    linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.58)),
-    radial-gradient(circle at 78% 28%,rgba(47,177,219,.34),transparent 28%),
-    linear-gradient(135deg,#147da2 0%,#48b7cf 30%,#f1b65e 62%,#1c1710 100%);
+    linear-gradient(180deg,rgba(2,18,27,.05),rgba(4,8,8,.62)),
+    radial-gradient(circle at 82% 18%,rgba(255,225,135,.72),transparent 18%),
+    radial-gradient(circle at 16% 42%,rgba(235,89,151,.22),transparent 27%),
+    linear-gradient(125deg,#1d9bc0 0%,#72c8d4 35%,#f4c678 69%,#d98b61 100%);
 }
 .hero:before{
   content:"";
   position:absolute;
   inset:0;
   z-index:-1;
-  opacity:.72;
+  pointer-events:none;
+  opacity:.62;
   background:
-    radial-gradient(ellipse at 18% 100%,rgba(11,79,67,.85) 0 8%,transparent 9%),
-    radial-gradient(ellipse at 83% 100%,rgba(17,85,66,.8) 0 10%,transparent 11%),
-    linear-gradient(105deg,transparent 0 61%,rgba(255,194,104,.2) 62% 66%,transparent 67%);
+    radial-gradient(ellipse at 7% 103%,rgba(5,60,50,.95) 0 10%,transparent 11%),
+    radial-gradient(ellipse at 93% 105%,rgba(5,55,48,.9) 0 12%,transparent 13%),
+    linear-gradient(90deg,transparent 0 12%,rgba(8,49,61,.24) 12.5% 14%,transparent 14.5% 25%,rgba(9,56,67,.2) 25.5% 29%,transparent 29.5% 72%,rgba(8,50,61,.22) 72.5% 76%,transparent 76.5%);
 }
 .hero:after{
-  content:"MIAMI · BANKO";
+  content:"VICE CITY · CASA BANKO";
   position:absolute;
-  right:18px;
-  bottom:20px;
+  right:14px;
+  bottom:12px;
   z-index:-1;
-  color:rgba(255,255,255,.12);
-  font:900 11px Arial,sans-serif;
-  letter-spacing:3px;
+  color:rgba(255,255,255,.16);
+  font:900 9px Arial,sans-serif;
+  letter-spacing:2.4px;
+  transform:skew(-7deg);
 }
-.brand{color:#ffd75f;text-shadow:3px 3px 0 #171006,0 0 18px rgba(242,204,96,.22)}
-.sub{text-shadow:0 2px 8px #000}
+.brand{
+  color:#ffd765;
+  text-shadow:3px 3px 0 rgba(24,12,4,.9),-1px -1px 0 rgba(255,240,172,.45),0 0 14px rgba(255,202,78,.2);
+}
+.sub{color:#fff8e9;text-shadow:0 2px 8px rgba(0,0,0,.95);}
 
-/* Journal only: keep every existing box/grid/input size; change surfaces and depth. */
+/* Existing Journal cards — same boxes, new materials. */
 #journal .card{
-  background:linear-gradient(155deg,rgba(16,16,13,.97),rgba(7,8,7,.98));
-  border-color:#6d531c;
-  box-shadow:0 14px 32px rgba(0,0,0,.26),inset 0 1px 0 rgba(255,218,112,.035);
+  background:linear-gradient(155deg,rgba(12,15,15,.975),rgba(5,7,7,.99));
+  border-color:rgba(196,148,38,.64);
+  box-shadow:0 12px 28px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,228,144,.045);
 }
 #journal .bankoCard{
-  background:linear-gradient(145deg,rgba(27,21,7,.98),rgba(7,8,7,.98) 58%,rgba(28,20,7,.96));
+  background:
+    radial-gradient(circle at 94% 4%,rgba(36,153,174,.09),transparent 29%),
+    linear-gradient(145deg,rgba(26,20,7,.98),rgba(6,8,8,.99) 58%,rgba(20,15,6,.98));
   border-color:#b98a22;
-  box-shadow:0 16px 38px rgba(0,0,0,.32),0 0 20px rgba(224,179,62,.055);
+  box-shadow:0 14px 34px rgba(0,0,0,.34),0 0 20px rgba(221,172,51,.055),inset 0 1px 0 rgba(255,231,156,.055);
 }
-#journal .title{font-family:Impact,Arial,sans-serif;letter-spacing:1px;font-weight:400;text-shadow:2px 2px 0 #332004}
-#journal button{background:linear-gradient(180deg,#1b1b17,#10110f);border-color:#765b1e;box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
-#journal button.on{background:linear-gradient(180deg,#ffd760,#c98b13);border-color:#ffe58a;color:#130d03;box-shadow:0 4px 12px rgba(209,148,25,.16),inset 0 1px 0 rgba(255,255,255,.4)}
-#journal .field,#journal textarea{background:linear-gradient(180deg,#090a09,#050605);border-color:#654e1b;box-shadow:inset 0 1px 8px rgba(0,0,0,.35)}
-#journal .gameBox{background:linear-gradient(160deg,#0b0c0b,#050605);border-color:#51401c}
-#journal .earned{background:linear-gradient(90deg,#151006,#201806,#151006);border:1px solid rgba(134,101,30,.25)}
-#journal .upload{background:rgba(5,6,5,.55);border-color:#9a7626}
-#journal .save{background:linear-gradient(90deg,#a86d08,#f4cf58,#b97809);box-shadow:0 5px 16px rgba(194,130,10,.14)}
-#journal .tradeItem,#journal .manageRow{border-color:#312817}
+#journal .title{
+  color:#ffd45d;
+  text-shadow:2px 2px 0 rgba(65,37,4,.85),0 0 12px rgba(236,180,51,.12);
+}
+#journal .label{color:#d7cdb7;}
+#journal .hint,#journal .rangeLabel{color:#a99f8b;}
 
-/* Small daylight Miami accent, deliberately restrained so the working form stays readable. */
-#journal{position:relative}
-#journal:before{
-  content:"";
-  position:absolute;
-  z-index:-1;
-  left:-16px;
-  right:-16px;
-  top:-16px;
-  height:210px;
-  pointer-events:none;
-  opacity:.12;
-  background:linear-gradient(135deg,#23a7c2,#f5c56c 56%,transparent 78%);
-  filter:saturate(.8);
+/* Same existing controls, only reskinned. */
+#journal button{
+  background:linear-gradient(180deg,rgba(27,27,23,.98),rgba(12,14,13,.99));
+  border-color:#72571d;
+  color:#f3ecdb;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+}
+#journal button.on,
+#journal .grid button.on,
+#journal .multi .drop button.on{
+  background:linear-gradient(180deg,#f8cf56,#c98a12);
+  border-color:#ffe58b;
+  color:#120c02;
+  box-shadow:0 4px 12px rgba(205,142,20,.14),inset 0 1px 0 rgba(255,255,255,.38);
+}
+#journal .field,#journal textarea,#journal select{
+  background:linear-gradient(180deg,rgba(8,12,13,.99),rgba(4,6,6,.99));
+  border-color:#66501d;
+  color:#f5f2e9;
+  box-shadow:inset 0 1px 9px rgba(0,0,0,.4);
+}
+#journal .field:focus,#journal textarea:focus,#journal select:focus{
+  border-color:#b88a25;
+  box-shadow:0 0 0 1px rgba(219,171,52,.14),inset 0 1px 9px rgba(0,0,0,.4);
+}
+#journal .gameBox{
+  background:linear-gradient(155deg,rgba(8,12,12,.99),rgba(4,6,6,.99));
+  border-color:#4e401f;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.02);
+}
+#journal .earned{
+  background:linear-gradient(90deg,rgba(24,18,5,.96),rgba(31,24,7,.98),rgba(17,14,7,.96));
+  border-color:rgba(144,108,29,.28);
+}
+#journal .upload{
+  background:linear-gradient(155deg,rgba(7,12,13,.8),rgba(5,7,7,.94));
+  border-color:#987326;
+}
+#journal .save{
+  background:linear-gradient(90deg,#aa700b,#f2cb54 50%,#b97b0c);
+  color:#100b02;
+  box-shadow:0 5px 15px rgba(191,128,9,.14),inset 0 1px 0 rgba(255,245,191,.28);
+}
+#journal .tradeItem,#journal .manageRow{border-color:#302818;}
+
+/* Very subtle Miami blue/pink reflections — accents only, no layout effects. */
+#journal .card:nth-of-type(2){
+  box-shadow:0 12px 28px rgba(0,0,0,.28),-1px 0 0 rgba(48,172,192,.07),1px 0 0 rgba(223,79,143,.045);
 }
 
-/* Keep the existing fixed nav dimensions/function; journal-active gets the GTA/gold treatment. */
-nav{background:rgba(6,7,7,.97);box-shadow:0 -10px 28px rgba(0,0,0,.22)}
-nav button[data-screen="journal"].active{color:#ffd45b;text-shadow:0 0 10px rgba(239,190,67,.35)}
+/* Existing fixed nav geometry untouched. */
+nav{
+  background:rgba(5,7,7,.975);
+  border-top-color:rgba(124,94,28,.55);
+  box-shadow:0 -9px 25px rgba(0,0,0,.28);
+}
+nav button[data-screen="journal"].active{
+  color:#ffd45b;
+  text-shadow:0 0 9px rgba(235,181,48,.28);
+}
