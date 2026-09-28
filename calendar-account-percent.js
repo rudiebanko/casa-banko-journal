@@ -49,3 +49,14 @@
   function init(){const cal=$('calendar');if(!cal){setTimeout(init,100);return}obs.observe(cal,{childList:true,subtree:true});document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.screen==='calendar')setTimeout(update,0)}));window.addEventListener('storage',schedule);document.addEventListener('click',e=>{if(e.target.closest('#calendarGrid,#prevMonth,#nextMonth,#calendarSelectToggle'))setTimeout(update,0)});if(!document.getElementById('calendarAccountPercentStyle')){const s=document.createElement('style');s.id='calendarAccountPercentStyle';s.textContent='.dpercent{font-size:7px;font-weight:900;color:#d7c58d;line-height:1.15;margin-top:2px}.dpercent.pos,.calMetric .pos,.daySnapMetric .pos{color:#35d99a!important}.dpercent.neg,.calMetric .neg,.daySnapMetric .neg{color:#ff5e5e!important}';document.head.appendChild(s)}setTimeout(update,0)}
   document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
 })();
+
+/* CASA BANKO live-account trading day: 2:00 PM America/Los_Angeles, DST-safe. */
+(()=>{
+  const TZ='America/Los_Angeles',CUTOFF=14;
+  function parts(){const out={};for(const p of new Intl.DateTimeFormat('en-US',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'}).formatToParts(new Date()))if(p.type!=='literal')out[p.type]=Number(p.value);return out}
+  function day(){const p=parts();let y=p.year,m=p.month,d=p.day;if(p.hour<CUTOFF){const x=new Date(Date.UTC(y,m-1,d)-86400000);y=x.getUTCFullYear();m=x.getUTCMonth()+1;d=x.getUTCDate()}return `${y}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')}`}
+  function acct(){try{return JSON.parse(localStorage.getItem('casaBankoTradeLockerAccount')||'null')}catch{return null}}
+  function paint(){const box=document.getElementById('globalLiveAccount'),a=acct();if(!box||!a?.id)return;const current=Number(a.balance??a.accountBalance??a.account_balance??a.equity);if(!Number.isFinite(current))return;const k=`casaBankoDailyBalanceLA2::${String(a.id)}::${day()}`;let start=Number(localStorage.getItem(k));if(!Number.isFinite(start)||start<=0){start=current;localStorage.setItem(k,String(start))}const diff=current-start,pct=start?diff/start*100:0,up=diff>=0,sign=up?'+':'−',amount=Math.abs(diff).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}),txt=(up?'🟢':'🔴')+' TODAY '+sign+Math.abs(pct).toFixed(2)+'% · '+sign+'$'+amount,row=[...box.querySelectorAll('div')].find(x=>x.textContent.includes('TODAY'));if(row&&row.textContent!==txt){row.textContent=txt;row.style.color=up?'#67d391':'#ff6b6b'}}
+  function init(){paint();const root=document.querySelector('.hero')||document.body;new MutationObserver(()=>queueMicrotask(paint)).observe(root,{childList:true,subtree:true,characterData:true});setInterval(paint,30000)}
+  document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
+})();
