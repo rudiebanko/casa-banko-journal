@@ -17,7 +17,7 @@ main{background:transparent!important;box-shadow:none!important}#journal{backgro
 /* Approved transparent CASA BANKO / TRADE JOURNAL lockup. Keep hero geometry unchanged. */
 .hero>div{box-sizing:border-box;background-image:url("casa-banko-journal-logo.png?v=20260928-approved-logo-1");background-repeat:no-repeat;background-position:left bottom;background-size:contain;width:min(66vw,468px);height:min(21vw,149px)}
 .hero .brand,.hero .sub{visibility:hidden!important}
-@media (max-width:899px){.hero>div{width:76vw;height:24.2vw;padding-bottom:0!important;margin-bottom:-10vw!important}}
+@media (max-width:899px){.hero>div{width:76vw;height:24.2vw;padding-bottom:0!important;margin-bottom:-7.5vw!important}}
 
 /* Base Journal glass */
 #journal .card{background:linear-gradient(150deg,rgba(10,14,14,.91),rgba(3,6,6,.95));border-color:rgba(216,170,61,.78);box-shadow:0 12px 28px rgba(0,0,0,.40),inset 0 1px 0 rgba(255,232,163,.07);backdrop-filter:blur(5px) saturate(.9);-webkit-backdrop-filter:blur(5px) saturate(.9)}
