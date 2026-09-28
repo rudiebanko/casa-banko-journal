@@ -11,14 +11,14 @@ body:after{content:"";position:absolute;left:0;right:0;top:0;height:calc(100vw *
 .sub{color:#fff8e9;font-family:"Arial Narrow Bold","Arial Narrow",Arial,sans-serif;font-weight:900;letter-spacing:4.6px;text-transform:uppercase;text-shadow:0 2px 8px rgba(0,0,0,.95)}
 main{background:transparent!important;box-shadow:none!important}#journal{background:transparent!important}
 /* LOCKED approved hero composition */
-@media (max-width:899px){.hero{height:calc(100vw * .82)!important;min-height:0!important;padding-top:0!important;padding-bottom:0!important;align-items:flex-end!important}.hero>div{padding-bottom:18px}#journal{padding-top:14px!important}}
+@media (max-width:899px){.hero{height:calc(100vw * .82)!important;min-height:0!important;padding-top:0!important;padding-bottom:0!important;align-items:flex-end!important}.hero>div:not(#globalLiveAccount){padding-bottom:18px}#journal{padding-top:14px!important}}
 @media (min-width:900px){body:before,body:after{height:1450px}body:before{background-size:auto 1450px;background-position:center -116px}}
 
 /* Approved transparent CASA BANKO / TRADE JOURNAL lockup. Keep hero geometry unchanged. */
-.hero>div{box-sizing:border-box;background-image:url("casa-banko-journal-logo.png?v=20260928-approved-logo-1");background-repeat:no-repeat;background-position:left bottom;background-size:contain;width:min(66vw,468px);height:min(21vw,149px)}
+.hero>div:not(#globalLiveAccount){box-sizing:border-box;background-image:url("casa-banko-journal-logo.png?v=20260928-approved-logo-1");background-repeat:no-repeat;background-position:left bottom;background-size:contain;width:min(66vw,468px);height:min(21vw,149px)}
 .hero .brand,.hero .sub{visibility:hidden!important}
 @media (max-width:899px){
-  .hero>div{width:76vw;height:24.2vw;padding-bottom:0!important;margin-bottom:-5.5vw!important}
+  .hero>div:not(#globalLiveAccount){width:76vw;height:24.2vw;padding-bottom:0!important;margin-bottom:-5.5vw!important}
   #globalLiveAccount{left:auto!important;right:18px!important;width:auto!important;max-width:58vw!important;min-width:0!important;height:auto!important;min-height:0!important;box-sizing:border-box!important;padding:8px 10px 6px!important}
 }
 
