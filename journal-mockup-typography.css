@@ -1,16 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@600;700&display=swap');
+@font-face{
+  font-family:'PriceDown';
+  src:url('pricedow.ttf?v=20260928') format('truetype');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap');
 
 /* CASA BANKO Journal — typography-only layer.
    No layout, spacing, background, component dimensions, or behavior rules belong here. */
 
-/* Display lettering: condensed/block treatment from approved mockup */
+/* Display lettering: PriceDown treatment. */
 .brand,
 #journal .title,
 #journal .bankoBalance,
 #journal .bankoCard .label,
 #journal .bankoLevel,
 #journal .gameK {
-  font-family:'Anton',Impact,Haettenschweiler,sans-serif !important;
+  font-family:'PriceDown',Impact,Haettenschweiler,sans-serif !important;
   font-weight:400 !important;
   font-stretch:normal !important;
   text-transform:uppercase;
@@ -48,7 +55,7 @@
   letter-spacing:.3px !important;
 }
 
-/* Supporting UI type */
+/* Supporting UI type stays clean/condensed for readability. */
 #journal button,
 #journal .gameV,
 #journal .earned,
@@ -71,7 +78,7 @@ nav button {letter-spacing:.05px !important;}
 
 /* Approved hero lockup spacing adjustment — visual only. */
 @media (max-width:899px){
-  .hero>div{width:76vw !important;height:24.2vw !important;}
+  .hero>div:not(#globalLiveAccount){width:76vw !important;height:24.2vw !important;}
   .hero{border-bottom-color:transparent !important;}
   main{box-shadow:none !important;}
 }
