@@ -19,7 +19,7 @@ main{background:transparent!important;box-shadow:none!important}#journal{backgro
 .hero .brand,.hero .sub{visibility:hidden!important}
 @media (max-width:899px){
   .hero>div{width:76vw;height:24.2vw;padding-bottom:0!important;margin-bottom:-5.5vw!important}
-  #globalLiveAccount{left:auto!important;right:18px!important;width:auto!important;max-width:58vw!important;min-width:0!important;box-sizing:border-box!important}
+  #globalLiveAccount{left:auto!important;right:18px!important;width:auto!important;max-width:58vw!important;min-width:0!important;height:auto!important;min-height:0!important;box-sizing:border-box!important;padding:8px 10px 6px!important}
 }
 
 /* Base Journal glass */
