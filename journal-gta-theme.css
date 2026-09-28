@@ -16,20 +16,21 @@ main{background:transparent!important;box-shadow:inset 0 1px 0 rgba(240,198,91,.
 /* Base Journal glass */
 #journal .card{background:linear-gradient(150deg,rgba(10,14,14,.91),rgba(3,6,6,.95));border-color:rgba(216,170,61,.78);box-shadow:0 12px 28px rgba(0,0,0,.40),inset 0 1px 0 rgba(255,232,163,.07);backdrop-filter:blur(5px) saturate(.9);-webkit-backdrop-filter:blur(5px) saturate(.9)}
 
-/* BANKO STATUS — mockup-matched smoky transparency; geometry stays locked */
-#journal .bankoCard{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(4,8,9,.61) 0%,rgba(2,5,6,.68) 52%,rgba(12,8,2,.65) 100%);border-color:#d4a52e;box-shadow:0 16px 34px rgba(0,0,0,.42),0 0 0 1px rgba(255,220,118,.10),inset 0 1px 0 rgba(255,235,170,.14),inset 0 -20px 45px rgba(0,0,0,.12);backdrop-filter:blur(1.5px) saturate(.88);-webkit-backdrop-filter:blur(1.5px) saturate(.88)}
-#journal .bankoCard:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 85% 5%,rgba(244,199,79,.07),transparent 29%),linear-gradient(110deg,rgba(255,255,255,.018),transparent 35%,rgba(225,166,35,.025) 68%,transparent);z-index:0}
+/* BANKO STATUS — mockup uses its own visible Miami artwork inside the glass panel */
+#journal .bankoCard{position:relative;overflow:hidden;background:rgba(2,5,5,.72)!important;border-color:#d4a52e;box-shadow:0 16px 34px rgba(0,0,0,.42),0 0 0 1px rgba(255,220,118,.10),inset 0 1px 0 rgba(255,235,170,.14);backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+#journal .bankoCard:before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(145deg,rgba(2,5,5,.68),rgba(2,5,5,.78)),url("journal-miami-bg.png?v=banko-panel-art-2208");background-size:auto,100vw auto;background-position:center,center calc(-1 * (100vw * .82 + 14px));background-repeat:no-repeat;z-index:0;opacity:.72}
+#journal .bankoCard:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,rgba(255,255,255,.018),transparent 35%,rgba(225,166,35,.025) 68%,transparent);z-index:0}
 #journal .bankoCard>*{position:relative;z-index:1}
 #journal .bankoCard .label{color:#e8dfca;font-family:Impact,"Arial Narrow",sans-serif;font-weight:400;letter-spacing:1.35px;text-shadow:0 2px 2px #000,0 0 8px rgba(216,170,61,.10)}
 #journal .bankoBalance{color:#f3d26c;font-family:Impact,"Arial Narrow",sans-serif;letter-spacing:1px;text-shadow:2px 3px 0 #3a2306,0 1px 0 #fff0a7,0 0 13px rgba(224,169,37,.13)}
-#journal .bankoLevel{background:linear-gradient(180deg,rgba(16,15,10,.64),rgba(4,6,6,.70));border-color:#c89527!important;color:#fff4d3!important;font-family:Impact,"Arial Narrow",sans-serif;letter-spacing:.65px;box-shadow:inset 0 1px 0 rgba(255,231,156,.12),0 4px 13px rgba(0,0,0,.18)}
+#journal .bankoLevel{background:rgba(4,6,6,.58);border-color:#c89527!important;color:#fff4d3!important;font-family:Impact,"Arial Narrow",sans-serif;letter-spacing:.65px;box-shadow:inset 0 1px 0 rgba(255,231,156,.12),0 4px 13px rgba(0,0,0,.18)}
 #journal .bankoTrack{background:linear-gradient(180deg,rgba(65,47,11,.58),rgba(30,23,8,.64));border:1px solid rgba(190,143,33,.50);box-shadow:inset 0 2px 5px rgba(0,0,0,.45),0 1px 0 rgba(255,223,131,.06)}
 #journal .bankoFill{background:linear-gradient(90deg,#9c6508,#e9bd43,#f5db78);box-shadow:0 0 10px rgba(231,183,60,.25)}
 #journal .bankoCard .hint{color:#c8beaa;text-shadow:0 1px 2px #000}
-#journal .gameBox{background:linear-gradient(155deg,rgba(4,8,9,.48),rgba(2,4,4,.59));border-color:rgba(202,155,45,.76);box-shadow:inset 0 1px 0 rgba(255,236,174,.07),inset 0 -12px 20px rgba(0,0,0,.08),0 4px 10px rgba(0,0,0,.10);backdrop-filter:blur(.5px);-webkit-backdrop-filter:blur(.5px)}
+#journal .gameBox{background:rgba(2,5,5,.50);border-color:rgba(202,155,45,.76);box-shadow:inset 0 1px 0 rgba(255,236,174,.07),0 4px 10px rgba(0,0,0,.10);backdrop-filter:none;-webkit-backdrop-filter:none}
 #journal .gameK{color:#d9cfba;font-family:Impact,"Arial Narrow",sans-serif;font-weight:400;letter-spacing:.75px;text-shadow:0 2px 2px #000}
 #journal .gameV{color:#fff8e9;font-family:"Arial Narrow",Arial,sans-serif;font-weight:900;letter-spacing:.55px;text-shadow:0 2px 2px #000}
-#journal .earned{background:linear-gradient(90deg,rgba(20,14,3,.58),rgba(39,27,5,.55) 45%,rgba(12,10,5,.61));border-color:rgba(204,155,42,.62);color:#f2cd62;font-family:"Arial Narrow",Arial,sans-serif;font-weight:900;letter-spacing:.35px;box-shadow:inset 0 1px 0 rgba(255,226,138,.08),0 4px 12px rgba(0,0,0,.10);text-shadow:0 2px 2px #000}
+#journal .earned{background:rgba(20,14,3,.52);border-color:rgba(204,155,42,.62);color:#f2cd62;font-family:"Arial Narrow",Arial,sans-serif;font-weight:900;letter-spacing:.35px;box-shadow:inset 0 1px 0 rgba(255,226,138,.08),0 4px 12px rgba(0,0,0,.10);text-shadow:0 2px 2px #000}
 
 /* Remaining Journal skin */
 #journal .title{color:var(--cb-gold-hi);font-family:Impact,"Arial Narrow",sans-serif;letter-spacing:.6px;text-shadow:2px 2px 0 #3a2207,0 0 10px rgba(236,180,51,.14)}
