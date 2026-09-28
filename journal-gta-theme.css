@@ -3,8 +3,8 @@
    VISUAL SKIN ONLY. Existing component dimensions / data / behavior stay locked. */
 :root{--cb-gold:#d8aa3d;--cb-gold-hi:#f4d777;--cb-cream:#f5eedf;--cb-muted:#b8ae99;--cb-glass:rgba(5,8,8,.88);--cb-glass-deep:rgba(2,4,4,.95)}
 body{color:var(--cb-cream);background:#050707;position:relative}
-body:before{content:"";position:absolute;left:0;right:0;top:0;height:calc(100vw * 2.045);pointer-events:none;z-index:-2;background-color:#050707;background-image:url("journal-rolls-royce-bg.png?v=daytime-2242");background-size:100% auto;background-repeat:no-repeat;background-position:center calc(-1 * (100vw * .24))}
-body:after{content:"";position:absolute;left:0;right:0;top:0;height:calc(100vw * 2.045);pointer-events:none;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.01) 0%,rgba(0,0,0,.03) 32%,rgba(0,0,0,.10) 48%,rgba(2,4,4,.34) 72%,#050707 100%)}
+body:before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;min-height:100%;pointer-events:none;z-index:-2;background-color:#050707;background-image:url("journal-rolls-royce-bg.png?v=daytime-2242");background-size:100% auto;background-repeat:repeat-y;background-position:center calc(-1 * (100vw * .24))}
+body:after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;min-height:100%;pointer-events:none;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.01) 0%,rgba(0,0,0,.03) 18%,rgba(0,0,0,.10) 32%,rgba(2,4,4,.28) 58%,rgba(2,4,4,.42) 100%)}
 .hero{position:relative;overflow:visible;isolation:auto;background:transparent!important;border-bottom:none!important}
 .hero:before,.hero:after{content:none!important;display:none!important}
 .brand{color:var(--cb-gold-hi);font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Arial Narrow",sans-serif;font-weight:900;font-stretch:condensed;letter-spacing:.15px;text-transform:uppercase;text-shadow:2px 3px 0 #382006,0 0 12px rgba(239,195,85,.20)}
@@ -12,7 +12,7 @@ body:after{content:"";position:absolute;left:0;right:0;top:0;height:calc(100vw *
 main{background:transparent!important;box-shadow:none!important}#journal{background:transparent!important}
 /* LOCKED approved hero composition */
 @media (max-width:899px){.hero{height:calc(100vw * .82)!important;min-height:0!important;padding-top:0!important;padding-bottom:0!important;align-items:flex-end!important}.hero>div:not(#globalLiveAccount){padding-bottom:18px}#journal{padding-top:14px!important}}
-@media (min-width:900px){body:before,body:after{height:1450px}body:before{background-size:auto 1450px;background-position:center -116px}}
+@media (min-width:900px){body:before{background-size:auto 1450px;background-position:center -116px;background-repeat:repeat-y}}
 
 /* Approved transparent CASA BANKO / TRADE JOURNAL lockup. Keep hero geometry unchanged. */
 .hero>div:not(#globalLiveAccount){box-sizing:border-box;background-image:url("casa-banko-journal-logo.png?v=20260928-approved-logo-1");background-repeat:no-repeat;background-position:left bottom;background-size:contain;width:min(66vw,468px);height:min(21vw,149px)}
