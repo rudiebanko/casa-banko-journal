@@ -22,8 +22,9 @@ main{background:transparent!important;box-shadow:none!important}#journal{backgro
   #globalLiveAccount{left:auto!important;right:18px!important;width:auto!important;max-width:58vw!important;min-width:0!important;height:auto!important;min-height:0!important;box-sizing:border-box!important;padding:8px 10px 6px!important}
 }
 
-/* Base Journal glass — 10% less transparent than BANKO Status */
-#journal .card{background:linear-gradient(150deg,rgba(10,14,14,.79),rgba(3,6,6,.82));border-color:rgba(216,170,61,.78);box-shadow:0 12px 28px rgba(0,0,0,.40),inset 0 1px 0 rgba(255,232,163,.07);backdrop-filter:blur(5px) saturate(.9);-webkit-backdrop-filter:blur(5px) saturate(.9)}
+/* Approved Journal glass — now shared by every tab card without changing layout or behavior. */
+#journal .card,#stats .card,#analytics .card,#calendar .card,#settings .card{background:linear-gradient(150deg,rgba(10,14,14,.79),rgba(3,6,6,.82))!important;border-color:rgba(216,170,61,.78)!important;box-shadow:0 12px 28px rgba(0,0,0,.40),inset 0 1px 0 rgba(255,232,163,.07)!important;backdrop-filter:blur(5px) saturate(.9);-webkit-backdrop-filter:blur(5px) saturate(.9)}
+#stats .stat,#stats .statsQuickBox,#stats .statsStreak,#analytics .metric,#analytics .rewardBox,#analytics .missionBox,#analytics .achievement,#analytics .levelStep,#calendar .day,#calendar .weekSummary{background:rgba(2,5,5,.50)!important;border-color:rgba(202,155,45,.76)!important;box-shadow:inset 0 1px 0 rgba(255,236,174,.07),0 4px 10px rgba(0,0,0,.10)!important}
 
 /* BANKO STATUS — uses matching artwork inside the glass panel */
 #journal .bankoCard{position:relative;overflow:hidden;background:rgba(2,5,5,.72)!important;border-color:#d4a52e;box-shadow:0 16px 34px rgba(0,0,0,.42),0 0 0 1px rgba(255,220,118,.10),inset 0 1px 0 rgba(255,235,170,.14);backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
