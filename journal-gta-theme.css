@@ -2,123 +2,55 @@
    SKIN ONLY. No sizing, grid, spacing, position, DOM, data, or behavior rules here.
    The existing coded layout remains the geometry source of truth. */
 
-/* Daytime GTA/Miami atmosphere on the EXISTING 180px hero. */
+/* APPROVED MIAMI ARTWORK — visual layer only. */
+body{
+  background-image:
+    linear-gradient(rgba(2,5,6,.20),rgba(2,5,6,.38)),
+    url("ChatGPT%20Image%20Sep%2027%2C%202026%2C%2008_36_29%20PM.png");
+  background-size:cover;
+  background-position:center top;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+}
 .hero{
   position:relative;
   overflow:hidden;
   isolation:isolate;
-  background:
-    linear-gradient(180deg,rgba(2,18,27,.05),rgba(4,8,8,.62)),
-    radial-gradient(circle at 82% 18%,rgba(255,225,135,.72),transparent 18%),
-    radial-gradient(circle at 16% 42%,rgba(235,89,151,.22),transparent 27%),
-    linear-gradient(125deg,#1d9bc0 0%,#72c8d4 35%,#f4c678 69%,#d98b61 100%);
+  background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.36));
 }
-.hero:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
-  opacity:.62;
-  background:
-    radial-gradient(ellipse at 7% 103%,rgba(5,60,50,.95) 0 10%,transparent 11%),
-    radial-gradient(ellipse at 93% 105%,rgba(5,55,48,.9) 0 12%,transparent 13%),
-    linear-gradient(90deg,transparent 0 12%,rgba(8,49,61,.24) 12.5% 14%,transparent 14.5% 25%,rgba(9,56,67,.2) 25.5% 29%,transparent 29.5% 72%,rgba(8,50,61,.22) 72.5% 76%,transparent 76.5%);
-}
-.hero:after{
-  content:"VICE CITY · CASA BANKO";
-  position:absolute;
-  right:14px;
-  bottom:12px;
-  z-index:-1;
-  color:rgba(255,255,255,.16);
-  font:900 9px Arial,sans-serif;
-  letter-spacing:2.4px;
-  transform:skew(-7deg);
-}
+.hero:before,.hero:after{display:none;}
 .brand{
   color:#ffd765;
   text-shadow:3px 3px 0 rgba(24,12,4,.9),-1px -1px 0 rgba(255,240,172,.45),0 0 14px rgba(255,202,78,.2);
 }
 .sub{color:#fff8e9;text-shadow:0 2px 8px rgba(0,0,0,.95);}
 
-/* Existing Journal cards — same boxes, new materials. */
+/* Existing Journal cards — same boxes, translucent black glass skin. */
 #journal .card{
-  background:linear-gradient(155deg,rgba(12,15,15,.975),rgba(5,7,7,.99));
-  border-color:rgba(196,148,38,.64);
-  box-shadow:0 12px 28px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,228,144,.045);
+  background:linear-gradient(155deg,rgba(8,11,11,.91),rgba(3,5,5,.95));
+  border-color:rgba(196,148,38,.68);
+  box-shadow:0 12px 28px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,228,144,.05);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
 }
 #journal .bankoCard{
-  background:
-    radial-gradient(circle at 94% 4%,rgba(36,153,174,.09),transparent 29%),
-    linear-gradient(145deg,rgba(26,20,7,.98),rgba(6,8,8,.99) 58%,rgba(20,15,6,.98));
+  background:linear-gradient(145deg,rgba(13,13,9,.90),rgba(3,6,6,.95) 58%,rgba(13,10,5,.91));
   border-color:#b98a22;
-  box-shadow:0 14px 34px rgba(0,0,0,.34),0 0 20px rgba(221,172,51,.055),inset 0 1px 0 rgba(255,231,156,.055);
+  box-shadow:0 14px 34px rgba(0,0,0,.40),0 0 20px rgba(221,172,51,.06),inset 0 1px 0 rgba(255,231,156,.06);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
 }
-#journal .title{
-  color:#ffd45d;
-  text-shadow:2px 2px 0 rgba(65,37,4,.85),0 0 12px rgba(236,180,51,.12);
-}
+#journal .title{color:#ffd45d;text-shadow:2px 2px 0 rgba(65,37,4,.85),0 0 12px rgba(236,180,51,.12);}
 #journal .label{color:#d7cdb7;}
 #journal .hint,#journal .rangeLabel{color:#a99f8b;}
-
-/* Same existing controls, only reskinned. */
-#journal button{
-  background:linear-gradient(180deg,rgba(27,27,23,.98),rgba(12,14,13,.99));
-  border-color:#72571d;
-  color:#f3ecdb;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
-}
-#journal button.on,
-#journal .grid button.on,
-#journal .multi .drop button.on{
-  background:linear-gradient(180deg,#f8cf56,#c98a12);
-  border-color:#ffe58b;
-  color:#120c02;
-  box-shadow:0 4px 12px rgba(205,142,20,.14),inset 0 1px 0 rgba(255,255,255,.38);
-}
-#journal .field,#journal textarea,#journal select{
-  background:linear-gradient(180deg,rgba(8,12,13,.99),rgba(4,6,6,.99));
-  border-color:#66501d;
-  color:#f5f2e9;
-  box-shadow:inset 0 1px 9px rgba(0,0,0,.4);
-}
-#journal .field:focus,#journal textarea:focus,#journal select:focus{
-  border-color:#b88a25;
-  box-shadow:0 0 0 1px rgba(219,171,52,.14),inset 0 1px 9px rgba(0,0,0,.4);
-}
-#journal .gameBox{
-  background:linear-gradient(155deg,rgba(8,12,12,.99),rgba(4,6,6,.99));
-  border-color:#4e401f;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.02);
-}
-#journal .earned{
-  background:linear-gradient(90deg,rgba(24,18,5,.96),rgba(31,24,7,.98),rgba(17,14,7,.96));
-  border-color:rgba(144,108,29,.28);
-}
-#journal .upload{
-  background:linear-gradient(155deg,rgba(7,12,13,.8),rgba(5,7,7,.94));
-  border-color:#987326;
-}
-#journal .save{
-  background:linear-gradient(90deg,#aa700b,#f2cb54 50%,#b97b0c);
-  color:#100b02;
-  box-shadow:0 5px 15px rgba(191,128,9,.14),inset 0 1px 0 rgba(255,245,191,.28);
-}
+#journal button{background:linear-gradient(180deg,rgba(24,24,20,.94),rgba(9,11,10,.96));border-color:#72571d;color:#f3ecdb;box-shadow:inset 0 1px 0 rgba(255,255,255,.025);}
+#journal button.on,#journal .grid button.on,#journal .multi .drop button.on{background:linear-gradient(180deg,#f8cf56,#c98a12);border-color:#ffe58b;color:#120c02;box-shadow:0 4px 12px rgba(205,142,20,.14),inset 0 1px 0 rgba(255,255,255,.38);}
+#journal .field,#journal textarea,#journal select{background:linear-gradient(180deg,rgba(6,10,11,.94),rgba(3,5,5,.96));border-color:#66501d;color:#f5f2e9;box-shadow:inset 0 1px 9px rgba(0,0,0,.4);}
+#journal .field:focus,#journal textarea:focus,#journal select:focus{border-color:#b88a25;box-shadow:0 0 0 1px rgba(219,171,52,.14),inset 0 1px 9px rgba(0,0,0,.4);}
+#journal .gameBox{background:linear-gradient(155deg,rgba(6,10,10,.93),rgba(3,5,5,.96));border-color:#4e401f;box-shadow:inset 0 1px 0 rgba(255,255,255,.02);}
+#journal .earned{background:linear-gradient(90deg,rgba(20,15,5,.91),rgba(27,21,6,.94),rgba(13,11,6,.92));border-color:rgba(144,108,29,.28);}
+#journal .upload{background:linear-gradient(155deg,rgba(5,10,11,.82),rgba(3,5,5,.93));border-color:#987326;}
+#journal .save{background:linear-gradient(90deg,#aa700b,#f2cb54 50%,#b97b0c);color:#100b02;box-shadow:0 5px 15px rgba(191,128,9,.14),inset 0 1px 0 rgba(255,245,191,.28);}
 #journal .tradeItem,#journal .manageRow{border-color:#302818;}
-
-/* Very subtle Miami blue/pink reflections — accents only, no layout effects. */
-#journal .card:nth-of-type(2){
-  box-shadow:0 12px 28px rgba(0,0,0,.28),-1px 0 0 rgba(48,172,192,.07),1px 0 0 rgba(223,79,143,.045);
-}
-
-/* Existing fixed nav geometry untouched. */
-nav{
-  background:rgba(5,7,7,.975);
-  border-top-color:rgba(124,94,28,.55);
-  box-shadow:0 -9px 25px rgba(0,0,0,.28);
-}
-nav button[data-screen="journal"].active{
-  color:#ffd45b;
-  text-shadow:0 0 9px rgba(235,181,48,.28);
-}
+nav{background:rgba(5,7,7,.96);border-top-color:rgba(124,94,28,.55);box-shadow:0 -9px 25px rgba(0,0,0,.28);}
+nav button[data-screen="journal"].active{color:#ffd45b;text-shadow:0 0 9px rgba(235,181,48,.28);}
