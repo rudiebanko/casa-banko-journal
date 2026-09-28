@@ -25,7 +25,14 @@
     const y=d.getFullYear(),m=d.getMonth(),items=trades().filter(t=>{const x=time(t);return x&&x.getFullYear()===y&&x.getMonth()===m});
     const dates=[...new Set(items.map(t=>{const x=time(t);return x&&key(x)}).filter(Boolean))];return{items,dates};
   }
-  function updateMonth(){const ms=$('calMonthStats'),x=monthItems();if(!ms||!x)return;const metrics=ms.querySelectorAll('.calMetric');if(metrics.length<2)return;const p=pctFor(x.items,x.dates);metrics[1].innerHTML='<b class="'+(p<0?'neg':p>0?'pos':'')+'">'+fmt(p)+'</b><span>ACCOUNT %</span>'}
+  function activeItems(){
+    const dates=Array.isArray(window.casaCalendarSelectionDates)?window.casaCalendarSelectionDates.filter(Boolean):[];
+    if(!dates.length)return null;
+    const wanted=new Set(dates);
+    const items=trades().filter(t=>{const d=time(t);return d&&wanted.has(key(d))});
+    return{items,dates};
+  }
+  function updateMonth(){const ms=$('calMonthStats'),x=activeItems()||monthItems();if(!ms||!x)return;const metrics=ms.querySelectorAll('.calMetric');if(metrics.length<2)return;const p=pctFor(x.items,x.dates);metrics[1].innerHTML='<b class="'+(p<0?'neg':p>0?'pos':'')+'">'+fmt(p)+'</b><span>ACCOUNT %</span>'}
   function updateDetail(){
     const snap=document.querySelector('#daySummary .daySnapshot');if(!snap)return;
     let items=[],dates=[];
