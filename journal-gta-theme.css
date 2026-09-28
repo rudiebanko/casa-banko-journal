@@ -11,7 +11,7 @@ body:after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;min-height
 .sub{color:#fff8e9;font-family:"Arial Narrow Bold","Arial Narrow",Arial,sans-serif;font-weight:900;letter-spacing:4.6px;text-transform:uppercase;text-shadow:0 2px 8px rgba(0,0,0,.95)}
 main{background:transparent!important;box-shadow:none!important}#journal{background:transparent!important}
 /* LOCKED approved hero composition */
-@media (max-width:899px){.hero{height:calc(100vw * .82)!important;min-height:0!important;padding-top:0!important;padding-bottom:0!important;align-items:flex-end!important}.hero>div:not(#globalLiveAccount){padding-bottom:18px}#journal{padding-top:14px!important}}
+@media (max-width:899px){.hero{height:calc(100vw * .82)!important;min-height:0!important;padding-top:0!important;padding-bottom:0!important;align-items:flex-end!important}.hero>div:not(#globalLiveAccount){padding-bottom:18px}.screen{padding-top:14px!important}}
 @media (min-width:900px){body:before{background-size:auto 1450px;background-position:center -116px;background-repeat:repeat-y}}
 
 /* Approved transparent CASA BANKO / TRADE JOURNAL lockup. Keep hero geometry unchanged. */
