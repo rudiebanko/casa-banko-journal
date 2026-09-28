@@ -2,11 +2,21 @@
    VISUAL SKIN ONLY. The existing coded layout remains the geometry source of truth.
    Do not change component names, dimensions, grid, spacing, DOM, data, or behavior here. */
 :root{--cb-gold:#d8aa3d;--cb-gold-hi:#f4d777;--cb-cream:#f5eedf;--cb-muted:#b8ae99;--cb-glass:rgba(5,8,8,.88);--cb-glass-deep:rgba(2,4,4,.95)}
-body{color:var(--cb-cream);background:#050707 url("journal-miami-bg.png?v=approved-gwagon-2118") center top/cover fixed no-repeat}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.04) 0%,rgba(0,0,0,.16) 19%,rgba(2,4,4,.50) 42%,rgba(2,4,4,.78) 70%,rgba(2,4,4,.90) 100%)}
-.hero{position:relative;overflow:hidden;isolation:isolate;background-image:linear-gradient(180deg,rgba(0,0,0,.03),rgba(0,0,0,.16) 70%,rgba(3,5,5,.48)),url("journal-miami-bg.png?v=approved-gwagon-2118");background-size:cover;background-position:center 18%;background-repeat:no-repeat;border-bottom-color:rgba(216,170,61,.72)}
-.hero:before,.hero:after{content:none!important;display:none!important}.brand{color:var(--cb-gold-hi);font-family:Impact,"Arial Narrow",sans-serif;letter-spacing:.5px;text-shadow:2px 3px 0 #382006,0 0 12px rgba(239,195,85,.20)}.sub{color:#fff8e9;font-family:"Arial Narrow",Arial,sans-serif;font-weight:800;letter-spacing:4px;text-shadow:0 2px 8px rgba(0,0,0,.95)}
-main{background:linear-gradient(180deg,rgba(4,7,7,.18),rgba(4,6,6,.48) 28%,rgba(3,5,5,.74) 66%,rgba(3,4,4,.88));box-shadow:inset 0 1px 0 rgba(240,198,91,.22)}
+
+/* ONE continuous artwork layer for the full Journal page. */
+body{color:var(--cb-cream);background:#050707}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:#050707 url("journal-miami-bg.png?v=approved-gwagon-continuous-2124") center top/cover no-repeat}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.02) 0%,rgba(0,0,0,.08) 18%,rgba(2,4,4,.22) 42%,rgba(2,4,4,.44) 70%,rgba(2,4,4,.62) 100%)}
+
+/* Hero is transparent now so it does NOT restart/crop the artwork. */
+.hero{position:relative;overflow:hidden;isolation:auto;background:transparent!important;border-bottom-color:rgba(216,170,61,.72)}
+.hero:before,.hero:after{content:none!important;display:none!important}
+.brand{color:var(--cb-gold-hi);font-family:Impact,"Arial Narrow",sans-serif;letter-spacing:.5px;text-shadow:2px 3px 0 #382006,0 0 12px rgba(239,195,85,.20)}
+.sub{color:#fff8e9;font-family:"Arial Narrow",Arial,sans-serif;font-weight:800;letter-spacing:4px;text-shadow:0 2px 8px rgba(0,0,0,.95)}
+
+/* Keep page itself transparent; cards provide readability over the continuous art. */
+main{background:transparent!important;box-shadow:inset 0 1px 0 rgba(240,198,91,.22)}
+#journal{background:transparent!important}
 #journal .card{background:linear-gradient(150deg,rgba(10,14,14,.91),rgba(3,6,6,.95));border-color:rgba(216,170,61,.78);box-shadow:0 12px 28px rgba(0,0,0,.40),inset 0 1px 0 rgba(255,232,163,.07);backdrop-filter:blur(5px) saturate(.9);-webkit-backdrop-filter:blur(5px) saturate(.9)}
 #journal .bankoCard{background:linear-gradient(145deg,rgba(9,13,13,.91),rgba(2,5,5,.96) 62%,rgba(14,10,4,.92));border-color:var(--cb-gold);box-shadow:0 14px 34px rgba(0,0,0,.45),0 0 18px rgba(216,170,61,.07),inset 0 1px 0 rgba(255,232,163,.08)}
 #journal .title{color:var(--cb-gold-hi);font-family:Impact,"Arial Narrow",sans-serif;letter-spacing:.6px;text-shadow:2px 2px 0 #3a2207,0 0 10px rgba(236,180,51,.14)}#journal .bankoBalance{color:var(--cb-gold-hi);font-family:Impact,"Arial Narrow",sans-serif;letter-spacing:.7px;text-shadow:2px 2px 0 #352005}#journal .label,#journal .gameK{color:#d9cfba;font-family:"Arial Narrow",Arial,sans-serif;font-weight:900;letter-spacing:.9px}#journal .hint,#journal .rangeLabel{color:var(--cb-muted)}#journal .gameV{font-family:"Arial Narrow",Arial,sans-serif;font-weight:900;letter-spacing:.4px}
