@@ -12,13 +12,20 @@ body{
   background-attachment:fixed;
   background-repeat:no-repeat;
 }
+/* The original skeleton gives .hero its own opaque background. Put the approved
+   artwork directly on that same 180px hero so the skeleton dimensions stay untouched. */
 .hero{
   position:relative;
   overflow:hidden;
   isolation:isolate;
-  background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.36));
+  background-image:
+    linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.34)),
+    url("ChatGPT%20Image%20Sep%2027%2C%202026%2C%2008_36_29%20PM.png");
+  background-size:cover;
+  background-position:center 25%;
+  background-repeat:no-repeat;
 }
-.hero:before,.hero:after{display:none;}
+.hero:before,.hero:after{content:none!important;display:none!important;}
 .brand{
   color:#ffd765;
   text-shadow:3px 3px 0 rgba(24,12,4,.9),-1px -1px 0 rgba(255,240,172,.45),0 0 14px rgba(255,202,78,.2);
