@@ -22,13 +22,13 @@ main{background:transparent!important;box-shadow:none!important}#journal{backgro
   #globalLiveAccount{left:auto!important;right:18px!important;width:auto!important;max-width:58vw!important;min-width:0!important;height:auto!important;min-height:0!important;box-sizing:border-box!important;padding:8px 10px 6px!important}
 }
 
-/* Approved BANKO STATUS transparency shared by every tab card. Layout/behavior unchanged. */
-#journal .card,#stats .card,#analytics .card,#calendar .card,#settings .card{background:rgba(2,5,5,.72)!important;border-color:rgba(216,170,61,.78)!important;box-shadow:0 12px 28px rgba(0,0,0,.40),inset 0 1px 0 rgba(255,232,163,.07)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-#stats .stat,#stats .statsQuickBox,#stats .statsStreak,#analytics .metric,#analytics .rewardBox,#analytics .missionBox,#analytics .achievement,#analytics .levelStep,#calendar .day,#calendar .weekSummary{background:rgba(2,5,5,.50)!important;border-color:rgba(202,155,45,.76)!important;box-shadow:inset 0 1px 0 rgba(255,236,174,.07),0 4px 10px rgba(0,0,0,.10)!important}
+/* Approved shared card treatment — 10% more transparent than prior version. Layout/behavior unchanged. */
+#journal .card,#stats .card,#analytics .card,#calendar .card,#settings .card{background:rgba(2,5,5,.62)!important;border-color:rgba(216,170,61,.78)!important;box-shadow:0 12px 28px rgba(0,0,0,.40),inset 0 1px 0 rgba(255,232,163,.07)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+#stats .stat,#stats .statsQuickBox,#stats .statsStreak,#analytics .metric,#analytics .rewardBox,#analytics .missionBox,#analytics .achievement,#analytics .levelStep,#calendar .day,#calendar .weekSummary{background:rgba(2,5,5,.40)!important;border-color:rgba(202,155,45,.76)!important;box-shadow:inset 0 1px 0 rgba(255,236,174,.07),0 4px 10px rgba(0,0,0,.10)!important}
 
 /* BANKO STATUS — uses matching artwork inside the glass panel */
-#journal .bankoCard{position:relative;overflow:hidden;background:rgba(2,5,5,.72)!important;border-color:#d4a52e;box-shadow:0 16px 34px rgba(0,0,0,.42),0 0 0 1px rgba(255,220,118,.10),inset 0 1px 0 rgba(255,235,170,.14);backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-#journal .bankoCard:before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(145deg,rgba(2,5,5,.68),rgba(2,5,5,.78)),url("journal-rolls-royce-bg.png?v=daytime-panel-2242");background-size:auto,100vw auto;background-position:center,center calc(-1 * (100vw * 1.06 + 14px));background-repeat:no-repeat;z-index:0;opacity:.72}
+#journal .bankoCard{position:relative;overflow:hidden;background:rgba(2,5,5,.62)!important;border-color:#d4a52e;box-shadow:0 16px 34px rgba(0,0,0,.42),0 0 0 1px rgba(255,220,118,.10),inset 0 1px 0 rgba(255,235,170,.14);backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+#journal .bankoCard:before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(145deg,rgba(2,5,5,.58),rgba(2,5,5,.68)),url("journal-rolls-royce-bg.png?v=daytime-panel-2242");background-size:auto,100vw auto;background-position:center,center calc(-1 * (100vw * 1.06 + 14px));background-repeat:no-repeat;z-index:0;opacity:.72}
 #journal .bankoCard:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,rgba(255,255,255,.018),transparent 35%,rgba(225,166,35,.025) 68%,transparent);z-index:0}
 #journal .bankoCard>*{position:relative;z-index:1}
 #journal .bankoCard .label{color:#f0e7d3;font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Arial Narrow",sans-serif;font-weight:900;font-stretch:condensed;letter-spacing:1.1px;text-transform:uppercase;text-shadow:1px 2px 2px #000,0 0 8px rgba(216,170,61,.10)}
@@ -37,10 +37,10 @@ main{background:transparent!important;box-shadow:none!important}#journal{backgro
 #journal .bankoTrack{background:linear-gradient(180deg,rgba(65,47,11,.58),rgba(30,23,8,.64));border:1px solid rgba(190,143,33,.50);box-shadow:inset 0 2px 5px rgba(0,0,0,.45),0 1px 0 rgba(255,223,131,.06)}
 #journal .bankoFill{background:linear-gradient(90deg,#9c6508,#e9bd43,#f5db78);box-shadow:0 0 10px rgba(231,183,60,.25)}
 #journal .bankoCard .hint{color:#d5cbb7;font-family:"Arial Narrow Bold","Arial Narrow",Arial,sans-serif;font-weight:800;letter-spacing:.15px;text-shadow:0 1px 2px #000}
-#journal .gameBox{background:rgba(2,5,5,.50);border-color:rgba(202,155,45,.76);box-shadow:inset 0 1px 0 rgba(255,236,174,.07),0 4px 10px rgba(0,0,0,.10);backdrop-filter:none;-webkit-backdrop-filter:none}
+#journal .gameBox{background:rgba(2,5,5,.40);border-color:rgba(202,155,45,.76);box-shadow:inset 0 1px 0 rgba(255,236,174,.07),0 4px 10px rgba(0,0,0,.10);backdrop-filter:none;-webkit-backdrop-filter:none}
 #journal .gameK{color:#e5dcc9;font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Arial Narrow",sans-serif;font-weight:900;font-stretch:condensed;letter-spacing:.5px;text-transform:uppercase;text-shadow:0 2px 2px #000}
 #journal .gameV{color:#fff8e9;font-family:"Arial Narrow Bold","Arial Narrow",Arial,sans-serif;font-weight:900;letter-spacing:.25px;text-transform:uppercase;text-shadow:0 2px 2px #000}
-#journal .earned{background:rgba(20,14,3,.52);border-color:rgba(204,155,42,.62);color:#f2cd62;font-family:"Arial Narrow Bold","Arial Narrow",Arial,sans-serif;font-weight:900;letter-spacing:.2px;text-transform:uppercase;box-shadow:inset 0 1px 0 rgba(255,226,138,.08),0 4px 12px rgba(0,0,0,.10);text-shadow:0 2px 2px #000}
+#journal .earned{background:rgba(20,14,3,.42);border-color:rgba(204,155,42,.62);color:#f2cd62;font-family:"Arial Narrow Bold","Arial Narrow",Arial,sans-serif;font-weight:900;letter-spacing:.2px;text-transform:uppercase;box-shadow:inset 0 1px 0 rgba(255,226,138,.08),0 4px 12px rgba(0,0,0,.10);text-shadow:0 2px 2px #000}
 
 /* Remaining Journal skin — typography only follows approved mockup */
 #journal .title{color:var(--cb-gold-hi);font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Arial Narrow",sans-serif;font-weight:900;font-stretch:condensed;letter-spacing:.1px;text-transform:uppercase;text-shadow:2px 2px 0 #3a2207,0 0 10px rgba(236,180,51,.14)}
