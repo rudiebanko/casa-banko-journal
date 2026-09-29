@@ -9,14 +9,13 @@
   .title{font-size:25px!important}
 
   /* JOURNAL desktop structure only:
-     Account Journey = compact centered overview, similar footprint to Stats.
-     Journal Trade = full-width directly below Journey.
-     Trade History = full-width directly below Journal Trade.
+     All three Journal cards share one centered width.
+     Order: Account Journey -> Journal Trade -> Trade History.
      DOM order and all Journal behavior remain untouched. */
   #journal.screen.active{display:flex!important;flex-direction:column!important;align-items:center!important;gap:24px!important;width:100%!important}
   #journal>.accountJourneyCard{order:1!important;width:min(950px,100%)!important;min-height:0!important;padding:28px!important;margin:0!important;align-self:center!important}
-  #journal>.accountJourneyCard+.card{order:2!important;width:100%!important;min-width:0!important;margin:0!important;align-self:stretch!important}
-  #journal>.accountJourneyCard+.card+.card{order:3!important;width:100%!important;min-width:0!important;margin:0!important;align-self:stretch!important}
+  #journal>.accountJourneyCard+.card{order:2!important;width:min(950px,100%)!important;min-width:0!important;margin:0!important;align-self:center!important}
+  #journal>.accountJourneyCard+.card+.card{order:3!important;width:min(950px,100%)!important;min-width:0!important;margin:0!important;align-self:center!important}
 
   #journal .accountJourneyCard .title{font-size:25px!important}
   #journal .journeyPeriod{font-size:10px!important;padding:6px 10px!important}
@@ -43,6 +42,9 @@
 @media (min-width:1400px){
   .hero,main{width:min(1580px,calc(100% - 96px))!important}
   #journal.screen.active{gap:26px!important}
-  #journal>.accountJourneyCard{width:min(980px,100%)!important;padding:30px!important}
+  #journal>.accountJourneyCard,
+  #journal>.accountJourneyCard+.card,
+  #journal>.accountJourneyCard+.card+.card{width:min(980px,100%)!important}
+  #journal>.accountJourneyCard{padding:30px!important}
   #journal .journeyChart{height:235px!important}
 }
