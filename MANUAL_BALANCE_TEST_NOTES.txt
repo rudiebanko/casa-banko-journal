@@ -1,0 +1,8 @@
+CASA BANKO manual balance test branch
+
+Scope only:
+- Adds account_state Supabase persistence for balance source/manual balance/Flip Challenge.
+- Adds Settings > TradeLocker Balance Source: TRADELOCKER API | MANUAL.
+- Manual balance updates existing casaBankoTradeLockerAccount balance fields so existing Live Account, Account Journey, and Flip Challenge consumers receive the same value without rewriting those working components.
+- State is keyed by TradeLocker account ID and authenticated CASA BANKO Cloud user.
+- main is intentionally untouched until verified.
