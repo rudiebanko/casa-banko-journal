@@ -13,8 +13,6 @@
   document.head.appendChild(favicon);
 })();
 document.write('<link rel="stylesheet" href="flip-road-states.css?v=20260928-1851">');
-document.write('<script src="flip-cloud-sync.js?v=20260928-2042"><\/script>');
 document.write('<script src="flip-challenge.js?v=20260928-1802"><\/script>');
 document.write('<link rel="stylesheet" href="journal-account-journey.css?v=20260928-1947">');
-document.write('<script src="journal-account-journey.js?v=20260928-2144-livebalance2"><\/script>');
-document.write('<link rel="stylesheet" href="desktop-layout-fix.css?v=20260928-2104">');
+document.write('<script src="journal-account-journey.js?v=20260928-1947"><\/script>');
