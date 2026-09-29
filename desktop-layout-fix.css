@@ -9,29 +9,30 @@
   .title{font-size:25px!important}
 
   /* JOURNAL desktop structure only:
-     row 1 = Account Journey full width
-     row 2 = Journal Trade left / Trade History right
-     Use adjacency instead of nth-of-type so the injected Journey card cannot shift ordering. */
-  #journal.screen.active{display:grid!important;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr)!important;grid-template-rows:auto auto!important;gap:26px!important;align-items:start!important;width:100%!important}
-  #journal>.accountJourneyCard{grid-column:1/-1!important;grid-row:1!important;width:100%!important;min-height:560px!important;padding:34px 38px!important;margin-bottom:0!important}
-  #journal>.accountJourneyCard+.card{grid-column:1!important;grid-row:2!important;min-width:0!important;margin-bottom:0!important}
-  #journal>.accountJourneyCard+.card+.card{grid-column:2!important;grid-row:2!important;min-width:0!important;margin-bottom:0!important}
+     Account Journey = compact centered overview, similar footprint to Stats.
+     Journal Trade = full-width directly below Journey.
+     Trade History = full-width directly below Journal Trade.
+     DOM order and all Journal behavior remain untouched. */
+  #journal.screen.active{display:flex!important;flex-direction:column!important;align-items:center!important;gap:24px!important;width:100%!important}
+  #journal>.accountJourneyCard{order:1!important;width:min(950px,100%)!important;min-height:0!important;padding:28px!important;margin:0!important;align-self:center!important}
+  #journal>.accountJourneyCard+.card{order:2!important;width:100%!important;min-width:0!important;margin:0!important;align-self:stretch!important}
+  #journal>.accountJourneyCard+.card+.card{order:3!important;width:100%!important;min-width:0!important;margin:0!important;align-self:stretch!important}
 
-  #journal .accountJourneyCard .title{font-size:30px!important}
-  #journal .journeyPeriod{font-size:11px!important;padding:7px 12px!important}
-  #journal .journeyFilters{gap:10px!important;margin:18px 0 8px!important}
-  #journal .journeyFilters button{font-size:11px!important;padding:11px 8px!important}
-  #journal .journeyHero{margin:20px 4px 16px!important}
-  #journal .journeyHero span,#journal .journeyBottom span{font-size:10px!important}
-  #journal .journeyHero b{font-size:38px!important}
-  #journal .journeyHeroChange{font-size:20px!important}
-  #journal .journeyChart{height:300px!important;padding:10px!important;margin:8px 0 16px!important}
-  #journal .journeyAxis,#journal .journeyDate{font-size:10px!important}
-  #journal .journeyStartLabel{font-size:9px!important}
-  #journal .journeyBottom{gap:12px!important}
-  #journal .journeyBottom>div{padding:14px 8px!important}
-  #journal .journeyBottom b{font-size:15px!important}
-  #journal .journeyHint{font-size:10px!important;margin-top:12px!important}
+  #journal .accountJourneyCard .title{font-size:25px!important}
+  #journal .journeyPeriod{font-size:10px!important;padding:6px 10px!important}
+  #journal .journeyFilters{gap:8px!important;margin:14px 0 6px!important}
+  #journal .journeyFilters button{font-size:10px!important;padding:9px 7px!important}
+  #journal .journeyHero{margin:14px 4px 10px!important}
+  #journal .journeyHero span,#journal .journeyBottom span{font-size:9px!important}
+  #journal .journeyHero b{font-size:30px!important}
+  #journal .journeyHeroChange{font-size:17px!important}
+  #journal .journeyChart{height:220px!important;padding:8px!important;margin:6px 0 12px!important}
+  #journal .journeyAxis,#journal .journeyDate{font-size:9px!important}
+  #journal .journeyStartLabel{font-size:8px!important}
+  #journal .journeyBottom{gap:10px!important}
+  #journal .journeyBottom>div{padding:11px 7px!important}
+  #journal .journeyBottom b{font-size:13px!important}
+  #journal .journeyHint{font-size:9px!important;margin-top:9px!important}
   #journal .historyFilterRow button,#journal .filterRow button{font-size:11px!important;padding:11px 4px!important}
   #journal .rangeLabel,#journal .hint{font-size:12px!important}
 
@@ -41,7 +42,7 @@
 
 @media (min-width:1400px){
   .hero,main{width:min(1580px,calc(100% - 96px))!important}
-  #journal.screen.active{gap:30px!important}
-  #journal .accountJourneyCard{padding:38px 44px!important}
-  #journal .journeyChart{height:330px!important}
+  #journal.screen.active{gap:26px!important}
+  #journal>.accountJourneyCard{width:min(980px,100%)!important;padding:30px!important}
+  #journal .journeyChart{height:235px!important}
 }
