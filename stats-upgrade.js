@@ -3,8 +3,8 @@
   const money=n=>(n<0?'-$':'$')+Math.abs(n).toFixed(2);
   const pct=(w,l)=>w+l?Math.round(w/(w+l)*100)+'%':'—';
   const arr=v=>Array.isArray(v)?v:(v?[v]:[]);
-  const esc=s=>String(s??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
-  function filtered(){try{let a=byRange(statsFilter,customFrom,customTo,$('rangeLabel'))||[];if(statsFilter==='all'){const cutoff=new Date('2026-09-01T00:00:00');a=a.filter(t=>{const d=typeof tradeTime==='function'?tradeTime(t):new Date(t.date||t.savedAt);return d&&!isNaN(d)&&d>=cutoff});const label=$('rangeLabel');if(label)label.textContent='ALL · SINCE SEP 1, 2026'}return a}catch(e){let a=typeof allTrades==='function'?allTrades():[];if(statsFilter==='all'){const cutoff=new Date('2026-09-01T00:00:00');a=a.filter(t=>{const d=typeof tradeTime==='function'?tradeTime(t):new Date(t.date||t.savedAt);return d&&!isNaN(d)&&d>=cutoff})}return a}}
+  const esc=s=>String(s??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function filtered(){try{return byRange(statsFilter,customFrom,customTo,$('rangeLabel'))||[]}catch(e){return typeof allTrades==='function'?allTrades():[]}}
   function autoSession(t){
     if(t.session&&String(t.session).trim())return String(t.session).trim().toUpperCase();
     const d=typeof tradeTime==='function'?tradeTime(t):new Date(t.date||t.savedAt);if(!d||isNaN(d))return null;
