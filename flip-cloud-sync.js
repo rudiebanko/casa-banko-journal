@@ -1,0 +1,10 @@
+/* CASA BANKO Flip Challenge cloud sync */
+(()=>{
+ const FLIP='casaBankoFlipChallengeV1';let sb,user,last='',busy=false;
+ const read=()=>localStorage.getItem(FLIP)||'';
+ async function getClient(){const text=await fetch('cloud.js',{cache:'no-store'}).then(r=>r.text());const um=text.match(/const URL='([^']+)'/),km=text.match(/KEY='([^']+)'/);if(!um||!km)return null;return window.supabase.createClient(um[1],km[1])}
+ async function upload(raw){if(!user||!raw||busy)return;busy=true;try{const state=JSON.parse(raw);await sb.from('flip_challenge_states').upsert({user_id:user.id,state:state,updated_at:new Date().toISOString()},{onConflict:'user_id'})}finally{busy=false}}
+ async function initialSync(){if(!user||busy)return;busy=true;try{const local=read();const {data,error}=await sb.from('flip_challenge_states').select('state').eq('user_id',user.id).maybeSingle();if(error)throw error;if(data&&data.state){const cloud=JSON.stringify(data.state);localStorage.setItem(FLIP,cloud);last=cloud;setTimeout(()=>window.renderRewards?.(),0)}else if(local){const state=JSON.parse(local);const {error:e}=await sb.from('flip_challenge_states').upsert({user_id:user.id,state:state,updated_at:new Date().toISOString()},{onConflict:'user_id'});if(e)throw e;last=local}}catch(e){console.error('Flip Challenge cloud sync issue. Local progress remains safe.',e)}finally{busy=false}}
+ async function init(){if(!window.supabase){setTimeout(init,100);return}sb=await getClient();if(!sb)return;const {data}=await sb.auth.getSession();user=data.session?.user||null;if(user)await initialSync();setInterval(()=>{const now=read();if(user&&now&&now!==last){last=now;upload(now)}},1500);sb.auth.onAuthStateChange(async(_e,s)=>{const next=s?.user||null;if(next?.id!==user?.id){user=next;last='';if(user)await initialSync()}})}
+ document.addEventListener('DOMContentLoaded',init);
+})();
