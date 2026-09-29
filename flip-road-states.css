@@ -1,18 +1,18 @@
 /* CASA BANKO Flip Road visual hierarchy: conquered -> current -> next unlock -> locked */
-.flipRoadCard.active{padding-top:31px!important;border:2px solid #efd982!important;background:linear-gradient(145deg,rgba(229,202,113,.29),rgba(44,34,9,.25))!important;box-shadow:0 0 16px rgba(255,220,112,.42),0 0 31px rgba(215,197,141,.22),inset 0 0 24px rgba(215,197,141,.09)!important;animation:flipCurrentPulse 2.2s ease-in-out infinite}
+.flipRoadCard.active{padding-top:31px!important;border:2px solid #ffe78d!important;background:linear-gradient(145deg,rgba(229,202,113,.29),rgba(44,34,9,.25))!important;box-shadow:0 0 24px rgba(255,220,112,.72),0 0 48px rgba(255,210,74,.46),inset 0 0 28px rgba(255,226,128,.16)!important;animation:flipCurrentPulse 2.2s ease-in-out infinite}
 .flipRoadCard.active:before{display:none!important}
-.flipRoadCard.active .flipNextBanner{font-size:0!important;background:linear-gradient(90deg,#b99b42,#f1da85,#b99b42)!important;color:#151109!important;box-shadow:0 2px 8px rgba(0,0,0,.28)!important}
+.flipRoadCard.active .flipNextBanner{font-size:0!important;background:linear-gradient(90deg,#d0ad45,#ffe98d,#d0ad45)!important;color:#151109!important;box-shadow:0 2px 8px rgba(0,0,0,.28),0 0 16px rgba(255,220,112,.32)!important}
 .flipRoadCard.active .flipNextBanner:after{content:'CURRENT FLIP';font-size:8px;font-weight:1000;letter-spacing:1.5px}
-.flipRoadCard.active .flipRoadIcon{background:#e7cf80!important;color:#111!important;border-color:#fff0ba!important;box-shadow:0 0 14px rgba(231,207,128,.55)!important}
+.flipRoadCard.active .flipRoadIcon{background:#f2d875!important;color:#111!important;border-color:#fff4c1!important;box-shadow:0 0 18px rgba(255,222,110,.72)!important}
 .flipRoadCard.active .flipRoadGoal{font-size:18px!important;color:#fff3bd!important;text-shadow:0 0 9px rgba(255,221,120,.20)!important}
 .flipRoadCard.active .flipRoadTag{font-size:0!important;color:#ffe9a0!important}
 .flipRoadCard.active .flipRoadTag:after{content:'IN PROGRESS · 0% → 30%';font-size:7.5px;font-weight:1000;letter-spacing:.65px}
-.flipRoadCard.active + .flipRoadCard.locked{opacity:1!important;padding-top:31px!important;border:2px solid rgba(236,211,126,.72)!important;background:linear-gradient(145deg,rgba(105,86,31,.26),rgba(13,13,12,.42))!important;box-shadow:inset 0 0 22px rgba(215,197,141,.08),0 0 9px rgba(215,197,141,.10)!important;animation:none!important}
+.flipRoadCard.active + .flipRoadCard.locked{opacity:1!important;padding-top:31px!important;border:2px solid rgba(215,197,141,.48)!important;background:linear-gradient(145deg,rgba(105,86,31,.18),rgba(13,13,12,.42))!important;box-shadow:inset 0 0 18px rgba(215,197,141,.05),0 0 3px rgba(215,197,141,.05)!important;animation:none!important}
 .flipRoadCard.active + .flipRoadCard.locked:before{content:'NEXT UNLOCK';position:absolute;z-index:5;left:0;right:0;top:0;height:22px;display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,#332b16,#756126,#332b16);color:#f6e6ad;font-size:8px;font-weight:1000;letter-spacing:1.5px;box-shadow:none}
 .flipRoadCard.active + .flipRoadCard.locked .flipRoadGoal{font-size:18px!important;color:#f6e9bd!important;text-shadow:none!important}
-.flipRoadCard.active + .flipRoadCard.locked .flipRoadIcon{background:rgba(215,197,141,.14)!important;color:#f2dda0!important;border:1px solid rgba(239,217,130,.75)!important;box-shadow:0 0 8px rgba(215,197,141,.15)!important}
+.flipRoadCard.active + .flipRoadCard.locked .flipRoadIcon{background:rgba(215,197,141,.14)!important;color:#f2dda0!important;border:1px solid rgba(239,217,130,.55)!important;box-shadow:none!important}
 .flipRoadCard.active + .flipRoadCard.locked .flipRoadTag{font-size:0!important;color:#d7c58d!important;opacity:1!important}
 .flipRoadCard.active + .flipRoadCard.locked .flipRoadTag:after{content:'GOAL TO UNLOCK';font-size:7.5px;font-weight:1000;letter-spacing:.7px}
 .flipRoadCard.active + .flipRoadCard.locked .flipLockMark{opacity:.055!important}
-@keyframes flipCurrentPulse{0%,100%{box-shadow:0 0 12px rgba(255,220,112,.30),0 0 22px rgba(215,197,141,.14),inset 0 0 20px rgba(215,197,141,.07)}50%{box-shadow:0 0 21px rgba(255,220,112,.55),0 0 36px rgba(215,197,141,.30),inset 0 0 28px rgba(215,197,141,.13)}}
+@keyframes flipCurrentPulse{0%,100%{box-shadow:0 0 20px rgba(255,220,112,.58),0 0 38px rgba(255,210,74,.32),inset 0 0 24px rgba(255,226,128,.12)}50%{box-shadow:0 0 30px rgba(255,225,125,.88),0 0 58px rgba(255,210,74,.58),inset 0 0 32px rgba(255,226,128,.20)}}
 @media(prefers-reduced-motion:reduce){.flipRoadCard.active{animation:none!important}}
