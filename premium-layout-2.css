@@ -68,3 +68,19 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 .p2recent{margin-top:9px}.p2rows{margin-top:10px}.p2row{display:grid;grid-template-columns:34px 1fr .7fr 1fr .8fr .6fr;gap:7px;align-items:center;border-top:1px solid #171919;padding:9px 3px;font:700 10px Arial;color:#888}.p2row b{color:#eee}.p2row em{font-style:normal;color:#d8b557}.p2row strong,.p2row i{text-align:right;font-style:normal}.p2empty{padding:18px;color:#777;font:700 11px Arial}
 @media(max-width:899px){#journal>.accountJourneyCard{display:none!important}#premiumDashboard{margin:0!important}.p2dashTitle{font-size:15px;margin-top:2px}.p2top{grid-template-columns:repeat(2,1fr)}.p2stat{padding:11px}.p2v{font-size:18px}.p2mid{grid-template-columns:1fr}.p2summary{grid-template-columns:repeat(3,1fr)}.p2row{grid-template-columns:28px 1fr .65fr .8fr}.p2row span:nth-of-type(2),.p2row i{display:none}.p2recent{margin-bottom:8px}}
 @media(max-width:380px){.p2top{grid-template-columns:1fr 1fr}.p2summary{grid-template-columns:repeat(2,1fr)}.p2v{font-size:16px}}
+/* P2 hotfix: old stylesheet specificity + mobile dashboard layout */
+#journal #premiumDashboard{display:block!important;width:100%!important;max-width:none!important;font-family:Arial,sans-serif!important}
+#journal #premiumDashboard *{box-sizing:border-box}
+#journal #premiumDashboard .p2top{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:9px!important}
+#journal #premiumDashboard .p2stat,#journal #premiumDashboard .p2panel{display:block!important;background:#080a0a!important;border:1px solid #252828!important;border-radius:10px!important;padding:14px!important}
+#journal #premiumDashboard .p2mid{display:grid!important;grid-template-columns:2fr 1fr!important;gap:9px!important;margin-top:9px!important}
+#journal #premiumDashboard .p2summary{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}
+#journal #premiumDashboard .p2row{display:grid!important}
+@media(max-width:899px){
+ #journal>.accountJourneyCard{display:none!important}
+ #journal #premiumDashboard .p2top{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ #journal #premiumDashboard .p2mid{grid-template-columns:1fr!important}
+ #journal #premiumDashboard .p2summary{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ #journal #premiumDashboard .p2stat,#journal #premiumDashboard .p2panel{padding:11px!important}
+ #journal #premiumDashboard .p2row{grid-template-columns:28px minmax(0,1fr) .65fr .8fr!important}
+}
