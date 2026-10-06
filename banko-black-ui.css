@@ -1,0 +1,78 @@
+/* CASA BANKO BLACK UI — Journal/Home visual layer only.
+   Keeps all existing data, TradeLocker sync, filters, trade actions and navigation logic intact. */
+:root{--bk-bg:#030404;--bk-panel:#090b0b;--bk-panel2:#0d0f0f;--bk-line:#332a17;--bk-gold:#e5b842;--bk-gold2:#f4d36d;--bk-text:#f7f5ef;--bk-muted:#918f89;--bk-green:#37df87;--bk-red:#ff5358}
+html,body{background:var(--bk-bg)!important}
+body:before,body:after{content:none!important;display:none!important}
+main,#journal{background:var(--bk-bg)!important}
+.app{background:var(--bk-bg)!important}
+
+/* Compact branded header */
+.hero{height:118px!important;min-height:118px!important;padding:14px 18px 8px!important;background:#030404!important;border-bottom:1px solid rgba(229,184,66,.18)!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.hero>div:not(#globalLiveAccount){width:245px!important;height:76px!important;margin:0!important;padding:0!important;background-image:url("casa-banko-journal-logo.png?v=20260928-approved-logo-1")!important;background-size:contain!important;background-position:center!important;background-repeat:no-repeat!important}
+.hero .brand,.hero .sub{visibility:hidden!important}
+#globalLiveAccount{position:static!important;margin:0 0 10px!important;max-width:none!important;width:100%!important;background:var(--bk-panel)!important;border:1px solid rgba(229,184,66,.55)!important;border-radius:15px!important;box-shadow:none!important;padding:14px 16px!important}
+
+/* Journal page rhythm */
+#journal{padding:10px 14px 94px!important;gap:10px!important}
+#journal .card{background:linear-gradient(180deg,var(--bk-panel2),var(--bk-panel))!important;border:1px solid rgba(229,184,66,.34)!important;border-radius:16px!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;padding:14px!important;margin:0 0 10px!important}
+#journal .card:before,#journal .card:after{background-image:none!important}
+#journal .title{font-family:Arial,sans-serif!important;color:var(--bk-text)!important;font-size:17px!important;font-weight:900!important;letter-spacing:.2px!important;text-shadow:none!important}
+#journal .label,#journal .hint,#journal .rangeLabel,#journal .tradeMeta{font-family:Arial,sans-serif!important}
+#journal .hint,#journal .tradeMeta{color:var(--bk-muted)!important}
+
+/* Account Journey */
+#journal .accountJourneyCard{order:0}
+#journal .journeyHead{margin-bottom:10px}
+#journal .journeyPeriod{background:#101212!important;border:1px solid #272929!important;color:#aaa!important;font-size:10px!important}
+#journal .journeyFilters{gap:7px!important;margin:10px 0 12px!important}
+#journal .journeyFilters button,#journal .historyFilterRow button{background:#0d0f0f!important;border:1px solid #2b2d2d!important;border-radius:9px!important;color:#d3d3d0!important;box-shadow:none!important;min-height:38px}
+#journal .journeyFilters button.on,#journal .historyFilterRow button.on{background:linear-gradient(180deg,var(--bk-gold2),#d39b25)!important;border-color:#f4d36d!important;color:#171006!important}
+#journal .journeyHero{padding:2px 2px 8px!important}
+#journal .journeyHero span,#journal .journeyBottom span{color:#888!important;font-family:Arial,sans-serif!important}
+#journal .journeyHero b{color:var(--bk-text)!important;text-shadow:none!important;font-family:Arial,sans-serif!important}
+#journal .journeyChart{background:#050606!important;border:1px solid #242626!important;border-radius:12px!important}
+#journal .journeyGrid{stroke:#202323!important}.journeyAxis,.journeyDate{fill:#777!important}
+#journal .journeyLine{stroke:var(--bk-gold2)!important;filter:none!important}.journeyPoint{fill:#ffe58d!important}
+#journal .journeyArea{opacity:.55}
+#journal .journeyBottom{gap:7px!important}
+#journal .journeyBottom>div{background:#0b0d0d!important;border:1px solid #272929!important;border-radius:10px!important;padding:10px 4px!important}
+#journal .journeyBottom b{color:var(--bk-text)!important;font-family:Arial,sans-serif!important}
+.journeyUp{color:var(--bk-green)!important}.journeyDown{color:var(--bk-red)!important}
+
+/* Log trade card becomes a clean action module until expanded by existing flow */
+#journal .card:not(.accountJourneyCard){overflow:hidden}
+#journal button,#journal .upload,#journal .field,#journal textarea,#journal select{font-family:Arial,sans-serif!important}
+#journal button{background:#0c0e0e!important;border:1px solid #303232!important;color:#eee!important;box-shadow:none!important;border-radius:9px!important}
+#journal button.on,#journal .grid button.on,#journal .multi .drop button.on{background:linear-gradient(180deg,var(--bk-gold2),#d39b25)!important;border-color:#f4d36d!important;color:#171006!important}
+#journal .save,#journal .manageBtn,#journal .upload{background:#0b0d0d!important;border:1px solid rgba(229,184,66,.78)!important;color:#f4f1e8!important;border-radius:10px!important;box-shadow:none!important}
+#journal .save{color:var(--bk-gold2)!important}
+
+/* Trade history = compact information cards */
+#journal .historyFilterRow{display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:6px!important}
+#journal .historyFilterRow button{padding:8px 3px!important;font-size:9px!important}
+#journal .rangeLabel{color:#d5d2ca!important;font-size:12px!important;letter-spacing:.8px!important;margin-top:12px!important}
+#journal .manageBtn{width:100%!important;min-height:42px!important;margin:10px 0!important}
+#journal .manageRow,#journal .tradeItem{background:#080a0a!important;border:1px solid #202323!important;border-radius:11px!important;margin:7px 0!important;padding:12px!important}
+#journal .tradeTop{font-family:Arial,sans-serif!important;color:var(--bk-text)!important;font-weight:800!important}
+#journal .deleteBtn{border-color:rgba(255,83,88,.45)!important;color:#ff7377!important}
+
+/* Fixed bottom nav */
+nav{background:rgba(3,4,4,.98)!important;border-top:1px solid #222!important;box-shadow:0 -8px 22px rgba(0,0,0,.45)!important}
+nav button{font-family:Arial,sans-serif!important;color:#747674!important}
+nav button.active{color:var(--bk-gold2)!important;text-shadow:none!important}
+
+/* Preserve clear semantic status colors */
+#journal .positive,#journal .profit,#journal .win{color:var(--bk-green)!important}
+#journal .negative,#journal .loss{color:var(--bk-red)!important}
+
+@media(max-width:899px){
+ .hero{height:112px!important;min-height:112px!important;padding:12px 14px 6px!important}
+ .hero>div:not(#globalLiveAccount){width:225px!important;height:70px!important}
+ #journal{padding-top:10px!important}
+}
+@media(max-width:420px){
+ #journal{padding-left:10px!important;padding-right:10px!important}
+ #journal .card{padding:12px!important;border-radius:14px!important}
+ #journal .journeyBottom{grid-template-columns:repeat(2,1fr)!important}
+ #journal .historyFilterRow{grid-template-columns:repeat(3,1fr)!important}
+}
