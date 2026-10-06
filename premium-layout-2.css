@@ -95,3 +95,12 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 #premiumDashboard .p2recent .p2rows{max-height:360px!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior:contain;padding-right:3px}
 #premiumDashboard .p2recent .p2rows::-webkit-scrollbar{width:3px}
 #premiumDashboard .p2recent .p2rows::-webkit-scrollbar-thumb{background:#3b3f3d;border-radius:3px}
+
+/* Approved CASA BANKO logo + live account header */
+#premiumDashboard .p2accountHeader{display:grid!important;grid-template-columns:minmax(145px,.8fr) minmax(0,1.55fr)!important;gap:12px!important;align-items:center!important;padding:12px 0 18px!important;border-bottom:1px solid #252828!important;margin-bottom:22px!important}
+#premiumDashboard .p2accountHeader img{display:block!important;width:100%!important;max-width:205px!important;height:auto!important;object-fit:contain!important}
+#premiumDashboard .p2liveBox{border:1px solid #8e7020!important;border-radius:18px!important;padding:13px 16px!important;text-align:right!important;background:#070909!important}
+#premiumDashboard .p2liveBox small{display:block!important;color:#a89e8d!important;font:800 10px Arial!important;letter-spacing:1.1px!important}
+#premiumDashboard .p2liveBox strong{display:block!important;color:#f2c84b!important;font:900 24px Arial!important;margin-top:6px!important}
+#premiumDashboard .p2liveBox strong i{font-size:11px!important;font-style:normal!important;color:#c7baa1!important}
+#premiumDashboard .p2liveBox span{display:block!important;color:#5bdd91!important;font:800 11px Arial!important;margin-top:6px!important}
