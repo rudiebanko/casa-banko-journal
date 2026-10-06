@@ -89,3 +89,9 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 #journalLegacyBridge{display:none!important}
 #journal{display:block!important}
 #journal #premiumDashboard{display:block!important}
+
+/* Recent Trades: independently scrollable so full trade history can be reviewed */
+#premiumDashboard .p2recent{overflow:hidden!important}
+#premiumDashboard .p2recent .p2rows{max-height:360px!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior:contain;padding-right:3px}
+#premiumDashboard .p2recent .p2rows::-webkit-scrollbar{width:3px}
+#premiumDashboard .p2recent .p2rows::-webkit-scrollbar-thumb{background:#3b3f3d;border-radius:3px}
