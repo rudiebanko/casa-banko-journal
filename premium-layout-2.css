@@ -1,0 +1,60 @@
+/* PREMIUM LAYOUT 2 — structural visual foundation
+   Source: approved black/gold CASA BANKO terminal concept.
+   Visual/layout layer only. Existing data + TradeLocker logic remains untouched. */
+:root{--p2-bg:#020303;--p2-card:#080a0a;--p2-card2:#0b0d0d;--p2-border:#252828;--p2-gold:#e6b640;--p2-gold-hi:#ffd568;--p2-text:#f5f5f2;--p2-muted:#858987;--p2-green:#00df82;--p2-red:#ff424c}
+html,body,.app{background:var(--p2-bg)!important;color:var(--p2-text)!important}
+body:before,body:after{display:none!important}
+.hero{background:#020303!important;border-bottom:1px solid var(--p2-border)!important}
+.hero>div:not(#globalLiveAccount){background-image:url("casa-banko-journal-logo.png?v=20260928-approved-logo-1")!important;background-repeat:no-repeat!important;background-position:center!important;background-size:contain!important}
+main{background:#020303!important}
+.screen{background:#020303!important}
+.screen .card{background:linear-gradient(180deg,var(--p2-card2),var(--p2-card))!important;border:1px solid var(--p2-border)!important;border-radius:11px!important;box-shadow:none!important}
+.screen .title{font-family:Arial,sans-serif!important;color:var(--p2-text)!important;text-shadow:none!important;font-weight:800!important;letter-spacing:0!important}
+.screen .label,.screen .hint,.screen .rangeLabel{font-family:Arial,sans-serif!important}
+.screen .hint{color:var(--p2-muted)!important}
+button,.field,textarea,select{font-family:Arial,sans-serif!important}
+nav{background:#030404!important;border-top:1px solid var(--p2-border)!important;box-shadow:none!important}
+nav button{font-family:Arial,sans-serif!important;color:#777!important}
+nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
+
+/* Desktop terminal shell */
+@media(min-width:900px){
+ body{padding-left:190px!important}
+ .app{max-width:none!important;width:100%!important}
+ .hero{position:fixed!important;left:0!important;top:0!important;bottom:0!important;width:190px!important;height:100vh!important;min-height:100vh!important;padding:24px 16px!important;border-right:1px solid var(--p2-border)!important;border-bottom:0!important;align-items:flex-start!important;z-index:20!important}
+ .hero>div:not(#globalLiveAccount){width:158px!important;height:80px!important;background-position:center top!important}
+ main{padding:18px 20px 88px!important;max-width:1500px!important;margin:0 auto!important}
+ nav{position:fixed!important;left:0!important;top:118px!important;bottom:auto!important;width:190px!important;height:auto!important;display:flex!important;flex-direction:column!important;gap:4px!important;padding:8px 12px!important;border:0!important;background:transparent!important;z-index:30!important}
+ nav button{width:100%!important;min-height:45px!important;text-align:left!important;padding:0 14px!important;border-radius:8px!important;font-size:12px!important;line-height:1.25!important}
+ nav button br{display:none!important}
+ nav button.active{background:rgba(230,182,64,.13)!important;border-left:2px solid var(--p2-gold)!important}
+ #journal{display:grid!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;gap:10px!important;padding:0!important}
+ #journal>.accountJourneyCard{grid-column:1/-1!important}
+ #journal>.card:not(.accountJourneyCard){grid-column:1/-1!important}
+}
+
+/* Premium compact modules */
+#journal .card{border-color:var(--p2-border)!important}
+#journal .journeyPeriod{background:#0b0d0d!important;border-color:#292c2c!important;color:#aaa!important}
+#journal .journeyFilters button,#journal .historyFilterRow button,#journal button{background:#0a0c0c!important;border-color:#2a2d2d!important;color:#ddd!important;box-shadow:none!important}
+#journal .journeyFilters button.on,#journal .historyFilterRow button.on,#journal button.on{background:linear-gradient(180deg,var(--p2-gold-hi),#d79d25)!important;border-color:var(--p2-gold-hi)!important;color:#171006!important}
+#journal .journeyChart{background:#040505!important;border-color:#202323!important}
+#journal .journeyBottom>div{background:#080a0a!important;border-color:#232626!important}
+#journal .journeyLine{stroke:var(--p2-green)!important;filter:none!important}
+#journal .journeyPoint{fill:var(--p2-green)!important;stroke:#064f32!important}
+#journal .journeyHero b,#journal .journeyBottom b{color:var(--p2-text)!important;text-shadow:none!important}
+#journal .manageRow,#journal .tradeItem{background:#070909!important;border:1px solid #202323!important}
+#journal .save,#journal .manageBtn,#journal .upload{background:#0a0c0c!important;border:1px solid rgba(230,182,64,.7)!important;color:var(--p2-gold-hi)!important;box-shadow:none!important}
+.journeyUp{color:var(--p2-green)!important}.journeyDown{color:var(--p2-red)!important}
+
+/* Mobile mirrors approved stacked terminal */
+@media(max-width:899px){
+ body{padding-left:0!important}
+ .hero{height:94px!important;min-height:94px!important;padding:10px 14px!important}
+ .hero>div:not(#globalLiveAccount){width:180px!important;height:58px!important}
+ main{padding-bottom:78px!important}
+ #journal{padding:8px 10px 86px!important}
+ #journal .card{border-radius:10px!important;padding:11px!important;margin-bottom:8px!important}
+ #journal .journeyBottom{grid-template-columns:repeat(2,1fr)!important}
+ nav{height:66px!important}
+}
