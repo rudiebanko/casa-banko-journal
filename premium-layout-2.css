@@ -89,3 +89,20 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 #journalLegacyBridge{display:none!important}
 #journal{display:block!important}
 #journal #premiumDashboard{display:block!important}
+
+/* Approved Premium Layout 2 mobile source-of-truth */
+#journal{padding:0 12px 82px!important;background:#030404!important}
+#premiumDashboard{max-width:430px!important;margin:0 auto!important}
+.p2mobileHead{height:76px;display:grid;grid-template-columns:42px 1fr 42px;align-items:center;border-bottom:1px solid #1d2020}
+.p2mobileHead button{border:0!important;background:transparent!important;color:#ddd!important;font-size:22px!important;padding:0!important}
+.p2logo{height:60px;background:url("casa-banko-journal-logo.png?v=20260928-approved-logo-1") center/contain no-repeat}
+.p2metric{position:relative;min-height:126px;background:#080a0a;border:1px solid #222626;border-radius:8px;padding:12px;overflow:hidden}
+.p2metric small{display:block;color:#b6b8b7;font:700 11px Arial}.p2metric strong{display:block;color:#f5f5f2;font:900 25px Arial;margin-top:5px}.p2metric em{display:block;font:800 11px Arial;font-style:normal;margin-top:4px}
+.p2metric svg{position:absolute;left:8px;right:8px;bottom:4px;width:calc(100% - 16px);height:47px}.p2metric svg polyline{fill:none;stroke:#00df82;stroke-width:2}
+.p2metric.balance{margin-top:8px;min-height:145px}.p2metric.balance strong{font-size:31px}
+.p2twocol{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:7px}.p2twocol .p2metric{min-height:120px}.p2twocol .p2metric strong{font-size:20px}
+.p2metric.big{margin-top:7px;min-height:130px}.p2status{margin-top:7px;background:#080a0a;border:1px solid #222626;border-radius:8px;padding:12px;display:flex;align-items:center;gap:18px}
+.p2status small{display:block;color:#a8aaa9;font:800 9px Arial;letter-spacing:.5px}.p2status strong{display:block;color:#eee;font:900 18px Arial;margin-top:5px}.p2status em{display:block;color:#858887;font:700 9px Arial;font-style:normal;margin-top:4px}
+.p2donut{--pct:0;width:76px;height:76px;border-radius:50%;background:conic-gradient(#00df82 calc(var(--pct)*1%),#222726 0);display:grid;place-items:center;position:relative;flex:0 0 76px}.p2donut:before{content:"";position:absolute;inset:9px;border-radius:50%;background:#080a0a}.p2donut b{position:relative;z-index:1;font:900 16px Arial;color:#fff}
+@media(max-width:899px){.hero{display:none!important}main{padding-top:0!important}#journal{padding-top:0!important}.p2dashTitle,.p2top,.p2mid,.p2recent{display:none!important}}
+@media(min-width:900px){.p2mobileHead{display:none}.p2twocol{grid-template-columns:1fr 1fr}.p2metric.balance{margin-top:0}}
