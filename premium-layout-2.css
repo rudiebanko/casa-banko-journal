@@ -84,3 +84,8 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
  #journal #premiumDashboard .p2stat,#journal #premiumDashboard .p2panel{padding:11px!important}
  #journal #premiumDashboard .p2row{grid-template-columns:28px minmax(0,1fr) .65fr .8fr!important}
 }
+
+/* Clean break from legacy Journal UI: old controls remain hidden only as a compatibility bridge for existing JS. */
+#journalLegacyBridge{display:none!important}
+#journal{display:block!important}
+#journal #premiumDashboard{display:block!important}
