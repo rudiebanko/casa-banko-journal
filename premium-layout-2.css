@@ -129,3 +129,42 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 #premiumDashboard .p2filters{display:flex!important;gap:7px!important;margin:8px 0 10px!important;flex-wrap:wrap}
 #premiumDashboard .p2filters button{border:1px solid #292d2b!important;background:#090b0a!important;color:#8e918f!important;border-radius:7px!important;padding:7px 12px!important;font:800 9px Arial!important}
 #premiumDashboard .p2filters button.active{background:#efbd39!important;color:#111!important;border-color:#efbd39!important}
+
+/* Desktop dashboard — approved terminal reference */
+.p2desktopGrid,.p2bottom{display:grid;gap:9px;margin-top:9px}
+.p2calendar,.p2performance{display:none}
+@media(min-width:900px){
+ body{padding-left:220px!important}
+ .hero{width:220px!important;padding:22px 18px!important}
+ .hero>div:not(#globalLiveAccount){width:184px!important;height:86px!important;background-size:contain!important}
+ nav{width:220px!important;top:122px!important;padding:8px 14px!important}
+ main{max-width:1420px!important;padding:24px 26px 70px!important}
+ #premiumDashboard{max-width:1180px!important;margin:0 auto!important}
+ #premiumDashboard .p2accountHeader,#premiumDashboard .p2dashTitle{display:none!important}
+ #premiumDashboard .p2top{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:10px!important}
+ #premiumDashboard .p2stat{min-height:112px!important;padding:16px!important}
+ #premiumDashboard .p2v{font-size:25px!important}
+ #premiumDashboard .p2desktopGrid{grid-template-columns:1.35fr 1fr .9fr!important}
+ #premiumDashboard .p2calendar{display:block!important}
+ #premiumDashboard .p2daily,#premiumDashboard .p2bankoPanel{min-height:245px!important}
+ #premiumDashboard .p2bottom{grid-template-columns:1.8fr .8fr!important}
+ #premiumDashboard .p2performance{display:block!important;min-height:230px!important}
+ #premiumDashboard .p2recent{margin-top:0!important;min-height:230px!important}
+ #premiumDashboard .p2recent .p2rows{max-height:150px!important}
+ #premiumDashboard .p2week,#premiumDashboard .p2days{display:grid!important;grid-template-columns:repeat(7,1fr)!important;gap:5px!important}
+ #premiumDashboard .p2week{margin:12px 0 6px!important}
+ #premiumDashboard .p2week b{font:700 8px Arial!important;color:#777!important;text-align:center!important}
+ #premiumDashboard .p2days i{height:27px!important;display:grid!important;place-items:center!important;border:1px solid #1d2020!important;border-radius:5px!important;font:700 9px Arial!important;color:#aaa!important;font-style:normal!important;position:relative!important}
+ #premiumDashboard .p2days i.now{background:#eee!important;color:#111!important}
+ #premiumDashboard .p2days i.profit:after,#premiumDashboard .p2days i.loss:after{content:"";position:absolute;bottom:3px;width:4px;height:4px;border-radius:50%;background:#00df82}
+ #premiumDashboard .p2days i.loss:after{background:#ff424c}
+ #premiumDashboard .p2performance svg{width:100%!important;height:130px!important;margin-top:18px!important}
+ #premiumDashboard .p2performance polyline{fill:none!important;stroke:#00df82!important;stroke-width:1.5!important}
+ #premiumDashboard .p2perfValue{font:900 24px Arial!important;margin-top:16px!important}
+}
+@media(max-width:899px){
+ #premiumDashboard .p2desktopGrid{display:grid!important;grid-template-columns:1fr!important}
+ #premiumDashboard .p2calendar{display:none!important}
+ #premiumDashboard .p2bottom{display:block!important}
+ #premiumDashboard .p2performance{display:none!important}
+}
