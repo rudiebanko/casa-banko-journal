@@ -106,3 +106,8 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 .p2donut{--pct:0;width:76px;height:76px;border-radius:50%;background:conic-gradient(#00df82 calc(var(--pct)*1%),#222726 0);display:grid;place-items:center;position:relative;flex:0 0 76px}.p2donut:before{content:"";position:absolute;inset:9px;border-radius:50%;background:#080a0a}.p2donut b{position:relative;z-index:1;font:900 16px Arial;color:#fff}
 @media(max-width:899px){.hero{display:none!important}main{padding-top:0!important}#journal{padding-top:0!important}.p2dashTitle,.p2top,.p2mid,.p2recent{display:none!important}}
 @media(min-width:900px){.p2mobileHead{display:none}.p2twocol{grid-template-columns:1fr 1fr}.p2metric.balance{margin-top:0}}
+
+.p2progress{margin-top:7px;background:#080a0a;border:1px solid #222626;border-radius:8px;padding:12px}
+.p2progressHead{display:flex;justify-content:space-between;align-items:center;font:800 10px Arial;color:#a8aaa9;letter-spacing:.4px}.p2progressHead strong{font:900 18px Arial;color:#eee}
+.p2line{height:100px;margin-top:7px;border-top:1px solid #161919;border-bottom:1px solid #161919}.p2line svg{width:100%;height:100%}.p2line svg polyline{fill:none;stroke:#00df82;stroke-width:2}
+.p2progressFoot{display:flex;justify-content:space-between;margin-top:6px;font:700 7px Arial;color:#696d6b}
