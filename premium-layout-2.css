@@ -104,3 +104,16 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 #premiumDashboard .p2liveBox strong{display:block!important;color:#f2c84b!important;font:900 24px Arial!important;margin-top:6px!important}
 #premiumDashboard .p2liveBox strong i{font-size:11px!important;font-style:normal!important;color:#c7baa1!important}
 #premiumDashboard .p2liveBox span{display:block!important;color:#5bdd91!important;font:800 11px Arial!important;margin-top:6px!important}
+
+/* Desktop cleanup requested 2026-10-06 */
+@media(min-width:900px){
+ #journalLegacyBridge{display:none!important}
+ #journal>.accountJourneyCard,.accountJourneyCard{display:none!important}
+ #premiumDashboard .p2accountHeader{grid-template-columns:minmax(230px,1fr) minmax(280px,430px)!important}
+ #premiumDashboard .p2accountHeader img{max-width:290px!important}
+ #premiumDashboard .p2liveBox{justify-self:end!important;width:100%!important;max-width:430px!important;padding:10px 14px!important}
+ #premiumDashboard .p2liveBox strong{font-size:21px!important}
+}
+#premiumDashboard .p2filters{display:flex!important;gap:7px!important;margin:8px 0 10px!important;flex-wrap:wrap}
+#premiumDashboard .p2filters button{border:1px solid #292d2b!important;background:#090b0a!important;color:#8e918f!important;border-radius:7px!important;padding:7px 12px!important;font:800 9px Arial!important}
+#premiumDashboard .p2filters button.active{background:#efbd39!important;color:#111!important;border-color:#efbd39!important}
