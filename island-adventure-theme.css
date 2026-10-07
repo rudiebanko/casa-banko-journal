@@ -101,3 +101,36 @@ nav button.active{color:#fff2c0!important;background:linear-gradient(110deg,#9c4
  #premiumDashboard .p2milestoneTop b{font-size:20px!important}
  #premiumDashboard .p2islandMilestone>strong{font-size:15px!important}
 }
+
+/* Desktop-approved concept: dedicated journal-log and trade-history visual hierarchy. */
+@media(min-width:900px){
+ #premiumDashboard{max-width:1500px!important;margin:auto!important}
+ #premiumDashboard .p2accountHeader{min-height:240px!important;padding:24px 30px!important}
+ #premiumDashboard .p2accountHeader img{max-height:130px!important}
+ #premiumDashboard .p2top{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important}
+ #premiumDashboard .p2desktopGrid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:14px!important;margin-top:16px!important}
+ #premiumDashboard .p2daily,#premiumDashboard .p2accountProgress{min-width:0!important}
+ #premiumDashboard .p2islandMilestone{margin:18px 0!important}
+ #premiumDashboard .p2journalEntry{margin-top:18px!important}
+ #premiumDashboard .p2journalRow{grid-template-columns:55px 1.15fr 1fr 1fr 1fr 1fr 1fr .9fr!important}
+}
+#premiumDashboard .p2journalEntry{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}
+#premiumDashboard .p2journalEntry>.p2head{display:none!important}
+#premiumDashboard .p2journalActions{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;margin:0 0 12px!important;padding:12px 16px!important;border:3px solid #a5682b!important;border-radius:11px!important;background:linear-gradient(170deg,#583019,#27160c)!important;box-shadow:inset 0 1px #ffbf5d,0 4px #3e210e!important}
+#premiumDashboard .p2adventureJournalTitle b,#premiumDashboard .p2adventureHistoryTitle{display:block!important;color:#ffd066!important;font-size:clamp(16px,2vw,23px)!important;font-weight:900!important;text-shadow:0 2px #462108!important}
+#premiumDashboard .p2adventureJournalTitle small,#premiumDashboard .p2adventureHistoryTitle small{display:block!important;color:#d8bca0!important;font-size:11px!important;font-weight:600!important;text-shadow:none!important;margin-top:3px!important}
+#premiumDashboard #p2AddJournal{background:linear-gradient(#ffd45b,#e98b12)!important;border:2px solid #ffce64!important;color:#321906!important;box-shadow:0 3px #71360d!important;white-space:nowrap!important;font-weight:900!important}
+#premiumDashboard #p2journalHistoryMount{border:3px solid #9e612c!important;border-radius:12px!important;padding:12px!important;background:linear-gradient(150deg,#102d45,#06192d)!important;box-shadow:inset 0 0 0 1px #e9a94d66,0 5px #39210d!important}
+#premiumDashboard .p2adventureHistoryTitle{padding:4px 5px 12px!important;border-bottom:2px solid #81502c!important;margin-bottom:10px!important}
+#premiumDashboard .p2journalTable{background:#061d31!important;border:1px solid #146c8d!important;border-radius:8px!important;overflow:auto!important}
+#premiumDashboard .p2journalRow{background:#08243b!important;border-bottom:1px solid #1b536c!important;color:#d9e7ed!important}
+#premiumDashboard .p2journalHeader{background:#113b59!important;color:#e2c78d!important}
+#premiumDashboard .p2journalRow:hover{background:#12445c!important}
+#premiumDashboard .p2journalFilters button.active{background:#03c5e7!important;color:#052334!important}
+#premiumDashboard .p2legacyJournalForm{border:3px solid #aa6a2c!important;box-shadow:inset 0 0 0 1px #e9a94d66,0 5px #39210d!important}
+@media(max-width:899px){
+ #premiumDashboard .p2journalActions{flex-wrap:wrap!important}
+ #premiumDashboard .p2adventureJournalTitle{width:100%!important}
+ #premiumDashboard #p2AddJournal{width:100%!important}
+ #premiumDashboard #p2journalHistoryMount{padding:8px!important}
+}
