@@ -896,3 +896,42 @@ color:#f1f1f1!important;
   border-color:#8a7330!important;
 }
 }
+
+
+/* Timeframe controls — exact nested selectors. */
+@media (min-width:900px){
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing .multi > .multiTop{
+  min-height:44px!important;
+  height:44px!important;
+  padding:0 18px!important;
+  background:#12140f!important;
+  border:1px solid #665526!important;
+  color:#c9a84c!important;
+  font-size:11px!important;
+  font-weight:800!important;
+  letter-spacing:.025em!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing .multi > .drop{
+  background:#0b0d0c!important;
+  border-color:#343126!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing .multi > .drop button{
+  min-height:44px!important;
+  height:44px!important;
+  background:#111310!important;
+  border-color:#37372e!important;
+  color:#c9a84c!important;
+  font-size:11px!important;
+  font-weight:800!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing .multi > .drop button:hover{
+  background:#171811!important;
+  border-color:#665526!important;
+  color:#e0bd58!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing .multi > .drop button.on{
+  background:#d6a936!important;
+  border-color:#d6a936!important;
+  color:#15140e!important;
+}
+}
