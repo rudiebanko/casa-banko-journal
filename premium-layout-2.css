@@ -344,3 +344,33 @@ grid-template-columns:44px 110px 105px 115px 115px 100px 110px 100px!important;
 justify-content:space-between!important;
 column-gap:16px!important;
 }
+
+/* Journal editor visual cleanup — layout only, existing fields/logic untouched. */
+#premiumDashboard #p2journalFormMount:not([hidden]){margin-top:14px!important}
+#premiumDashboard .p2legacyJournalForm{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px 14px!important;padding:16px!important;border:1px solid #242727!important;border-radius:10px!important;background:#080909!important}
+#premiumDashboard .p2legacyJournalForm>.title{grid-column:1/-1!important;display:block!important;margin:0 0 2px!important;padding:0 0 12px!important;border-bottom:1px solid #222525!important;font-size:16px!important;color:#f1bd35!important}
+#premiumDashboard .p2legacyJournalForm>#syncedJournalHint,
+#premiumDashboard .p2legacyJournalForm>#syncedManualFallback,
+#premiumDashboard .p2legacyJournalForm>.manualBox,
+#premiumDashboard .p2legacyJournalForm>.multi,
+#premiumDashboard .p2legacyJournalForm>.upload,
+#premiumDashboard .p2legacyJournalForm>#shot,
+#premiumDashboard .p2legacyJournalForm>#shotName,
+#premiumDashboard .p2legacyJournalForm>textarea,
+#premiumDashboard .p2legacyJournalForm>#save,
+#premiumDashboard .p2legacyJournalForm>#status{grid-column:1/-1!important}
+#premiumDashboard .p2legacyJournalForm>.label{margin:8px 0 -5px!important;padding-top:8px!important;border-top:1px solid #171919!important;font-size:11px!important;color:#b7a978!important;letter-spacing:.08em!important}
+#premiumDashboard .p2legacyJournalForm>.label:first-of-type{border-top:0!important}
+#premiumDashboard .p2legacyJournalForm .grid{margin:0!important;gap:8px!important}
+#premiumDashboard .p2legacyJournalForm .grid button,
+#premiumDashboard .p2legacyJournalForm .multiTop{min-height:38px!important;border-radius:7px!important;font-size:12px!important}
+#premiumDashboard .p2legacyJournalForm .grid button.on,
+#premiumDashboard .p2legacyJournalForm .multi button.on{background:#f3bd32!important;color:#090909!important;border-color:#f3bd32!important}
+#premiumDashboard .p2legacyJournalForm .manualBox{padding:12px!important;margin:2px 0 4px!important;border:1px solid #202323!important;border-radius:9px!important;background:#060707!important}
+#premiumDashboard .p2legacyJournalForm .field{min-height:38px!important;font-size:12px!important}
+#premiumDashboard .p2legacyJournalForm .upload{display:flex!important;align-items:center!important;justify-content:center!important;min-height:48px!important;margin-top:0!important;border-radius:8px!important;background:#0b0c0c!important}
+#premiumDashboard .p2legacyJournalForm textarea{min-height:110px!important;border-radius:8px!important;padding:12px!important;font-size:13px!important;background:#060707!important}
+#premiumDashboard .p2legacyJournalForm>#save{min-height:44px!important;border-radius:8px!important;font-size:13px!important;margin-top:2px!important}
+#premiumDashboard .p2legacyJournalForm>#syncedJournalHint{padding:10px 12px!important;margin:0!important;border:1px solid #292513!important;border-radius:7px!important;background:#0d0c08!important;color:#c8b66f!important;font-size:11px!important}
+#premiumDashboard .p2legacyJournalForm>#syncedManualFallback{margin:0!important;min-height:36px!important;border-radius:7px!important}
+@media(max-width:899px){#premiumDashboard .p2legacyJournalForm{grid-template-columns:1fr!important}#premiumDashboard .p2legacyJournalForm>*{grid-column:1!important}}
