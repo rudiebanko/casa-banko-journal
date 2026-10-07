@@ -468,3 +468,155 @@ color:#f1f1f1!important;
 #premiumDashboard .p2legacyJournalForm.syncedTradeEditing>textarea{max-width:none!important;min-height:105px!important}
 #premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#save{justify-self:end!important;margin-top:12px!important}
 }
+
+
+/* Journal editor polish — presentation only. Keeps working journal behavior untouched. */
+@media (min-width:900px){
+#premiumDashboard .p2legacyJournalForm{
+  background:#090b0b!important;
+  border:1px solid #262a29!important;
+  border-radius:14px!important;
+  padding:20px 22px 22px!important;
+  box-shadow:0 18px 50px rgba(0,0,0,.24)!important;
+}
+#premiumDashboard .p2legacyJournalForm>.title{
+  color:#f4c33b!important;
+  font-size:18px!important;
+  letter-spacing:.015em!important;
+  margin:0 0 18px!important;
+}
+#premiumDashboard .p2legacyJournalForm #syncedJournalHint{
+  color:#777d7a!important;
+  font-size:11px!important;
+  margin:-10px 0 14px!important;
+}
+#premiumDashboard .p2legacyJournalForm #syncedManualFallback{
+  width:auto!important;
+  min-width:210px!important;
+  height:38px!important;
+  padding:0 18px!important;
+  margin:0 0 20px!important;
+  border-radius:8px!important;
+  border:1px solid #303533!important;
+  background:#111413!important;
+  color:#d7d9d8!important;
+  font-size:11px!important;
+  letter-spacing:.045em!important;
+}
+#premiumDashboard .p2legacyJournalForm .label{
+  color:#8e9491!important;
+  font-size:9px!important;
+  font-weight:800!important;
+  letter-spacing:.12em!important;
+  margin:13px 0 7px!important;
+}
+#premiumDashboard .p2legacyJournalForm .single,
+#premiumDashboard .p2legacyJournalForm .many{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:7px!important;
+  max-width:760px!important;
+}
+#premiumDashboard .p2legacyJournalForm .single button,
+#premiumDashboard .p2legacyJournalForm .many button,
+#premiumDashboard .p2legacyJournalForm .multiTop{
+  min-height:36px!important;
+  height:36px!important;
+  padding:0 18px!important;
+  border-radius:7px!important;
+  border:1px solid #353a38!important;
+  background:#141716!important;
+  color:#d8dcda!important;
+  font-size:10px!important;
+  font-weight:750!important;
+  letter-spacing:.025em!important;
+  box-shadow:none!important;
+}
+#premiumDashboard .p2legacyJournalForm .single button:hover,
+#premiumDashboard .p2legacyJournalForm .many button:hover,
+#premiumDashboard .p2legacyJournalForm .multiTop:hover{
+  border-color:#686b62!important;
+  background:#181b1a!important;
+}
+#premiumDashboard .p2legacyJournalForm .single button.on,
+#premiumDashboard .p2legacyJournalForm .many button.on{
+  background:#f5bd32!important;
+  border-color:#f5bd32!important;
+  color:#090909!important;
+  box-shadow:0 0 0 1px rgba(245,189,50,.08)!important;
+}
+#premiumDashboard .p2legacyJournalForm .multi{
+  max-width:760px!important;
+  margin-bottom:7px!important;
+}
+#premiumDashboard .p2legacyJournalForm .multiTop{
+  width:100%!important;
+  justify-content:flex-start!important;
+  text-align:left!important;
+  padding-left:14px!important;
+}
+#premiumDashboard .p2legacyJournalForm .upload{
+  max-width:760px!important;
+  min-height:72px!important;
+  margin-top:18px!important;
+  padding:14px 16px!important;
+  border:1px dashed #5d5128!important;
+  border-radius:9px!important;
+  background:#101210!important;
+  color:#e6bd47!important;
+  justify-content:flex-start!important;
+  font-size:10px!important;
+}
+#premiumDashboard .p2legacyJournalForm #shot{
+  margin-top:8px!important;
+  max-width:360px!important;
+  color:#9ea29f!important;
+  font-size:11px!important;
+}
+#premiumDashboard .p2legacyJournalForm #shotName{
+  color:#686e6b!important;
+  font-size:10px!important;
+  margin:5px 0 0!important;
+}
+#premiumDashboard .p2legacyJournalForm textarea{
+  min-height:150px!important;
+  border-radius:9px!important;
+  border:1px solid #292e2c!important;
+  background:#0c0e0d!important;
+  color:#eceeed!important;
+  padding:14px!important;
+  font-size:13px!important;
+  line-height:1.55!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.015)!important;
+}
+#premiumDashboard .p2legacyJournalForm textarea:focus{
+  border-color:#6f602e!important;
+  outline:none!important;
+}
+#premiumDashboard .p2legacyJournalForm #save{
+  min-width:210px!important;
+  height:42px!important;
+  padding:0 22px!important;
+  border-radius:8px!important;
+  background:#f5bd32!important;
+  color:#090909!important;
+  font-size:11px!important;
+  font-weight:850!important;
+  letter-spacing:.025em!important;
+  box-shadow:none!important;
+}
+#premiumDashboard .p2legacyJournalForm #status{
+  color:#b6bcb9!important;
+  font-size:10px!important;
+}
+#premiumDashboard .p2journalEntry>.p2head{
+  padding-bottom:14px!important;
+}
+#premiumDashboard #p2AddJournal{
+  border-radius:8px!important;
+  min-height:38px!important;
+  padding:0 16px!important;
+  font-size:10px!important;
+  letter-spacing:.02em!important;
+}
+}
