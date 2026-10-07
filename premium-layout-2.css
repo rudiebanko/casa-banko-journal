@@ -178,3 +178,20 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
  #premiumDashboard .p2desktopGrid{grid-template-columns:1.55fr .85fr!important}
  #premiumDashboard .p2daily,#premiumDashboard .p2bankoPanel{min-height:245px!important}
 }
+
+/* Desktop only: replace Daily Summary + BANKO Status row with account progress chart.
+   Mobile stays unchanged. */
+.p2accountProgress{display:none!important}
+@media(min-width:900px){
+ #premiumDashboard .p2daily,#premiumDashboard .p2bankoPanel{display:none!important}
+ #premiumDashboard .p2desktopGrid{grid-template-columns:1fr!important}
+ #premiumDashboard .p2accountProgress{display:block!important;min-height:245px!important;padding:18px!important}
+ #premiumDashboard .p2progressMeta{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;margin-top:16px!important}
+ #premiumDashboard .p2progressMeta>div{border:1px solid #1d2020!important;border-radius:8px!important;padding:10px 12px!important;background:#050606!important}
+ #premiumDashboard .p2progressMeta small{display:block!important;font:700 8px Arial!important;color:#777!important;margin-bottom:5px!important}
+ #premiumDashboard .p2progressMeta strong{font:900 14px Arial!important;color:#eee!important}
+ #premiumDashboard .p2accountProgress svg{display:block!important;width:100%!important;height:125px!important;margin-top:16px!important}
+ #premiumDashboard .p2accountProgress polyline{fill:none!important;stroke:#00df82!important;stroke-width:1.5!important;vector-effect:non-scaling-stroke!important}
+ #premiumDashboard .p2progressAxis{display:flex!important;justify-content:space-between!important;border-top:1px solid #171919!important;padding-top:7px!important}
+ #premiumDashboard .p2progressAxis span{font:700 8px Arial!important;color:#777!important}
+}
