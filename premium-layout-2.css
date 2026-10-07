@@ -291,3 +291,17 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 #premiumDashboard .p2journalHeader em{font-style:normal!important}
 #premiumDashboard .p2journalRow .up{color:#00df82!important}
 #premiumDashboard .p2journalRow .down{color:#ff424c!important}
+
+/* Home / Journal desktop readability bump — typography only. */
+@media(min-width:900px){
+#premiumDashboard{font-size:1.08em!important}
+#premiumDashboard .p2head{font-size:13px!important}
+#premiumDashboard .p2head span{font-size:9px!important}
+#premiumDashboard .p2stat small,#premiumDashboard .p2liveBox small{font-size:10px!important}
+#premiumDashboard .p2stat strong{font-size:23px!important}
+#premiumDashboard .p2stat span,#premiumDashboard .p2liveBox span{font-size:10px!important}
+#premiumDashboard .p2dailyRow,#premiumDashboard .p2recentRow{font-size:11px!important}
+#premiumDashboard .p2journalRow{font-size:11px!important}
+#premiumDashboard .p2journalRow b{font-size:12px!important}
+#premiumDashboard .p2journalHeader,#premiumDashboard .p2journalHeader b,#premiumDashboard .p2journalHeader strong{font-size:9px!important}
+}
