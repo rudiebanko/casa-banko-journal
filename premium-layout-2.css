@@ -870,3 +870,29 @@ color:#f1f1f1!important;
   color:#dfbd59!important;
 }
 }
+
+
+/* Journal controls v4 — larger buttons + gold timeframe dropdowns. */
+@media (min-width:900px){
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.single button,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.many button{
+  min-height:38px!important;
+  height:38px!important;
+  padding:0 18px!important;
+  font-size:10px!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multiTop{
+  min-height:40px!important;
+  height:40px!important;
+  padding:0 16px!important;
+  font-size:10px!important;
+  color:#c6a64b!important;
+  background:#161711!important;
+  border-color:#5a4c25!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multiTop:hover{
+  color:#e0bf5b!important;
+  background:#1a1a12!important;
+  border-color:#8a7330!important;
+}
+}
