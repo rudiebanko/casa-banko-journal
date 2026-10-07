@@ -1,134 +1,88 @@
-/* CASA BANKO Island Adventure — decorative theme only. No business logic changes. */
-:root{--p2-bg:#07182b;--p2-card:#082038;--p2-card2:#102a44;--p2-border:#a56a2a;--p2-gold:#ffbb3e;--p2-gold-hi:#ffe08a;--p2-text:#f8f5e9;--p2-muted:#a7bdca}
-html,body,.app,main,.screen{background:#06192c!important;color:#f8f5e9!important}
+/* CASA BANKO ISLAND ADVENTURE — single maintained visual skin.
+   Existing journal, TradeLocker, Supabase, charts and event handlers are unchanged.
+   Only this file owns the Island Adventure appearance. */
+:root{--p2-bg:#06182b;--p2-card:#09243b;--p2-card2:#0c2c46;--p2-border:#ae7135;--p2-gold:#f5b641;--p2-gold-hi:#ffdc75;--p2-text:#f4f6f7;--p2-muted:#9eb9c9}
+html,body,.app,main,.screen{background:#06182b!important;color:#f2f6f8!important}
 body:before,body:after{display:none!important}
-.hero{background:#0b2038 url("island-adventure-bg.svg") center 34%/cover no-repeat!important;border-color:#a66c2f!important}
-.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 45%,rgba(4,17,31,.4))}
-.hero>div{position:relative;z-index:1}
-@media(min-width:900px){.hero{background-position:35% center!important;border-right:3px solid #9d6225!important}.hero:after{background:linear-gradient(180deg,rgba(4,15,30,.1),rgba(3,14,27,.86))}nav{background:transparent!important}}
-nav{background:#081c31!important;border-color:#b17835!important}
-nav button{color:#c7d9df!important;border:1px solid transparent!important}
-nav button.active{color:#fff2c0!important;background:linear-gradient(110deg,#9c4a0b,#e88a1a 55%,#a24e0c)!important;border:1px solid #ffc65b!important;box-shadow:inset 0 2px 0 #ffd77c,0 3px 0 #542806!important;text-shadow:0 1px 2px #4a230a!important}
+main{background:linear-gradient(180deg,#0c2440,#06182b 500px)!important}
+.hero{background:#102842 url("island-adventure-bg.svg") center center/cover no-repeat!important;border-color:#aa7136!important}
+.hero>div:not(#globalLiveAccount){position:relative;z-index:2}
+nav{background:#0b2136!important;border-color:#a36a2d!important}
+nav button{color:#c3d3d8!important}
+nav button.active{color:#fff0ae!important;background:linear-gradient(145deg,#ffae2a,#9d480a)!important;border:2px solid #ffcc58!important;box-shadow:inset 0 1px #ffe28c,0 3px #5b2e0d!important;text-shadow:0 1px #633208!important}
+#premiumDashboard{position:relative!important;background:transparent!important}
+#premiumDashboard .p2accountHeader{position:relative!important;overflow:hidden!important;display:flex!important;justify-content:space-between!important;align-items:center!important;gap:20px!important;padding:25px!important;margin:0 0 14px!important;background:linear-gradient(90deg,#041626bb,#04162618),url("island-adventure-bg.svg") center 43%/cover no-repeat!important;border:3px solid #aa6b2e!important;border-radius:13px!important;box-shadow:inset 0 0 0 1px #ffc66a88,0 5px #4a2911!important}
+#premiumDashboard .p2accountHeader img{width:min(35%,300px)!important;max-width:300px!important;height:auto!important;object-fit:contain!important}
+#premiumDashboard .p2liveBox{background:linear-gradient(150deg,#4a270f,#211408)!important;border:3px solid #a96d30!important;border-radius:11px!important;box-shadow:inset 0 0 0 1px #ffc76c,0 4px #44250f!important}
+#premiumDashboard .p2dashTitle{display:none!important}
+#journal #premiumDashboard .p2top{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:13px!important}
 #journal #premiumDashboard .p2stat,#journal #premiumDashboard .p2panel,
-#premiumDashboard .p2stat,#premiumDashboard .p2panel{
- background:linear-gradient(155deg,#112c46,#071b30 78%)!important;
- border:3px solid #9c612b!important;
- border-radius:12px!important;
- box-shadow:inset 0 0 0 1px #f3ae42,0 5px 0 #3e240e,0 9px 22px rgba(0,0,0,.32)!important
-}
-#premiumDashboard .p2stat:nth-child(4n+1){border-color:#188fc6!important;box-shadow:inset 0 0 0 1px #50d8f8,0 5px 0 #073f61,0 9px 22px #0005!important}
-#premiumDashboard .p2stat:nth-child(4n+2){border-color:#c46d18!important}
-#premiumDashboard .p2stat:nth-child(4n+3){border-color:#7747c8!important;box-shadow:inset 0 0 0 1px #b796ff,0 5px 0 #3c226b,0 9px 22px #0005!important}
-#premiumDashboard .p2stat:nth-child(4n+4){border-color:#148f88!important;box-shadow:inset 0 0 0 1px #4ae2c8,0 5px 0 #07524d,0 9px 22px #0005!important}
-#premiumDashboard .p2head{color:#ffcd61!important;text-shadow:0 2px 0 #5d2b0b!important;letter-spacing:.035em!important}
-#premiumDashboard .p2summary b,#premiumDashboard .p2progressMeta>div{
- background:linear-gradient(145deg,#092a46,#061b31)!important;
- border:1px solid #087da8!important;border-radius:7px!important;
- box-shadow:inset 0 1px 0 #27b4da55!important
-}
-#premiumDashboard .p2summary small,#premiumDashboard .p2progressMeta small{color:#a2c0d0!important}
-#premiumDashboard .p2accountProgress svg polyline,#premiumDashboard .p2performance svg polyline{stroke:#24e1f6!important;filter:drop-shadow(0 0 3px #12bad6)}
-#premiumDashboard .p2progressAxis{border-color:#37607b!important}
-#premiumDashboard .p2journalEntry{border-color:#bc782d!important}
-#premiumDashboard #p2AddJournal,#premiumDashboard .p2journalEntry button:not(.p2journalRow){background:linear-gradient(#ffd15e,#e98a14)!important;color:#2e1809!important;border:2px solid #f6b94d!important;border-radius:8px!important;box-shadow:0 3px 0 #76400d!important;font-weight:900!important}
-#premiumDashboard .p2legacyJournalForm{background:linear-gradient(155deg,#15263b,#0b1a2c)!important;border:3px solid #98602b!important}
-#premiumDashboard .p2legacyJournalForm>.title{color:#ffcd61!important}
-#premiumDashboard .p2journalRow{border-color:#37566a!important}
-#premiumDashboard .p2journalRow:hover{background:#133b55!important}
-.screen .card{background:linear-gradient(150deg,#112c45,#071a2c)!important;border:2px solid #9c642c!important;box-shadow:inset 0 0 0 1px #e9a94d55,0 5px 0 #3a230f!important}
-.screen .title{color:#ffcd61!important}
-.screen .field,.screen textarea,.screen select{background:#071d33!important;border-color:#47708a!important;color:#e9f4f8!important}
-.screen button.on{border-color:#ffd05e!important}
-#journal .journeyChart,#journal .journeyBottom>div{background:#0a2841!important;border-color:#b47931!important}
-#journal .journeyLine{stroke:#1bdef5!important}
-@media(min-width:900px){#premiumDashboard{position:relative}#premiumDashboard:before{content:"";display:block;height:155px;margin-bottom:14px;border:3px solid #9b6329;border-radius:12px;background:linear-gradient(0deg,rgba(4,17,30,.18),rgba(4,17,30,.05)),url("island-adventure-bg.svg") center 46%/cover no-repeat;box-shadow:inset 0 0 0 2px #e9a94d77,0 5px 0 #39210d}}
-@media(max-width:899px){.hero{min-height:145px!important;background-position:center 44%!important}#premiumDashboard .p2progressMeta{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}#premiumDashboard .p2progressMeta>div{display:flex!important;flex-direction:column!important;min-width:0!important;padding:9px 7px!important}#premiumDashboard .p2progressMeta small{display:block!important;font-size:9px!important;line-height:1.3!important;white-space:normal!important}#premiumDashboard .p2progressMeta strong{display:block!important;font-size:clamp(11px,3vw,16px)!important;overflow-wrap:anywhere!important}}
-
-/* Island adventure layout pass 2 — layered game panels, compact spacing, live milestone. */
-#premiumDashboard{background:transparent!important}
-#premiumDashboard .p2accountHeader{
- position:relative!important;overflow:hidden!important;
- background:linear-gradient(90deg,rgba(5,23,36,.52),rgba(5,23,36,.12)),url("island-adventure-bg.svg") center 45%/cover no-repeat!important;
- border:3px solid #ad6b2c!important;border-radius:13px!important;
- padding:18px!important;margin-bottom:12px!important;
- box-shadow:inset 0 0 0 2px #e6a64988,0 5px 0 #4e2b11!important
-}
-#premiumDashboard .p2accountHeader:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 40%,#04182855)}
-#premiumDashboard .p2accountHeader>*{position:relative;z-index:1}
-#premiumDashboard .p2liveBox{background:linear-gradient(140deg,#492408,#241507)!important;border:3px solid #b57731!important;box-shadow:inset 0 0 0 1px #ffc65b,0 4px 0 #45230a!important}
-#premiumDashboard .p2dashTitle{color:#ffcf5b!important;text-shadow:0 2px 0 #49280c!important}
-#premiumDashboard .p2stat{position:relative!important;overflow:hidden!important}
-#premiumDashboard .p2stat:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.11;background:repeating-linear-gradient(0deg,transparent 0 17px,#ffe0a4 18px,transparent 20px)}
-#premiumDashboard .p2stat:nth-child(1){background:linear-gradient(145deg,#12457b,#052244)!important}
-#premiumDashboard .p2stat:nth-child(2){background:linear-gradient(145deg,#5d290e,#281409)!important}
-#premiumDashboard .p2stat:nth-child(3){background:linear-gradient(145deg,#421b71,#190d36)!important}
-#premiumDashboard .p2stat:nth-child(4){background:linear-gradient(145deg,#075c59,#063238)!important}
-#premiumDashboard .p2panel{position:relative!important}
-#premiumDashboard .p2daily:before,#premiumDashboard .p2accountProgress:before{
- content:"";position:absolute;inset:0 0 auto;height:33px;pointer-events:none;
- background:repeating-linear-gradient(0deg,transparent 0 10px,#170c06 11px,#9b5725 12px,#603014 15px);
- border-bottom:2px solid #b47534;border-radius:9px 9px 0 0;opacity:.55
-}
-#premiumDashboard .p2daily .p2head,#premiumDashboard .p2accountProgress .p2head{position:relative;z-index:1}
-#premiumDashboard .p2summary b{border-color:#079cce!important}
-#premiumDashboard .p2accountProgress svg{background:linear-gradient(0deg,#062a40bb,transparent),url("island-adventure-bg.svg") center 85%/cover!important;border-radius:5px}
-#premiumDashboard .p2islandMilestone{
- display:flex!important;align-items:center!important;gap:13px!important;
- padding:12px 15px!important;margin:12px 0!important;
- border:3px solid #a7682d!important;border-radius:12px!important;
- background:linear-gradient(170deg,#56301b,#26180f 65%,#160f0b)!important;
- box-shadow:inset 0 0 0 1px #e6a147,0 5px 0 #3e220f,0 9px 18px #0006!important;
- color:#fff4df!important;font-family:Arial,sans-serif!important
-}
-#premiumDashboard .p2milestoneIcon{flex:0 0 52px!important;display:grid!important;place-items:center!important;height:52px!important;border:2px solid #d89439!important;border-radius:7px!important;background:linear-gradient(135deg,#c4771b,#6b370f)!important;color:#ffdf64!important;font-size:33px!important;text-shadow:0 2px #4c250a}
+#premiumDashboard .p2stat,#premiumDashboard .p2panel{position:relative!important;min-width:0!important;background:linear-gradient(145deg,#0b2d4c,#071a30)!important;border:3px solid #a96c2d!important;border-radius:11px!important;box-shadow:inset 0 0 0 1px #e5a454,0 5px #46270f,0 9px 16px #0006!important}
+#premiumDashboard .p2stat:nth-child(1){background:linear-gradient(145deg,#14529a,#061d45)!important;border-color:#177aca!important;box-shadow:inset 0 0 0 1px #51c2ff,0 5px #0a3465!important}
+#premiumDashboard .p2stat:nth-child(2){background:linear-gradient(145deg,#663014,#241108)!important;border-color:#c47424!important}
+#premiumDashboard .p2stat:nth-child(3){background:linear-gradient(145deg,#542083,#1b0d37)!important;border-color:#8b3dd0!important;box-shadow:inset 0 0 0 1px #c27cff,0 5px #421d63!important}
+#premiumDashboard .p2stat:nth-child(4){background:linear-gradient(145deg,#096b66,#062b35)!important;border-color:#119d91!important;box-shadow:inset 0 0 0 1px #46e8cb,0 5px #07504c!important}
+#premiumDashboard .p2k{color:#c7d8e6!important}
+#premiumDashboard .p2sub{color:#afc5d3!important}
+#premiumDashboard .p2desktopGrid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:14px!important;margin-top:17px!important}
+#premiumDashboard .p2daily,#premiumDashboard .p2accountProgress{display:block!important;min-width:0!important}
+#premiumDashboard .p2head{color:#ffce64!important;font-weight:900!important;text-shadow:0 2px #53280b!important}
+#premiumDashboard .p2head span{color:#c6d9e2!important;text-shadow:none!important}
+#premiumDashboard .p2summary b,#premiumDashboard .p2progressMeta>div{background:linear-gradient(160deg,#0a304e,#051b31)!important;border:1px solid #078fbd!important;border-radius:8px!important;box-shadow:inset 0 1px #45cafa44!important}
+#premiumDashboard .p2summary small,#premiumDashboard .p2progressMeta small{color:#a9c2d1!important}
+#premiumDashboard .p2accountProgress svg{background:linear-gradient(0deg,#032c43b5,#051a2a44),url("island-adventure-bg.svg") center 90%/cover no-repeat!important;border-radius:5px}
+#premiumDashboard .p2accountProgress svg polyline,#premiumDashboard .p2performance svg polyline{stroke:#12e1f6!important;filter:drop-shadow(0 0 2px #12b7df)}
+#premiumDashboard .p2progressAxis{border-color:#35647b!important}
+#premiumDashboard .p2progressAxis span{color:#bed5e0!important}
+#premiumDashboard .p2islandMilestone{display:flex!important;align-items:center!important;gap:14px!important;margin:18px 0!important;padding:13px 17px!important;border:3px solid #a76c30!important;border-radius:12px!important;background:linear-gradient(170deg,#56321d,#25170e)!important;box-shadow:inset 0 0 0 1px #efaf55,0 5px #3c220f!important;color:#fff3dc!important;font-family:Arial,sans-serif!important}
+#premiumDashboard .p2milestoneIcon{display:grid!important;place-items:center!important;flex:0 0 55px!important;height:55px!important;border:2px solid #e0a347!important;border-radius:7px!important;background:linear-gradient(145deg,#ba751e,#61300d)!important;color:#ffe27b!important;font-size:33px!important}
 #premiumDashboard .p2milestoneMain{flex:1;min-width:0}
-#premiumDashboard .p2milestoneTop{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:9px;font-size:11px;font-weight:800}
-#premiumDashboard .p2milestoneTop b{display:block;font-size:23px;color:#ffe28b}
-#premiumDashboard .p2milestoneTop>span:last-child{color:#d5dce4;white-space:nowrap}
-#premiumDashboard .p2milestoneTrack{height:18px;background:#041f36;border:2px solid #0e6387;border-radius:10px;overflow:hidden}
-#premiumDashboard .p2milestoneFill{height:100%;border-radius:8px;background:linear-gradient(180deg,#76efff,#00baf7 60%,#0872ce);box-shadow:0 0 12px #0ce1ff}
-#premiumDashboard .p2islandMilestone>strong{font-size:18px;align-self:flex-end}
-@media(min-width:900px){#premiumDashboard:before{display:none!important}#premiumDashboard .p2accountHeader{min-height:185px!important;background-position:center 48%!important}#premiumDashboard .p2desktopGrid{gap:12px!important}}
+#premiumDashboard .p2milestoneTop{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;font-size:12px;font-weight:800}
+#premiumDashboard .p2milestoneTop b{display:block;font-size:23px;color:#ffe08c}
+#premiumDashboard .p2milestoneTop>span:last-child{white-space:nowrap;color:#d6e0e5}
+#premiumDashboard .p2milestoneTrack{height:18px;overflow:hidden;border:2px solid #0e7195;border-radius:12px;background:#052138}
+#premiumDashboard .p2milestoneFill{height:100%;border-radius:9px;background:linear-gradient(#77efff,#03b9f3 60%,#0877c9);box-shadow:0 0 12px #00c8f6}
+#premiumDashboard .p2islandMilestone>strong{align-self:flex-end;font-size:19px}
+#journal #premiumDashboard .p2journalEntry,#premiumDashboard .p2journalEntry{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;margin-top:17px!important}
+#premiumDashboard .p2journalEntry>.p2head{display:none!important}
+#premiumDashboard .p2journalActions{display:flex!important;justify-content:space-between!important;align-items:center!important;gap:12px!important;padding:13px 17px!important;margin-bottom:12px!important;border:3px solid #a96c30!important;border-radius:11px!important;background:linear-gradient(160deg,#573019,#28180e)!important;box-shadow:inset 0 1px #e9aa54,0 4px #3b210d!important}
+#premiumDashboard .p2adventureJournalTitle b,#premiumDashboard .p2adventureHistoryTitle{display:block!important;color:#ffcd61!important;font-size:clamp(17px,2vw,24px)!important;font-weight:900!important;text-shadow:0 2px #4a230c!important}
+#premiumDashboard .p2adventureJournalTitle small,#premiumDashboard .p2adventureHistoryTitle small{display:block!important;color:#e0c5a4!important;font-size:11px!important;margin-top:4px!important;text-shadow:none!important}
+#premiumDashboard #p2AddJournal{background:linear-gradient(#ffcf58,#e78b11)!important;color:#2e1b09!important;border:2px solid #ffd46e!important;box-shadow:0 3px #67370e!important;font-weight:900!important;white-space:nowrap!important}
+#premiumDashboard #p2journalHistoryMount{padding:13px!important;background:linear-gradient(150deg,#102e49,#061a2d)!important;border:3px solid #a16b30!important;border-radius:12px!important;box-shadow:inset 0 0 0 1px #e7a753,0 5px #39210d!important}
+#premiumDashboard .p2adventureHistoryTitle{padding:4px 5px 12px!important;margin-bottom:10px!important;border-bottom:2px solid #87532d!important}
+#premiumDashboard .p2journalTable{overflow:auto!important;border:1px solid #137fa3!important;border-radius:8px!important;background:#071e33!important}
+#premiumDashboard .p2journalRow{background:#09243b!important;border-bottom:1px solid #24556d!important;color:#e1edf2!important}
+#premiumDashboard .p2journalHeader{background:#16425c!important;color:#e9d19a!important}
+#premiumDashboard .p2journalRow:hover{background:#16445e!important}
+#premiumDashboard .p2journalFilters button.active{background:#00c7ed!important;color:#062336!important}
+#premiumDashboard .p2legacyJournalForm{background:linear-gradient(150deg,#142e43,#091a2c)!important;border:3px solid #a66b30!important;box-shadow:inset 0 0 0 1px #e7a753,0 5px #39210d!important}
+#premiumDashboard .p2legacyJournalForm>.title{color:#ffcd61!important}
+#premiumDashboard .p2bottom{display:none!important}
+.screen .card{background:linear-gradient(155deg,#102b44,#07192c)!important;border:2px solid #a66c32!important;box-shadow:inset 0 0 0 1px #e9a54a77,0 4px #3c230f!important}
+.screen .title{color:#ffcf6d!important}
+@media(min-width:900px){
+ .hero{background-position:32% center!important;border-right:3px solid #a66b31!important}
+ #premiumDashboard .p2accountHeader img{display:none!important}
+ #premiumDashboard .p2accountHeader{justify-content:flex-end!important;min-height:180px!important}
+ #premiumDashboard .p2liveBox{min-width:270px!important}
+ #journal #premiumDashboard .p2top{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+ #premiumDashboard .p2desktopGrid{grid-template-columns:1fr 1fr!important}
+}
 @media(max-width:899px){
- #premiumDashboard .p2accountHeader{padding:12px!important;min-height:130px!important;gap:10px!important}
- #premiumDashboard .p2accountHeader img{max-width:43%!important;object-fit:contain!important}
- #premiumDashboard .p2liveBox{max-width:55%!important;min-width:0!important}
- #premiumDashboard .p2top{gap:12px!important}
- #premiumDashboard .p2desktopGrid{gap:13px!important}
+ #premiumDashboard .p2accountHeader{display:none!important}
+ #journal #premiumDashboard .p2top{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+ #premiumDashboard .p2desktopGrid{display:block!important}
+ #premiumDashboard .p2daily,#premiumDashboard .p2accountProgress{margin-top:13px!important}
+ #premiumDashboard .p2progressMeta{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}
+ #premiumDashboard .p2progressMeta>div{display:flex!important;flex-direction:column!important;min-width:0!important;padding:9px 7px!important}
+ #premiumDashboard .p2progressMeta small{display:block!important;font-size:9px!important;line-height:1.3!important;white-space:normal!important}
+ #premiumDashboard .p2progressMeta strong{display:block!important;font-size:clamp(11px,3vw,16px)!important;overflow-wrap:anywhere!important}
  #premiumDashboard .p2islandMilestone{gap:8px!important;padding:10px 8px!important}
- #premiumDashboard .p2milestoneIcon{flex-basis:39px!important;height:42px!important;font-size:26px!important}
+ #premiumDashboard .p2milestoneIcon{flex-basis:39px!important;height:43px!important;font-size:26px!important}
  #premiumDashboard .p2milestoneTop{font-size:9px!important;gap:4px!important}
  #premiumDashboard .p2milestoneTop b{font-size:20px!important}
  #premiumDashboard .p2islandMilestone>strong{font-size:15px!important}
-}
-
-/* Desktop-approved concept: dedicated journal-log and trade-history visual hierarchy. */
-@media(min-width:900px){
- #premiumDashboard{max-width:1500px!important;margin:auto!important}
- #premiumDashboard .p2accountHeader{min-height:240px!important;padding:24px 30px!important}
- #premiumDashboard .p2accountHeader img{max-height:130px!important}
- #premiumDashboard .p2top{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important}
- #premiumDashboard .p2desktopGrid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:14px!important;margin-top:16px!important}
- #premiumDashboard .p2daily,#premiumDashboard .p2accountProgress{min-width:0!important}
- #premiumDashboard .p2islandMilestone{margin:18px 0!important}
- #premiumDashboard .p2journalEntry{margin-top:18px!important}
- #premiumDashboard .p2journalRow{grid-template-columns:55px 1.15fr 1fr 1fr 1fr 1fr 1fr .9fr!important}
-}
-#premiumDashboard .p2journalEntry{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}
-#premiumDashboard .p2journalEntry>.p2head{display:none!important}
-#premiumDashboard .p2journalActions{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;margin:0 0 12px!important;padding:12px 16px!important;border:3px solid #a5682b!important;border-radius:11px!important;background:linear-gradient(170deg,#583019,#27160c)!important;box-shadow:inset 0 1px #ffbf5d,0 4px #3e210e!important}
-#premiumDashboard .p2adventureJournalTitle b,#premiumDashboard .p2adventureHistoryTitle{display:block!important;color:#ffd066!important;font-size:clamp(16px,2vw,23px)!important;font-weight:900!important;text-shadow:0 2px #462108!important}
-#premiumDashboard .p2adventureJournalTitle small,#premiumDashboard .p2adventureHistoryTitle small{display:block!important;color:#d8bca0!important;font-size:11px!important;font-weight:600!important;text-shadow:none!important;margin-top:3px!important}
-#premiumDashboard #p2AddJournal{background:linear-gradient(#ffd45b,#e98b12)!important;border:2px solid #ffce64!important;color:#321906!important;box-shadow:0 3px #71360d!important;white-space:nowrap!important;font-weight:900!important}
-#premiumDashboard #p2journalHistoryMount{border:3px solid #9e612c!important;border-radius:12px!important;padding:12px!important;background:linear-gradient(150deg,#102d45,#06192d)!important;box-shadow:inset 0 0 0 1px #e9a94d66,0 5px #39210d!important}
-#premiumDashboard .p2adventureHistoryTitle{padding:4px 5px 12px!important;border-bottom:2px solid #81502c!important;margin-bottom:10px!important}
-#premiumDashboard .p2journalTable{background:#061d31!important;border:1px solid #146c8d!important;border-radius:8px!important;overflow:auto!important}
-#premiumDashboard .p2journalRow{background:#08243b!important;border-bottom:1px solid #1b536c!important;color:#d9e7ed!important}
-#premiumDashboard .p2journalHeader{background:#113b59!important;color:#e2c78d!important}
-#premiumDashboard .p2journalRow:hover{background:#12445c!important}
-#premiumDashboard .p2journalFilters button.active{background:#03c5e7!important;color:#052334!important}
-#premiumDashboard .p2legacyJournalForm{border:3px solid #aa6a2c!important;box-shadow:inset 0 0 0 1px #e9a94d66,0 5px #39210d!important}
-@media(max-width:899px){
  #premiumDashboard .p2journalActions{flex-wrap:wrap!important}
  #premiumDashboard .p2adventureJournalTitle{width:100%!important}
  #premiumDashboard #p2AddJournal{width:100%!important}
