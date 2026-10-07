@@ -1,0 +1,45 @@
+/* CASA BANKO Island Adventure — decorative theme only. No business logic changes. */
+:root{--p2-bg:#07182b;--p2-card:#082038;--p2-card2:#102a44;--p2-border:#a56a2a;--p2-gold:#ffbb3e;--p2-gold-hi:#ffe08a;--p2-text:#f8f5e9;--p2-muted:#a7bdca}
+html,body,.app,main,.screen{background:#06192c!important;color:#f8f5e9!important}
+body:before,body:after{display:none!important}
+.hero{background:#0b2038 url("island-adventure-bg.svg") center 34%/cover no-repeat!important;border-color:#a66c2f!important}
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 45%,rgba(4,17,31,.4))}
+.hero>div{position:relative;z-index:1}
+@media(min-width:900px){.hero{background-position:35% center!important;border-right:3px solid #9d6225!important}.hero:after{background:linear-gradient(180deg,rgba(4,15,30,.1),rgba(3,14,27,.86))}nav{background:transparent!important}}
+nav{background:#081c31!important;border-color:#b17835!important}
+nav button{color:#c7d9df!important;border:1px solid transparent!important}
+nav button.active{color:#fff2c0!important;background:linear-gradient(110deg,#9c4a0b,#e88a1a 55%,#a24e0c)!important;border:1px solid #ffc65b!important;box-shadow:inset 0 2px 0 #ffd77c,0 3px 0 #542806!important;text-shadow:0 1px 2px #4a230a!important}
+#journal #premiumDashboard .p2stat,#journal #premiumDashboard .p2panel,
+#premiumDashboard .p2stat,#premiumDashboard .p2panel{
+ background:linear-gradient(155deg,#112c46,#071b30 78%)!important;
+ border:3px solid #9c612b!important;
+ border-radius:12px!important;
+ box-shadow:inset 0 0 0 1px #f3ae42,0 5px 0 #3e240e,0 9px 22px rgba(0,0,0,.32)!important
+}
+#premiumDashboard .p2stat:nth-child(4n+1){border-color:#188fc6!important;box-shadow:inset 0 0 0 1px #50d8f8,0 5px 0 #073f61,0 9px 22px #0005!important}
+#premiumDashboard .p2stat:nth-child(4n+2){border-color:#c46d18!important}
+#premiumDashboard .p2stat:nth-child(4n+3){border-color:#7747c8!important;box-shadow:inset 0 0 0 1px #b796ff,0 5px 0 #3c226b,0 9px 22px #0005!important}
+#premiumDashboard .p2stat:nth-child(4n+4){border-color:#148f88!important;box-shadow:inset 0 0 0 1px #4ae2c8,0 5px 0 #07524d,0 9px 22px #0005!important}
+#premiumDashboard .p2head{color:#ffcd61!important;text-shadow:0 2px 0 #5d2b0b!important;letter-spacing:.035em!important}
+#premiumDashboard .p2summary b,#premiumDashboard .p2progressMeta>div{
+ background:linear-gradient(145deg,#092a46,#061b31)!important;
+ border:1px solid #087da8!important;border-radius:7px!important;
+ box-shadow:inset 0 1px 0 #27b4da55!important
+}
+#premiumDashboard .p2summary small,#premiumDashboard .p2progressMeta small{color:#a2c0d0!important}
+#premiumDashboard .p2accountProgress svg polyline,#premiumDashboard .p2performance svg polyline{stroke:#24e1f6!important;filter:drop-shadow(0 0 3px #12bad6)}
+#premiumDashboard .p2progressAxis{border-color:#37607b!important}
+#premiumDashboard .p2journalEntry{border-color:#bc782d!important}
+#premiumDashboard #p2AddJournal,#premiumDashboard .p2journalEntry button:not(.p2journalRow){background:linear-gradient(#ffd15e,#e98a14)!important;color:#2e1809!important;border:2px solid #f6b94d!important;border-radius:8px!important;box-shadow:0 3px 0 #76400d!important;font-weight:900!important}
+#premiumDashboard .p2legacyJournalForm{background:linear-gradient(155deg,#15263b,#0b1a2c)!important;border:3px solid #98602b!important}
+#premiumDashboard .p2legacyJournalForm>.title{color:#ffcd61!important}
+#premiumDashboard .p2journalRow{border-color:#37566a!important}
+#premiumDashboard .p2journalRow:hover{background:#133b55!important}
+.screen .card{background:linear-gradient(150deg,#112c45,#071a2c)!important;border:2px solid #9c642c!important;box-shadow:inset 0 0 0 1px #e9a94d55,0 5px 0 #3a230f!important}
+.screen .title{color:#ffcd61!important}
+.screen .field,.screen textarea,.screen select{background:#071d33!important;border-color:#47708a!important;color:#e9f4f8!important}
+.screen button.on{border-color:#ffd05e!important}
+#journal .journeyChart,#journal .journeyBottom>div{background:#0a2841!important;border-color:#b47931!important}
+#journal .journeyLine{stroke:#1bdef5!important}
+@media(min-width:900px){#premiumDashboard{position:relative}#premiumDashboard:before{content:"";display:block;height:155px;margin-bottom:14px;border:3px solid #9b6329;border-radius:12px;background:linear-gradient(0deg,rgba(4,17,30,.18),rgba(4,17,30,.05)),url("island-adventure-bg.svg") center 46%/cover no-repeat;box-shadow:inset 0 0 0 2px #e9a94d77,0 5px 0 #39210d}}
+@media(max-width:899px){.hero{min-height:145px!important;background-position:center 44%!important}#premiumDashboard .p2progressMeta{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}#premiumDashboard .p2progressMeta>div{display:flex!important;flex-direction:column!important;min-width:0!important;padding:9px 7px!important}#premiumDashboard .p2progressMeta small{display:block!important;font-size:9px!important;line-height:1.3!important;white-space:normal!important}#premiumDashboard .p2progressMeta strong{display:block!important;font-size:clamp(11px,3vw,16px)!important;overflow-wrap:anywhere!important}}
