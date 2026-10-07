@@ -620,3 +620,35 @@ color:#f1f1f1!important;
   letter-spacing:.02em!important;
 }
 }
+
+
+/* Journal contrast pass — typography/colors only. */
+@media (min-width:900px){
+#premiumDashboard .p2legacyJournalForm .single button,
+#premiumDashboard .p2legacyJournalForm .many button,
+#premiumDashboard .p2legacyJournalForm .multiTop{
+  color:#f1f2f1!important;
+  font-weight:800!important;
+}
+#premiumDashboard .p2legacyJournalForm .single button:not(.on),
+#premiumDashboard .p2legacyJournalForm .many button:not(.on),
+#premiumDashboard .p2legacyJournalForm .multiTop{
+  background:#181b1a!important;
+  border-color:#404542!important;
+}
+#premiumDashboard .p2legacyJournalForm .single button.on,
+#premiumDashboard .p2legacyJournalForm .many button.on{
+  color:#11130f!important;
+  background:#e9b83f!important;
+  border-color:#f1c34f!important;
+}
+#premiumDashboard .p2legacyJournalForm .label,
+#premiumDashboard .p2legacyJournalForm .detailFieldMiniLabel{
+  color:#aeb3b0!important;
+}
+#premiumDashboard .p2legacyJournalForm #syncedManualFallback{
+  color:#f0f1f0!important;
+  background:#181b1a!important;
+  border-color:#414643!important;
+}
+}
