@@ -400,3 +400,21 @@ column-gap:16px!important;
 #premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#shotName{margin:5px 0 10px!important;color:#777!important;font-size:9px!important}
 #premiumDashboard .p2legacyJournalForm.syncedTradeEditing>textarea{width:100%!important;min-height:90px!important;margin:0!important;background:#070808!important;border:1px solid #242727!important;border-radius:7px!important;box-sizing:border-box!important}
 #premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#save{width:100%!important;min-height:40px!important;margin-top:10px!important;background:#f3bd32!important;color:#090909!important;border-radius:7px!important;font-size:11px!important}
+
+/* Journal editor compact control system — dashboard proportions, no stretched buttons. */
+@media(min-width:900px){
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing{max-width:none!important;padding:16px 18px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.grid{display:flex!important;flex-wrap:wrap!important;justify-content:flex-start!important;gap:7px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.grid button{width:auto!important;min-width:112px!important;max-width:170px!important;flex:0 0 auto!important;padding:8px 16px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.grid[data-k="session"] button{min-width:120px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.grid[data-k="phase"] button{min-width:145px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.grid[data-k="liq"] button,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.grid[data-k="plan"] button{min-width:105px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.grid[data-k="model"] button,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.grid[data-k="grade"] button{min-width:100px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multi{width:min(360px,100%)!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multiTop{width:100%!important;min-height:34px!important;text-align:left!important;padding-left:12px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.upload{width:min(460px,100%)!important;justify-content:flex-start!important;padding:0 14px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>textarea{max-width:760px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#save{width:auto!important;min-width:190px!important;padding:0 22px!important}
+}
