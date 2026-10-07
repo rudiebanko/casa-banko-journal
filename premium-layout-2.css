@@ -796,3 +796,61 @@ color:#f1f1f1!important;
   color:#bbb9b1!important;
 }
 }
+
+
+/* Journal refinement v3 — visibly softer palette + integrated upload zone. */
+@media (min-width:900px){
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.single button:not(.on),
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.many button:not(.on),
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multiTop{
+  color:#8f928d!important;
+  background:#101312!important;
+  border-color:#292e2b!important;
+  font-weight:700!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.single button:not(.on):hover,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.many button:not(.on):hover,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multiTop:hover{
+  color:#b3b5ae!important;
+  background:#141716!important;
+  border-color:#3a3f3b!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.single button.on,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.many button.on{
+  background:#d6a936!important;
+  border-color:#d6a936!important;
+  color:#17160f!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.label,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing .detailFieldMiniLabel{
+  color:#717772!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.upload{
+  grid-column:2!important;
+  grid-row:5 / span 8!important;
+  min-height:220px!important;
+  max-height:260px!important;
+  cursor:pointer!important;
+  border-color:#403a26!important;
+  background:#0d100f!important;
+  color:#c8a947!important;
+  transition:border-color .15s ease,background .15s ease!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.upload:hover{
+  background:#101311!important;
+  border-color:#76652d!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#shot{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#shotName{
+  grid-column:2!important;
+  text-align:center!important;
+  color:#656b67!important;
+  margin:7px 0 0!important;
+}
+}
