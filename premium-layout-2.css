@@ -854,3 +854,19 @@ color:#f1f1f1!important;
   margin:7px 0 0!important;
 }
 }
+
+
+/* Journal button gold-text test. */
+@media (min-width:900px){
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.single button:not(.on),
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.many button:not(.on),
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multiTop,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#syncedManualFallback{
+  color:#c6a64b!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.single button:not(.on):hover,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.many button:not(.on):hover,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multiTop:hover{
+  color:#dfbd59!important;
+}
+}
