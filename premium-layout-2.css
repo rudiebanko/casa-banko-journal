@@ -374,3 +374,29 @@ column-gap:16px!important;
 #premiumDashboard .p2legacyJournalForm>#syncedJournalHint{padding:10px 12px!important;margin:0!important;border:1px solid #292513!important;border-radius:7px!important;background:#0d0c08!important;color:#c8b66f!important;font-size:11px!important}
 #premiumDashboard .p2legacyJournalForm>#syncedManualFallback{margin:0!important;min-height:36px!important;border-radius:7px!important}
 @media(max-width:899px){#premiumDashboard .p2legacyJournalForm{grid-template-columns:1fr!important}#premiumDashboard .p2legacyJournalForm>*{grid-column:1!important}}
+
+/* Sleek dashboard-style synced journal editor. */
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing{display:block!important;padding:14px!important;background:#090a0a!important;border:1px solid #222525!important;border-radius:9px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.title{margin:0!important;padding:0 0 10px!important;border:0!important;color:#f1bd35!important;font-size:15px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#syncedJournalHint{margin:0 0 12px!important;padding:8px 10px!important;background:#0c0d0d!important;border:1px solid #1e2121!important;color:#8f9696!important;font-size:10px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#sourceChoice,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#sourceChoice+.manualBox,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.label:has(+ #sourceChoice){display:none!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.manualBox{display:grid!important;grid-template-columns:1fr!important;margin:0 0 12px!important;padding:10px!important;background:#070808!important;border:1px solid #1e2121!important;border-radius:8px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.manualBox>.label{margin:0 0 8px!important;color:#777!important;font-size:9px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.manualBox .fieldGrid{gap:7px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.manualBox .field{min-height:34px!important;background:#0a0b0b!important;border-color:#242727!important;font-size:11px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.label{margin:10px 0 5px!important;padding:0!important;border:0!important;color:#7e8585!important;font-size:9px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.grid{display:grid!important;margin:0!important;gap:7px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.grid.two{grid-template-columns:repeat(2,1fr)!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.grid.four{grid-template-columns:repeat(4,1fr)!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.grid.single:not(.two){grid-template-columns:repeat(3,1fr)!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.grid button,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multiTop{min-height:34px!important;padding:7px 10px!important;background:#0a0b0b!important;border:1px solid #242727!important;border-radius:6px!important;font-size:10px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.grid button.on,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multi .drop button.on{background:#f3bd32!important;color:#090909!important;border-color:#f3bd32!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multi{margin:0!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.upload{min-height:42px!important;margin:0!important;background:#0a0b0b!important;border:1px solid #6f5715!important;border-radius:7px!important;font-size:11px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#shotName{margin:5px 0 10px!important;color:#777!important;font-size:9px!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>textarea{width:100%!important;min-height:90px!important;margin:0!important;background:#070808!important;border:1px solid #242727!important;border-radius:7px!important;box-sizing:border-box!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#save{width:100%!important;min-height:40px!important;margin-top:10px!important;background:#f3bd32!important;color:#090909!important;border-radius:7px!important;font-size:11px!important}
