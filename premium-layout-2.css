@@ -337,3 +337,10 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 }
 #premiumDashboard .p2journalRows .p2journalRow{cursor:pointer!important}
 #premiumDashboard .p2journalRows .p2journalRow:hover{background:#101212!important}
+
+/* Journal history column balance — remove oversized PAIR gap. */
+#premiumDashboard .p2journalRow{
+grid-template-columns:44px 110px 105px 115px 115px 100px 110px 100px!important;
+justify-content:space-between!important;
+column-gap:16px!important;
+}
