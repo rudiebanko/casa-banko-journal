@@ -199,8 +199,8 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 /* Desktop Journal cleanup: remove calendar, daily summary and BANKO status completely. */
 @media(min-width:900px){
  #premiumDashboard .p2calendar,
- #premiumDashboard .p2daily,
- #premiumDashboard .p2bankoPanel,
- #premiumDashboard .p2desktopGrid{display:none!important}
+ #premiumDashboard .p2bankoPanel{display:none!important}
+ #premiumDashboard .p2desktopGrid{display:block!important}
+ #premiumDashboard .p2daily{display:block!important}
  #premiumDashboard .p2accountProgress{display:block!important;margin-top:10px!important}
 }
