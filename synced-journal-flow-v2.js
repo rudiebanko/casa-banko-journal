@@ -7,7 +7,7 @@
   const card=source.closest('.card');
   if(!card||card.dataset.syncedJournalV2==='1')return;
   card.dataset.syncedJournalV2='1';
-  let editingIndex=null, manualMode=false, snapshotPanel=null;
+  let editingIndex=null, manualMode=false;
 
   const title=card.querySelector('.title');
   if(title)title.textContent='JOURNAL TRADE';
@@ -86,12 +86,8 @@
   function updateRPreview(){const risk=Math.abs(parseFloat($('rInput')?.value));const pnl=parseFloat($('pnlInput')?.value);const out=$('autoRResult');if(!out)return null;if(!Number.isFinite(risk)||risk<=0||!Number.isFinite(pnl)){out.textContent='R RESULT: —';return null}const r=pnl/risk;out.textContent='R RESULT: '+(r>=0?'+':'')+r.toFixed(2)+'R';return +r.toFixed(4)}
   $('rInput')?.addEventListener('input',updateRPreview);
   function sessionFromOpenTime(t){const d=openDate(t);if(!d)return t.session||'';const mins=d.getHours()*60+d.getMinutes();if(mins>=15*60&&mins<23*60)return'ASIA';if(mins>=23*60||mins<4*60)return'LONDON';if(mins>=4*60&&mins<14*60)return'NEW YORK';return t.session||''}
-  function ensureSnapshot(t,i){
-    if(!snapshotPanel){
-      snapshotPanel=document.createElement('aside');snapshotPanel.className='journalTradeSnapshot';snapshotPanel.id='journalTradeSnapshot';
-      card.appendChild(snapshotPanel);
-    }
-    const pnl=Number(t.pnl), pnlText=Number.isFinite(pnl)?((pnl>=0?'+':'')+'
+  function openTrade(i){
+    const a=trades(),t=a[i];if(!t)return;editingIndex=i;manualMode=false;showEditor(true);manual.style.display='none';card.classList.add('syncedTradeEditing');
     if(title)title.textContent='JOURNAL TRADE #'+(i+1)+' · '+(t.symbol||'TRADE')+' · '+(t.direction||'—')+' · '+(sessionFromOpenTime(t)||t.session||'—');
     if(manualDetailsLabel)manualDetailsLabel.textContent='TRADE DETAILS';
     hint.textContent='Add your setup, execution notes, grade and screenshot. Synced execution data stays protected.';
@@ -102,43 +98,6 @@
     const autoSession=sessionFromOpenTime(t);one('session',autoSession);lockSession(true);one('phase',t.phase);one('liq',t.liq);one('plan',t.plan);one('grade',t.grade);many('model',t.model);multi('keyLevel',t.keyLevel);multi('bosTF',t.bosTF);multi('entryTF',t.entryTF);setVal('notes',t.notes||'');$('shotName').textContent=t.screenshotName||'No screenshot selected.';save.textContent='SAVE JOURNAL ENTRY';$('status').textContent='';card.scrollIntoView({behavior:'smooth',block:'start'});
   }
   history.addEventListener('click',e=>{const row=e.target.closest('.manageRow');if(!row)return;const rows=[...history.querySelectorAll('.manageRow')],i=rows.indexOf(row);if(i<0)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();openTrade(i)},true);window.casaBankoOpenJournalTrade=i=>{i=Number(i);if(Number.isInteger(i)&&i>=0)openTrade(i)};window.addEventListener('casaBankoOpenJournalTrade',e=>window.casaBankoOpenJournalTrade(e.detail?.index));
-  manual.onclick=()=>{editingIndex=null;manualMode=true;showEditor(true);manual.style.display='none';card.classList.remove('syncedTradeEditing');if(snapshotPanel)snapshotPanel.remove();snapshotPanel=null;if(title)title.textContent='JOURNAL TRADE';if(manualDetailsLabel)manualDetailsLabel.textContent='MANUAL TRADE DETAILS';hint.textContent='Manual fallback entry — use this only for a trade that is not coming from TradeLocker.';const td=$('tradeDate');if(td){td.type='datetime-local';td.style.minWidth='0';td.title='';td.value=''}if(closeTimeInput)closeTimeInput.closest('.syncedCloseTimeWrap').style.display='none';['tradeDate','entryPrice','exitPrice','stopLoss','pnlInput','symbol','rInput'].forEach(id=>lock(id,false));lockSelect('result',false);const rLab=$('rInput')?.parentElement?.querySelector('.detailFieldMiniLabel');if(rLab)rLab.textContent='R RESULT';const rOut=$('autoRResult');if(rOut)rOut.style.display='none';lockDirection(false);lockSession(false);S.source='MANUAL';save.textContent='SAVE MANUAL TRADE'};
-  save.onclick=async function(e){
-    if(manualMode){
-      e?.preventDefault?.();
-      const now=new Date().toISOString(), activeId=window.CasaBankoAccounts?.activeId?.()||'';
-      const riskRaw=$('rInput')?.value??'', pnlRaw=$('pnlInput')?.value??'';
-      const manualTrade={...S,source:'MANUAL',symbol:$('symbol')?.value.trim()||'',date:$('tradeDate')?.value||now,entry:$('entryPrice')?.value===''?null:+$('entryPrice').value,exit:$('exitPrice')?.value===''?null:+$('exitPrice').value,stopLoss:$('stopLoss')?.value===''?null:+$('stopLoss').value,pnl:pnlRaw===''?0:+pnlRaw,r:riskRaw===''?null:+riskRaw,result:$('result')?.value||'',notes:$('notes')?.value||'',screenshotName:$('shot')?.files?.[0]?.name||'',savedAt:now};
-      if(activeId)manualTrade.tradeLockerAccountId=String(activeId);
-      const a=trades();a.push(manualTrade);write(a);
-      try{if(window.CasaBankoAccounts?.saveCurrent)await window.CasaBankoAccounts.saveCurrent()}catch(err){console.warn('CASA BANKO manual trade account persistence:',err)}
-      $('status').textContent='✓ MANUAL TRADE SAVED';
-      manualMode=false;showEditor(false);manual.style.display='';hint.textContent='Select a synced trade from Trade History to add your journal details.';
-      if(typeof refreshAll==='function')refreshAll();
-      return;
-    }
-    if(editingIndex===null)return;
-    const a=trades(),old=a[editingIndex];if(!old)return;const risk=Math.abs(parseFloat($('rInput').value));const calculatedR=updateRPreview();const updated={...old,symbol:$('symbol').value.trim()||old.symbol,riskAmount:Number.isFinite(risk)&&risk>0?risk:null,r:calculatedR,result:old.result,session:sessionFromOpenTime(old)||old.session,phase:S.phase||old.phase,keyLevel:S.keyLevel||old.keyLevel,bosTF:S.bosTF||old.bosTF,entryTF:S.entryTF||old.entryTF,liq:S.liq||old.liq,model:S.model||old.model,plan:S.plan||old.plan,grade:S.grade||old.grade,notes:$('notes').value,screenshotName:$('shot').files[0]?.name||old.screenshotName||'',journalUpdatedAt:new Date().toISOString()};a[editingIndex]=updated;write(a);try{if(window.CasaBankoAccounts?.saveCurrent)await window.CasaBankoAccounts.saveCurrent()}catch(err){console.warn('CASA BANKO journal account persistence:',err)}$('status').textContent='✓ Journal entry saved — R calculated from P&L ÷ intended Risk $.';if(typeof refreshAll==='function')refreshAll()};
-})();+Math.abs(pnl).toFixed(2)):'—';
-    const r=Number(t.r), rText=Number.isFinite(r)?((r>=0?'+':'')+r.toFixed(2)+'R'):'—';
-    snapshotPanel.innerHTML='<div class="snapshotHead"><span>TRADE SNAPSHOT</span><b>#'+(i+1)+'</b></div>'+
-      '<div class="snapshotHero"><div><small>PAIR</small><strong>'+(t.symbol||'—')+'</strong></div><div><small>DIRECTION</small><strong class="'+(String(t.direction).toUpperCase()==='BUY'?'snapBuy':'snapSell')+'">'+(t.direction||'—')+'</strong></div></div>'+
-      '<div class="snapshotStats"><div><small>SESSION</small><b>'+(sessionFromOpenTime(t)||t.session||'—')+'</b></div><div><small>RESULT</small><b>'+(t.result||'—')+'</b></div><div><small>P&L</small><b class="'+(pnl>=0?'snapProfit':'snapLoss')+'">'+pnlText+'</b></div><div><small>R RESULT</small><b>'+rText+'</b></div><div><small>ENTRY</small><b>'+first(t,['entry','entryPrice','openPrice','open_price'])+'</b></div><div><small>EXIT</small><b>'+first(t,['exit','exitPrice','closePrice','close_price'])+'</b></div></div>'+
-      '<div class="snapshotTimes"><div><small>OPEN</small><span>'+fullOpenTime(t)+'</span></div><div><small>CLOSE</small><span>'+(fullCloseTime(t)||'—')+'</span></div></div>'+
-      '<div class="snapshotChart"><span>CHART SCREENSHOT</span><div class="snapshotEmpty">Upload your trade screenshot<br><small>Preview will live here</small></div></div>';
-  }
-  function openTrade(i){
-    const a=trades(),t=a[i];if(!t)return;editingIndex=i;manualMode=false;showEditor(true);manual.style.display='none';card.classList.add('syncedTradeEditing');ensureSnapshot(t,i);
-    if(title)title.textContent='JOURNAL TRADE #'+(i+1)+' · '+(t.symbol||'TRADE')+' · '+(t.direction||'—')+' · '+(sessionFromOpenTime(t)||t.session||'—');
-    if(manualDetailsLabel)manualDetailsLabel.textContent='TRADE DETAILS';
-    hint.textContent='Add your setup, execution notes, grade and screenshot. Synced execution data stays protected.';
-    setVal('symbol',t.symbol||'');const td=$('tradeDate');if(td){td.type='text';td.value=fullOpenTime(t);td.title=fullOpenTime(t);td.style.minWidth='0';td.style.cursor='default'}
-    if(closeTimeInput){const close=fullCloseTime(t);closeTimeInput.value=close||'—';closeTimeInput.title=close||'Close time not available yet'}
-    setVal('entryPrice',first(t,['entry','entryPrice','openPrice','open_price']));setVal('exitPrice',first(t,['exit','exitPrice','closePrice','close_price']));setVal('stopLoss',t.stopLoss);setVal('pnlInput',t.pnl);setVal('rInput',t.riskAmount??t.riskDollar??'');setVal('result',t.result);
-    ['tradeDate','entryPrice','exitPrice','stopLoss','pnlInput'].forEach(id=>lock(id,true));lockSelect('result',true);lock('symbol',false);lock('rInput',false);updateRPreview();one('direction',t.direction);lockDirection(true);
-    const autoSession=sessionFromOpenTime(t);one('session',autoSession);lockSession(true);one('phase',t.phase);one('liq',t.liq);one('plan',t.plan);one('grade',t.grade);many('model',t.model);multi('keyLevel',t.keyLevel);multi('bosTF',t.bosTF);multi('entryTF',t.entryTF);setVal('notes',t.notes||'');$('shotName').textContent=t.screenshotName||'No screenshot selected.';save.textContent='SAVE JOURNAL ENTRY';$('status').textContent='';card.scrollIntoView({behavior:'smooth',block:'start'});
-  }
-  history.addEventListener('click',e=>{const row=e.target.closest('.manageRow');if(!row)return;const rows=[...history.querySelectorAll('.manageRow')],i=rows.indexOf(row);if(i<0)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();openTrade(i)},true);window.addEventListener('casaBankoOpenJournalTrade',e=>{const i=Number(e.detail?.index);if(Number.isInteger(i)&&i>=0)openTrade(i)});
   manual.onclick=()=>{editingIndex=null;manualMode=true;showEditor(true);manual.style.display='none';card.classList.remove('syncedTradeEditing');if(title)title.textContent='JOURNAL TRADE';if(manualDetailsLabel)manualDetailsLabel.textContent='MANUAL TRADE DETAILS';hint.textContent='Manual fallback entry — use this only for a trade that is not coming from TradeLocker.';const td=$('tradeDate');if(td){td.type='datetime-local';td.style.minWidth='0';td.title='';td.value=''}if(closeTimeInput)closeTimeInput.closest('.syncedCloseTimeWrap').style.display='none';['tradeDate','entryPrice','exitPrice','stopLoss','pnlInput','symbol','rInput'].forEach(id=>lock(id,false));lockSelect('result',false);const rLab=$('rInput')?.parentElement?.querySelector('.detailFieldMiniLabel');if(rLab)rLab.textContent='R RESULT';const rOut=$('autoRResult');if(rOut)rOut.style.display='none';lockDirection(false);lockSession(false);S.source='MANUAL';save.textContent='SAVE MANUAL TRADE'};
   save.onclick=async function(e){
     if(manualMode){
