@@ -259,3 +259,20 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
  #premiumDashboard .p2legacyJournalForm .fieldGrid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important}
  #premiumDashboard .p2legacyJournalForm textarea{min-height:110px!important}
 }
+
+/* Journal Entry: compact Recent-Trades visual language; preserve original journal/history behavior. */
+#premiumDashboard .p2journalEntry{padding:14px!important}
+#premiumDashboard .p2journalActions{display:flex!important;justify-content:flex-start!important;margin:8px 0 10px!important}
+#premiumDashboard #p2AddJournal{border:1px solid #8d6b13!important;background:#f3bd32!important;color:#090909!important;border-radius:8px!important;padding:9px 14px!important;font:900 11px Arial!important;cursor:pointer!important}
+#premiumDashboard .p2journalHistory{display:block!important;margin:0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+#premiumDashboard .p2journalHistory>.title{display:none!important}
+#premiumDashboard .p2journalHistory .historyFilterRow{display:flex!important;gap:8px!important;margin:0 0 10px!important;flex-wrap:wrap!important}
+#premiumDashboard .p2journalHistory .historyFilterRow button{width:auto!important;min-width:76px!important;margin:0!important;padding:8px 12px!important;border:1px solid #2a2d2d!important;border-radius:7px!important;background:#070808!important;color:#999!important;font:900 10px Arial!important}
+#premiumDashboard .p2journalHistory .historyFilterRow button.on{background:#f3bd32!important;color:#090909!important;border-color:#f3bd32!important}
+#premiumDashboard .p2journalHistory .rangeLabel{font:800 10px Arial!important;color:#aaa!important;margin:6px 0!important}
+#premiumDashboard .p2journalHistory>.hint{font:700 9px Arial!important;color:#777!important;margin:4px 0 8px!important}
+#premiumDashboard .p2journalHistory .manageBtn{width:auto!important;margin:0 0 8px!important;padding:7px 11px!important;border:1px solid #2a2d2d!important;background:#070808!important;color:#d7ad43!important;border-radius:7px!important;font:900 9px Arial!important}
+#premiumDashboard .p2journalHistory .manageList{display:block!important;max-height:220px!important;overflow-y:auto!important;border-top:1px solid #191b1b!important}
+#premiumDashboard .p2journalHistory #manageTrades>*{margin:0!important;border:0!important;border-bottom:1px solid #191b1b!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:11px 4px!important}
+#premiumDashboard #p2journalFormMount:not([hidden]){display:block!important;margin-top:8px!important}
+#premiumDashboard #p2journalFormMount[hidden],#premiumDashboard #p2journalHistoryMount[hidden]{display:none!important}
