@@ -15,6 +15,7 @@
   hint.className='hint'; hint.id='syncedJournalHint';
   hint.textContent='Select a synced trade from Trade History to add your journal details.';
   title?.insertAdjacentElement('afterend',hint);
+  const uploadBox=$('shot')?.closest('.upload');if(uploadBox){uploadBox.style.cursor='pointer';uploadBox.addEventListener('click',e=>{if(e.target?.id==='shot')return;$('shot')?.click()})}
   const manual=document.createElement('button');
   manual.type='button'; manual.className='manageBtn'; manual.id='syncedManualFallback';
   manual.textContent='+ ADD TRADE MANUALLY';
