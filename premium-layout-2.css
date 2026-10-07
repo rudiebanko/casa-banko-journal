@@ -168,3 +168,13 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
  #premiumDashboard .p2bottom{display:block!important}
  #premiumDashboard .p2performance{display:none!important}
 }
+
+/* Desktop fix: sidebar interaction + no duplicate calendar on Journal */
+@media(min-width:900px){
+ .hero{pointer-events:none!important}
+ nav{pointer-events:auto!important;z-index:999!important}
+ nav button{pointer-events:auto!important;cursor:pointer!important}
+ #premiumDashboard .p2calendar{display:none!important}
+ #premiumDashboard .p2desktopGrid{grid-template-columns:1.55fr .85fr!important}
+ #premiumDashboard .p2daily,#premiumDashboard .p2bankoPanel{min-height:245px!important}
+}
