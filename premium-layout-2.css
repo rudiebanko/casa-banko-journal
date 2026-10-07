@@ -652,3 +652,120 @@ color:#f1f1f1!important;
   border-color:#414643!important;
 }
 }
+
+
+/* Journal composition v2 — compact two-column desktop layout, CSS only. */
+@media (min-width:900px){
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  column-gap:28px!important;
+  align-items:start!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.title,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#syncedJournalHint,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#syncedManualFallback,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.manualBox{
+  grid-column:1 / -1!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#syncedManualFallback{
+  justify-self:start!important;
+  min-width:0!important;
+  width:auto!important;
+  height:34px!important;
+  margin-bottom:12px!important;
+  padding:0 14px!important;
+  font-size:10px!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.label,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.single,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.many,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multi{
+  grid-column:1!important;
+  max-width:none!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.label{
+  margin:10px 0 5px!important;
+  color:#8f9692!important;
+  font-size:9px!important;
+  letter-spacing:.14em!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.single,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.many{
+  gap:6px!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.single button,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.many button,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multiTop{
+  height:32px!important;
+  min-height:32px!important;
+  padding:0 13px!important;
+  border-radius:6px!important;
+  font-size:9px!important;
+  color:#d5d9d7!important;
+  background:#131615!important;
+  border-color:#343936!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.single button.on,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.many button.on{
+  color:#10110f!important;
+  background:#e9b83f!important;
+  border-color:#e9b83f!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multi{
+  margin-bottom:2px!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multiTop{
+  width:100%!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.upload{
+  grid-column:2!important;
+  grid-row:5 / span 4!important;
+  align-self:stretch!important;
+  max-width:none!important;
+  min-height:150px!important;
+  margin:10px 0 0!important;
+  border:1px dashed #4a432a!important;
+  border-radius:10px!important;
+  background:#0f1211!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  color:#d8b54b!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#shot{
+  grid-column:2!important;
+  max-width:none!important;
+  width:100%!important;
+  margin:8px 0 0!important;
+  color:#9ca19e!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#shotName{
+  grid-column:2!important;
+  margin:4px 0 0!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>textarea,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#save,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#status{
+  grid-column:1 / -1!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>textarea{
+  min-height:130px!important;
+  margin-top:5px!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#save{
+  justify-self:end!important;
+  width:auto!important;
+  min-width:190px!important;
+  height:40px!important;
+  margin-top:12px!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing .manualBox{
+  background:#0e1110!important;
+  border:1px solid #252a28!important;
+  border-radius:10px!important;
+  padding:12px!important;
+  margin-bottom:8px!important;
+}
+}
