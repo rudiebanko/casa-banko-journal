@@ -276,3 +276,18 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 #premiumDashboard .p2journalHistory #manageTrades>*{margin:0!important;border:0!important;border-bottom:1px solid #191b1b!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:11px 4px!important}
 #premiumDashboard #p2journalFormMount:not([hidden]){display:block!important;margin-top:8px!important}
 #premiumDashboard #p2journalFormMount[hidden],#premiumDashboard #p2journalHistoryMount[hidden]{display:none!important}
+
+/* Journal history table — same compact language as Recent Trades. */
+#premiumDashboard .p2journalFilters{margin:8px 0 10px!important}
+#premiumDashboard .p2journalTable{width:100%!important;overflow-x:auto!important;border-top:1px solid #191b1b!important}
+#premiumDashboard .p2journalRows{max-height:220px!important;overflow-y:auto!important}
+#premiumDashboard .p2journalRow{display:grid!important;grid-template-columns:42px minmax(90px,1.2fr) 85px 100px 100px 90px 100px 90px!important;align-items:center!important;gap:10px!important;min-width:790px!important;padding:10px 6px!important;border-bottom:1px solid #191b1b!important;font:700 10px Arial!important;color:#aaa!important}
+#premiumDashboard .p2journalRow b{color:#eee!important;font:900 11px Arial!important}
+#premiumDashboard .p2journalRow em,#premiumDashboard .p2journalRow i{font-style:normal!important}
+#premiumDashboard .p2journalRow strong{text-align:right!important}
+#premiumDashboard .p2journalRow i{text-align:right!important;font-weight:900!important}
+#premiumDashboard .p2journalHeader{position:sticky!important;top:0!important;z-index:2!important;background:#080909!important;color:#666!important;font-size:8px!important}
+#premiumDashboard .p2journalHeader b,#premiumDashboard .p2journalHeader strong{color:#666!important;font-size:8px!important}
+#premiumDashboard .p2journalHeader em{font-style:normal!important}
+#premiumDashboard .p2journalRow .up{color:#00df82!important}
+#premiumDashboard .p2journalRow .down{color:#ff424c!important}
