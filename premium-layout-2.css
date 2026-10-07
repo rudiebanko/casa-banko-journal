@@ -319,3 +319,21 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 #premiumDashboard .p2journalRow b{font-size:13px!important}
 #premiumDashboard .p2journalHeader,#premiumDashboard .p2journalHeader b,#premiumDashboard .p2journalHeader strong{font-size:10px!important}
 }
+
+/* Home refinement: larger typography + clickable journal rows + performance full width. */
+@media(min-width:900px){
+#premiumDashboard{font-size:1.2em!important}
+#premiumDashboard .p2head{font-size:15px!important}
+#premiumDashboard .p2head span{font-size:11px!important}
+#premiumDashboard .p2stat small,#premiumDashboard .p2liveBox small{font-size:12px!important}
+#premiumDashboard .p2stat strong{font-size:27px!important}
+#premiumDashboard .p2stat span,#premiumDashboard .p2liveBox span{font-size:12px!important}
+#premiumDashboard .p2dailyRow{font-size:13px!important}
+#premiumDashboard .p2journalRow{font-size:13px!important}
+#premiumDashboard .p2journalRow b{font-size:14px!important}
+#premiumDashboard .p2journalHeader,#premiumDashboard .p2journalHeader b,#premiumDashboard .p2journalHeader strong{font-size:11px!important}
+#premiumDashboard .p2performanceOnly{grid-template-columns:1fr!important}
+#premiumDashboard .p2performanceOnly .p2performance{width:100%!important}
+}
+#premiumDashboard .p2journalRows .p2journalRow{cursor:pointer!important}
+#premiumDashboard .p2journalRows .p2journalRow:hover{background:#101212!important}
