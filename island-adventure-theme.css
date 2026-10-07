@@ -43,3 +43,61 @@ nav button.active{color:#fff2c0!important;background:linear-gradient(110deg,#9c4
 #journal .journeyLine{stroke:#1bdef5!important}
 @media(min-width:900px){#premiumDashboard{position:relative}#premiumDashboard:before{content:"";display:block;height:155px;margin-bottom:14px;border:3px solid #9b6329;border-radius:12px;background:linear-gradient(0deg,rgba(4,17,30,.18),rgba(4,17,30,.05)),url("island-adventure-bg.svg") center 46%/cover no-repeat;box-shadow:inset 0 0 0 2px #e9a94d77,0 5px 0 #39210d}}
 @media(max-width:899px){.hero{min-height:145px!important;background-position:center 44%!important}#premiumDashboard .p2progressMeta{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}#premiumDashboard .p2progressMeta>div{display:flex!important;flex-direction:column!important;min-width:0!important;padding:9px 7px!important}#premiumDashboard .p2progressMeta small{display:block!important;font-size:9px!important;line-height:1.3!important;white-space:normal!important}#premiumDashboard .p2progressMeta strong{display:block!important;font-size:clamp(11px,3vw,16px)!important;overflow-wrap:anywhere!important}}
+
+/* Island adventure layout pass 2 — layered game panels, compact spacing, live milestone. */
+#premiumDashboard{background:transparent!important}
+#premiumDashboard .p2accountHeader{
+ position:relative!important;overflow:hidden!important;
+ background:linear-gradient(90deg,rgba(5,23,36,.52),rgba(5,23,36,.12)),url("island-adventure-bg.svg") center 45%/cover no-repeat!important;
+ border:3px solid #ad6b2c!important;border-radius:13px!important;
+ padding:18px!important;margin-bottom:12px!important;
+ box-shadow:inset 0 0 0 2px #e6a64988,0 5px 0 #4e2b11!important
+}
+#premiumDashboard .p2accountHeader:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 40%,#04182855)}
+#premiumDashboard .p2accountHeader>*{position:relative;z-index:1}
+#premiumDashboard .p2liveBox{background:linear-gradient(140deg,#492408,#241507)!important;border:3px solid #b57731!important;box-shadow:inset 0 0 0 1px #ffc65b,0 4px 0 #45230a!important}
+#premiumDashboard .p2dashTitle{color:#ffcf5b!important;text-shadow:0 2px 0 #49280c!important}
+#premiumDashboard .p2stat{position:relative!important;overflow:hidden!important}
+#premiumDashboard .p2stat:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.11;background:repeating-linear-gradient(0deg,transparent 0 17px,#ffe0a4 18px,transparent 20px)}
+#premiumDashboard .p2stat:nth-child(1){background:linear-gradient(145deg,#12457b,#052244)!important}
+#premiumDashboard .p2stat:nth-child(2){background:linear-gradient(145deg,#5d290e,#281409)!important}
+#premiumDashboard .p2stat:nth-child(3){background:linear-gradient(145deg,#421b71,#190d36)!important}
+#premiumDashboard .p2stat:nth-child(4){background:linear-gradient(145deg,#075c59,#063238)!important}
+#premiumDashboard .p2panel{position:relative!important}
+#premiumDashboard .p2daily:before,#premiumDashboard .p2accountProgress:before{
+ content:"";position:absolute;inset:0 0 auto;height:33px;pointer-events:none;
+ background:repeating-linear-gradient(0deg,transparent 0 10px,#170c06 11px,#9b5725 12px,#603014 15px);
+ border-bottom:2px solid #b47534;border-radius:9px 9px 0 0;opacity:.55
+}
+#premiumDashboard .p2daily .p2head,#premiumDashboard .p2accountProgress .p2head{position:relative;z-index:1}
+#premiumDashboard .p2summary b{border-color:#079cce!important}
+#premiumDashboard .p2accountProgress svg{background:linear-gradient(0deg,#062a40bb,transparent),url("island-adventure-bg.svg") center 85%/cover!important;border-radius:5px}
+#premiumDashboard .p2islandMilestone{
+ display:flex!important;align-items:center!important;gap:13px!important;
+ padding:12px 15px!important;margin:12px 0!important;
+ border:3px solid #a7682d!important;border-radius:12px!important;
+ background:linear-gradient(170deg,#56301b,#26180f 65%,#160f0b)!important;
+ box-shadow:inset 0 0 0 1px #e6a147,0 5px 0 #3e220f,0 9px 18px #0006!important;
+ color:#fff4df!important;font-family:Arial,sans-serif!important
+}
+#premiumDashboard .p2milestoneIcon{flex:0 0 52px!important;display:grid!important;place-items:center!important;height:52px!important;border:2px solid #d89439!important;border-radius:7px!important;background:linear-gradient(135deg,#c4771b,#6b370f)!important;color:#ffdf64!important;font-size:33px!important;text-shadow:0 2px #4c250a}
+#premiumDashboard .p2milestoneMain{flex:1;min-width:0}
+#premiumDashboard .p2milestoneTop{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:9px;font-size:11px;font-weight:800}
+#premiumDashboard .p2milestoneTop b{display:block;font-size:23px;color:#ffe28b}
+#premiumDashboard .p2milestoneTop>span:last-child{color:#d5dce4;white-space:nowrap}
+#premiumDashboard .p2milestoneTrack{height:18px;background:#041f36;border:2px solid #0e6387;border-radius:10px;overflow:hidden}
+#premiumDashboard .p2milestoneFill{height:100%;border-radius:8px;background:linear-gradient(180deg,#76efff,#00baf7 60%,#0872ce);box-shadow:0 0 12px #0ce1ff}
+#premiumDashboard .p2islandMilestone>strong{font-size:18px;align-self:flex-end}
+@media(min-width:900px){#premiumDashboard:before{display:none!important}#premiumDashboard .p2accountHeader{min-height:185px!important;background-position:center 48%!important}#premiumDashboard .p2desktopGrid{gap:12px!important}}
+@media(max-width:899px){
+ #premiumDashboard .p2accountHeader{padding:12px!important;min-height:130px!important;gap:10px!important}
+ #premiumDashboard .p2accountHeader img{max-width:43%!important;object-fit:contain!important}
+ #premiumDashboard .p2liveBox{max-width:55%!important;min-width:0!important}
+ #premiumDashboard .p2top{gap:12px!important}
+ #premiumDashboard .p2desktopGrid{gap:13px!important}
+ #premiumDashboard .p2islandMilestone{gap:8px!important;padding:10px 8px!important}
+ #premiumDashboard .p2milestoneIcon{flex-basis:39px!important;height:42px!important;font-size:26px!important}
+ #premiumDashboard .p2milestoneTop{font-size:9px!important;gap:4px!important}
+ #premiumDashboard .p2milestoneTop b{font-size:20px!important}
+ #premiumDashboard .p2islandMilestone>strong{font-size:15px!important}
+}
