@@ -769,3 +769,30 @@ color:#f1f1f1!important;
   margin-bottom:8px!important;
 }
 }
+
+
+/* Journal soft-eye contrast — warm muted text on charcoal. */
+@media (min-width:900px){
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.single button:not(.on),
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.many button:not(.on),
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multiTop{
+  color:#b8b6ad!important;
+  background:#151817!important;
+  border-color:#303431!important;
+  font-weight:750!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.single button:not(.on):hover,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.many button:not(.on):hover,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.multiTop:hover{
+  color:#d1cdbf!important;
+  background:#191c1b!important;
+  border-color:#454840!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.label,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing .detailFieldMiniLabel{
+  color:#858a86!important;
+}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>#syncedManualFallback{
+  color:#bbb9b1!important;
+}
+}
