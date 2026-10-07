@@ -204,3 +204,39 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
  #premiumDashboard .p2daily{display:block!important}
  #premiumDashboard .p2accountProgress{display:block!important;margin-top:10px!important}
 }
+
+/* Desktop top header — surgical presentation override. Dashboard content remains untouched. */
+@media(min-width:900px){
+ #premiumDashboard{max-width:1180px!important;margin:0 auto!important}
+ #premiumDashboard .p2accountHeader{
+  display:grid!important;
+  grid-template-columns:minmax(280px,1fr) 270px!important;
+  align-items:center!important;
+  gap:24px!important;
+  width:100%!important;
+  margin:0 0 16px!important;
+  padding:0 0 14px!important;
+  border-bottom:1px solid #252828!important;
+  position:static!important;
+  height:auto!important;
+ }
+ #premiumDashboard .p2accountHeader img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:300px!important;
+  justify-self:start!important;
+ }
+ #premiumDashboard .p2liveBox{
+  display:block!important;
+  justify-self:end!important;
+  width:270px!important;
+  max-width:270px!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:8px 12px!important;
+  position:static!important;
+ }
+ #premiumDashboard .p2liveBox strong{font-size:19px!important}
+ #premiumDashboard .p2dashTitle{display:none!important}
+}
