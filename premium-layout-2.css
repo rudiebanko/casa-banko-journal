@@ -935,3 +935,37 @@ color:#f1f1f1!important;
   color:#15140e!important;
 }
 }
+
+/* CYBER BLUE + ORANGE THEME — visual tokens only; preserves data, structure and behavior. */
+:root{--p2-bg:#020b14;--p2-card:#061421;--p2-card2:#081b2a;--p2-border:#123a52;--p2-gold:#ffac38;--p2-gold-hi:#ffd077;--p2-text:#e5f5fc;--p2-muted:#8aabba;--p2-green:#00dcae;--p2-red:#ff485e}
+html,body,.app,main,.screen{background:#020b14!important}
+.hero{background:#03111e!important;border-color:#10405c!important}
+nav{background:#03111e!important}
+@media(min-width:900px){nav{background:transparent!important}nav button.active{background:#063b66!important;border-left-color:#19bfff!important}}
+nav button.active{color:#6bdfff!important}
+#premiumDashboard .p2stat,#premiumDashboard .p2panel{background:#051522!important;border-color:#115070!important}
+#premiumDashboard .p2stat{box-shadow:inset 0 1px 0 rgba(42,194,255,.045)!important}
+#premiumDashboard .p2head{color:#d6f4ff!important}
+#premiumDashboard .p2head span,#premiumDashboard .p2k,#premiumDashboard .p2sub{color:#84a8ba!important}
+#premiumDashboard .p2summary b,#premiumDashboard .p2progressMeta>div{background:#04111c!important;border-color:#123e56!important}
+#premiumDashboard .p2accountProgress svg polyline,#premiumDashboard .p2performance svg polyline{stroke:#00d6ed!important}
+#premiumDashboard .p2liveBox{background:#061724!important;border-color:#c48a32!important}
+#premiumDashboard .p2journalEntry{border-color:#0789b4!important}
+#premiumDashboard #p2AddJournal{background:#00c5e8!important;border-color:#00c5e8!important;color:#02131e!important}
+#premiumDashboard .p2legacyJournalForm{background:#06131e!important;border-color:#14465f!important}
+#premiumDashboard .p2legacyJournalForm>.title{color:#ffb447!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.single button:not(.on),
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.many button:not(.on),
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing .multi>.multiTop,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing .multi>.drop button{background:#071c2a!important;border-color:#15506a!important;color:#8cdef1!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.single button.on,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.many button.on,
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing .multi>.drop button.on{background:#00c5e8!important;border-color:#00c5e8!important;color:#00131c!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing>.upload{background:#071b29!important;border-color:#1382a0!important;color:#6bdfff!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing textarea{background:#04111c!important;border-color:#19465d!important}
+#premiumDashboard .p2legacyJournalForm.syncedTradeEditing #save{background:#ffad39!important;color:#11100a!important}
+#premiumDashboard .p2journalRow{border-color:#153b51!important}
+#premiumDashboard .p2journalRow:hover{background:#092336!important}
+#journal .card{border-color:#14435d!important}
+#journal .journeyChart,#journal .journeyBottom>div{background:#04131f!important;border-color:#17465c!important}
+#journal .journeyLine{stroke:#00d6ed!important}
