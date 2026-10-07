@@ -305,3 +305,17 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 #premiumDashboard .p2journalRow b{font-size:12px!important}
 #premiumDashboard .p2journalHeader,#premiumDashboard .p2journalHeader b,#premiumDashboard .p2journalHeader strong{font-size:9px!important}
 }
+
+/* Home / Journal readability bump 2 — slightly larger again, typography only. */
+@media(min-width:900px){
+#premiumDashboard{font-size:1.14em!important}
+#premiumDashboard .p2head{font-size:14px!important}
+#premiumDashboard .p2head span{font-size:10px!important}
+#premiumDashboard .p2stat small,#premiumDashboard .p2liveBox small{font-size:11px!important}
+#premiumDashboard .p2stat strong{font-size:25px!important}
+#premiumDashboard .p2stat span,#premiumDashboard .p2liveBox span{font-size:11px!important}
+#premiumDashboard .p2dailyRow,#premiumDashboard .p2recentRow{font-size:12px!important}
+#premiumDashboard .p2journalRow{font-size:12px!important}
+#premiumDashboard .p2journalRow b{font-size:13px!important}
+#premiumDashboard .p2journalHeader,#premiumDashboard .p2journalHeader b,#premiumDashboard .p2journalHeader strong{font-size:10px!important}
+}
