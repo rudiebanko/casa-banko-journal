@@ -248,3 +248,14 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 #premiumDashboard .p2liveBox strong{font-size:19px!important}
 #premiumDashboard .p2dashTitle{display:none!important}
 }
+
+/* Original journal-entry workflow mounted into premium dashboard. */
+#premiumDashboard .p2journalEntry{margin-top:10px!important}
+#premiumDashboard #p2journalEntryMount{padding-top:8px!important}
+#premiumDashboard .p2legacyJournalForm{margin:0!important;border:0!important;background:transparent!important;box-shadow:none!important;padding:0!important}
+#premiumDashboard .p2legacyJournalForm>.title{display:none!important}
+@media(min-width:900px){
+ #premiumDashboard .p2journalEntry{padding:14px!important}
+ #premiumDashboard .p2legacyJournalForm .fieldGrid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important}
+ #premiumDashboard .p2legacyJournalForm textarea{min-height:110px!important}
+}
