@@ -23,8 +23,9 @@ main{background:transparent!important;box-shadow:none!important}#journal{backgro
 }
 
 /* Approved shared card treatment — 10% less transparent than the .72 baseline. Layout/behavior unchanged. */
-#journal .card,#calendar .card,#settings .card{background:rgba(2,5,5,.82)!important;border-color:rgba(216,170,61,.78)!important;box-shadow:0 12px 28px rgba(0,0,0,.40),inset 0 1px 0 rgba(255,232,163,.07)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-#calendar .day,#calendar .weekSummary{background:rgba(2,5,5,.60)!important;border-color:rgba(202,155,45,.76)!important;box-shadow:inset 0 1px 0 rgba(255,236,174,.07),0 4px 10px rgba(0,0,0,.10)!important}
+#journal .card,#settings .card{background:rgba(2,5,5,.82)!important;border-color:rgba(216,170,61,.78)!important;box-shadow:0 12px 28px rgba(0,0,0,.40),inset 0 1px 0 rgba(255,232,163,.07)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+#calendar .card{background:rgba(6,27,46,.82)!important;border-color:rgba(0,187,231,.78)!important;box-shadow:0 12px 28px rgba(0,0,0,.40),inset 0 1px 0 rgba(76,218,255,.07)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+#calendar .day,#calendar .weekSummary{background:rgba(7,31,51,.60)!important;border-color:rgba(0,173,220,.76)!important;box-shadow:inset 0 1px 0 rgba(76,218,255,.07),0 4px 10px rgba(0,0,0,.10)!important}
 
 /* BANKO STATUS — uses matching artwork inside the glass panel */
 #journal .bankoCard{position:relative;overflow:hidden;background:rgba(2,5,5,.82)!important;border-color:#d4a52e;box-shadow:0 16px 34px rgba(0,0,0,.42),0 0 0 1px rgba(255,220,118,.10),inset 0 1px 0 rgba(255,235,170,.14);backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
