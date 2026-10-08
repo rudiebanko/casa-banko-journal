@@ -24,7 +24,7 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
  .hero{position:fixed!important;left:0!important;top:0!important;bottom:0!important;width:190px!important;height:100vh!important;min-height:100vh!important;padding:24px 16px!important;border-right:1px solid var(--p2-border)!important;border-bottom:0!important;align-items:flex-start!important;z-index:20!important}
  .hero>div:not(#globalLiveAccount){width:158px!important;height:80px!important;background-position:center top!important}
  main{padding:18px 20px 88px!important;max-width:1500px!important;margin:0 auto!important}
- nav{position:fixed!important;left:0!important;top:118px!important;bottom:auto!important;width:190px!important;height:auto!important;display:flex!important;flex-direction:column!important;gap:4px!important;padding:8px 12px!important;border:0!important;background:transparent!important;z-index:30!important}
+ nav{position:fixed!important;left:0!important;top:118px!important;bottom:auto!important;transform:none!important;width:190px!important;height:auto!important;display:flex!important;flex-direction:column!important;gap:4px!important;padding:8px 12px!important;border:0!important;background:transparent!important;z-index:30!important}
  nav button{width:100%!important;min-height:45px!important;text-align:left!important;padding:0 14px!important;border-radius:8px!important;font-size:12px!important;line-height:1.25!important}
  nav button br{display:none!important}
  nav button.active{background:rgba(230,182,64,.13)!important;border-left:2px solid var(--p2-gold)!important}
