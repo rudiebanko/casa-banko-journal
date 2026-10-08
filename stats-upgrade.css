@@ -1,5 +1,25 @@
 @import url('./analytics-polish.css?v=20260927-1444');
 /* CASA BANKO polished Stats dashboard */
+/* Cyber Blue Stats screen — visual styling only; all IDs and calculations preserved. */
+#stats.screen.active{color:#e5f5fc}
+#stats .card,#statsFinishedDetails>.card{background:linear-gradient(145deg,#09243b,#061a2d 65%,#061525)!important;border:1px solid #087ca5!important;border-radius:10px!important;box-shadow:inset 0 1px 0 rgba(57,209,255,.08)!important;padding:18px!important}
+#stats .title{color:#d7f4ff!important;font-size:19px!important;letter-spacing:.3px!important}
+#stats .statsHero{background:linear-gradient(145deg,#09243b,#061a2d 65%,#061525)!important}
+#stats .statsHeroPnl .v{font-size:38px}
+#stats .statsQuickBox,#stats .statsStreak{background:linear-gradient(155deg,#08243a,#06192b)!important;border:1px solid #08658a!important}
+#stats .statsQuickBox .v{font-size:18px}
+#stats .statsQuickBox .k,#stats .statsStreak .k{font-size:10px;color:#8daec0}
+#stats .statsSectionTitle{color:#d7f4ff!important;font-size:17px}
+#stats .statsBreakName{color:#e5f5fc;font-size:14px}
+#stats .statsBreakMeta{font-size:11px;color:#91a8b7}
+#stats .statsBreakValue{font-size:16px}
+#stats .statsBreakValue small{font-size:10px}
+#stats .statsEmpty{color:#91a8b7}
+#stats .filterRow button{background:#09243b!important;border:1px solid #14536e!important;color:#b5d9e9!important;border-radius:7px!important}
+#stats .filterRow button.on{background:#00c5e8!important;border-color:#00c5e8!important;color:#00131c!important}
+#stats .rangeLabel{color:#8daec0}
+#stats .statsStreak .v{font-size:24px}
+
 #stats .statsHero{background:linear-gradient(145deg,#09243b,#061a2d 65%,#061525);border-color:#087ca5!important;overflow:hidden}
 #stats .statsHeroTop{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-top:14px;padding-bottom:16px;border-bottom:1px solid #15516b}
 #stats .statsHeroPnl .k,#stats .statsHeroSide .k{font-size:9px;color:#8daec0;font-weight:900;letter-spacing:.7px}
