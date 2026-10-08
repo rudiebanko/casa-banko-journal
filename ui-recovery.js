@@ -28,7 +28,10 @@
     try{if(typeof renderManage==='function')renderManage()}catch(e){}
     var saved='journal';try{saved=localStorage.getItem('casaBankoActiveTab')||'journal'}catch(e){}
     if(!document.getElementById(saved))saved='journal';
-    showScreen(saved);
+    // The main app has already restored and rendered the saved screen on startup.
+    // Avoid a second full refresh; keep this recovery handler for subsequent navigation.
+    var active=document.querySelector('.screen.active');
+    if(!active || active.id!==saved)showScreen(saved);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
   window.casaShowScreen=showScreen;
