@@ -1,6 +1,6 @@
 /* CASA BANKO Rewards — game-style progression */
-#analytics .rewardsHero{position:relative;overflow:hidden;background:rgba(2,5,5,.82)!important;border-color:#d4a52e!important;box-shadow:0 16px 34px rgba(0,0,0,.42),0 0 0 1px rgba(255,220,118,.10),inset 0 1px 0 rgba(255,235,170,.14)!important}
-#analytics .rewardsHero:before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(145deg,rgba(2,5,5,.78),rgba(2,5,5,.88)),url("journal-rolls-royce-bg.png?v=daytime-panel-2242");background-size:auto,100vw auto;background-position:center,center calc(-1 * (100vw * 1.06 + 14px));background-repeat:no-repeat;z-index:0;opacity:.72}
+#analytics .rewardsHero{position:relative;overflow:hidden;background:linear-gradient(145deg,#09243b,#061a2d 65%,#061525)!important;border-color:#087ca5!important;box-shadow:0 16px 34px rgba(0,0,0,.42),0 0 0 1px rgba(255,220,118,.10),inset 0 1px 0 rgba(255,235,170,.14)!important}
+#analytics .rewardsHero:before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(145deg,rgba(6,26,45,.82),rgba(6,21,37,.90)),url("journal-rolls-royce-bg.png?v=daytime-panel-2242");background-size:auto,100vw auto;background-position:center,center calc(-1 * (100vw * 1.06 + 14px));background-repeat:no-repeat;z-index:0;opacity:.72}
 #analytics .rewardsHero>*{position:relative;z-index:1}
 #analytics .rewardTop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-top:8px}
 #analytics .rewardBalance{font-size:31px;font-weight:1000;color:#f2cc60;margin-top:5px}
@@ -8,32 +8,32 @@
 #analytics .rewardTrack{height:14px;background:linear-gradient(180deg,rgba(65,47,11,.58),rgba(30,23,8,.64));border:1px solid rgba(190,143,33,.50);border-radius:20px;overflow:hidden;margin:14px 0 7px;box-shadow:inset 0 2px 5px rgba(0,0,0,.45)}
 #analytics .rewardFill{height:100%;background:linear-gradient(90deg,#9c6508,#e9bd43,#f5db78);box-shadow:0 0 10px rgba(231,183,60,.25)}
 #analytics .rewardGrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}
-#analytics .rewardBox,#analytics .missionBox,#analytics .achievement{background:#0a0906;border:1px solid #403116;border-radius:13px;padding:13px}
-#analytics .rewardsHero .rewardBox{background:rgba(2,5,5,.60)!important;border-color:rgba(202,155,45,.76)!important;box-shadow:inset 0 1px 0 rgba(255,236,174,.07),0 4px 10px rgba(0,0,0,.10)!important}
-#analytics .rewardK{font-size:9px;color:#e5dcc9;font-weight:900;letter-spacing:.4px}
-#analytics .rewardV{font-size:16px;font-weight:1000;color:#fff8e9;margin-top:6px}
-#analytics .rewardsHero .earned{margin-top:10px;background:rgba(20,14,3,.62);border:1px solid rgba(204,155,42,.62);border-radius:11px;padding:10px 12px;color:#f2cd62;font-weight:900;letter-spacing:.2px;text-transform:uppercase;box-shadow:inset 0 1px 0 rgba(255,226,138,.08),0 4px 12px rgba(0,0,0,.10)}
+#analytics .rewardBox,#analytics .missionBox,#analytics .achievement{background:linear-gradient(155deg,#08243a,#06192b);border:1px solid #08658a;border-radius:13px;padding:13px}
+#analytics .rewardsHero .rewardBox{background:linear-gradient(155deg,#08243a,#06192b)!important;border-color:#08658a!important;box-shadow:inset 0 1px 0 rgba(255,236,174,.07),0 4px 10px rgba(0,0,0,.10)!important}
+#analytics .rewardK{font-size:9px;color:#8daec0;font-weight:900;letter-spacing:.4px}
+#analytics .rewardV{font-size:16px;font-weight:1000;color:#e5f5fc;margin-top:6px}
+#analytics .rewardsHero .earned{margin-top:10px;background:#08243a;border:1px solid #08658a;border-radius:11px;padding:10px 12px;color:#f2cd62;font-weight:900;letter-spacing:.2px;text-transform:uppercase;box-shadow:inset 0 1px 0 rgba(255,226,138,.08),0 4px 12px rgba(0,0,0,.10)}
 #analytics .rewardSection{margin-top:14px}
 #analytics .missionBox{margin-top:9px}
 #analytics .missionTop{display:flex;justify-content:space-between;gap:10px;font-size:12px;font-weight:900}
-#analytics .missionMeta{font-size:10px;color:#a99e87;margin-top:5px}
-#analytics .missionTrack{height:9px;background:#29251b;border-radius:20px;overflow:hidden;margin-top:9px}
+#analytics .missionMeta{font-size:10px;color:#8daec0;margin-top:5px}
+#analytics .missionTrack{height:9px;background:#06192b;border-radius:20px;overflow:hidden;margin-top:9px}
 #analytics .missionFill{height:100%;background:linear-gradient(90deg,#9d6810,#f2cb55)}
 #analytics .achievementGrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
 #analytics .achievement{min-height:108px;position:relative}
 #analytics .achievement.locked{opacity:.42;filter:grayscale(.65)}
-#analytics .achievement.unlocked{border-color:#84631a;background:linear-gradient(145deg,#181205,#090806)}
+#analytics .achievement.unlocked{border-color:#087ca5;background:linear-gradient(145deg,#09243b,#061525)}
 #analytics .achievementIcon{font-size:25px}
 #analytics .achievementName{font-size:11px;font-weight:1000;margin-top:8px}
-#analytics .achievementMeta{font-size:9px;color:#a99e87;margin-top:5px;line-height:1.35}
+#analytics .achievementMeta{font-size:9px;color:#8daec0;margin-top:5px;line-height:1.35}
 #analytics .achievementState{position:absolute;right:9px;top:9px;font-size:11px;color:#f2cc60;font-weight:900}
 #analytics .levelRoad{display:grid;gap:8px;margin-top:10px}
-#analytics .levelStep{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:10px;padding:11px;border:1px solid #352b18;border-radius:12px;background:#0a0907}
+#analytics .levelStep{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:10px;padding:11px;border:1px solid #08658a;border-radius:10px;background:linear-gradient(145deg,#09243b,#061525)}
 #analytics .levelStep.current{border-color:#b68a22;background:#181205}
-#analytics .levelStep.done{border-color:#62501f}
+#analytics .levelStep.done{border-color:#08658a}
 #analytics .levelNum{font-size:10px;color:#f2cc60;font-weight:1000}
 #analytics .levelName{font-size:11px;font-weight:900}
-#analytics .levelReq{font-size:9px;color:#9f947d;text-align:right}
+#analytics .levelReq{font-size:9px;color:#8daec0;text-align:right}
 nav button[data-screen="analytics"]{color:#8c8475!important;filter:grayscale(1)!important;opacity:.88}
 nav button[data-screen="analytics"].active{color:#f0c34d!important;filter:none!important;opacity:1}
 /* Settings nav: match the compact icon footprint used by the other tabs. */
@@ -42,4 +42,4 @@ nav button[data-screen="settings"]::before,nav button[data-screen="settings"]::a
 nav button[data-screen="settings"] .settingsNavIcon{display:inline-block!important;font-family:Arial,sans-serif!important;font-size:11px!important;font-weight:400!important;line-height:10px!important;height:10px!important;vertical-align:baseline!important;color:currentColor!important;-webkit-text-fill-color:currentColor!important;transform:none!important;margin:0!important}
 nav button[data-screen="settings"].active{color:#f0c34d!important}
 @media(max-width:360px){#analytics .rewardBalance{font-size:27px}#analytics .achievementGrid{grid-template-columns:1fr}}
-@media(min-width:900px){#analytics.screen.active{display:block;max-width:1000px;margin:0 auto}#analyticsCharts{display:grid;grid-template-columns:1fr 1fr;gap:20px}#analyticsCharts>.card{margin:0}#analyticsCharts>.rewardsHero,#analyticsCharts>.rewardWide{grid-column:1/-1}#analytics .achievementGrid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:900px){#analytics.screen.active{display:block;max-width:1120px;margin:0 auto}#analyticsCharts{display:grid;grid-template-columns:1fr 1fr;gap:20px}#analyticsCharts>.card{margin:0}#analyticsCharts>.rewardsHero,#analyticsCharts>.rewardWide{grid-column:1/-1}#analytics .achievementGrid{grid-template-columns:repeat(4,1fr)}}
