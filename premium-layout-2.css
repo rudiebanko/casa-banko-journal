@@ -87,7 +87,8 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 
 /* Clean break from legacy Journal UI: old controls remain hidden only as a compatibility bridge for existing JS. */
 #journalLegacyBridge{display:none!important}
-#journal{display:block!important}
+#journal.screen.active{display:block!important}
+#journal.screen:not(.active){display:none!important}
 #journal #premiumDashboard{display:block!important}
 
 /* Recent Trades: independently scrollable so full trade history can be reviewed */
