@@ -941,7 +941,40 @@ color:#f1f1f1!important;
 html,body,.app,main,.screen{background:#020b14!important}
 .hero{background:#03111e!important;border-color:#10405c!important}
 nav{background:#03111e!important}
-@media(min-width:900px){nav{background:transparent!important}nav button.active{background:#063b66!important;border-left-color:#19bfff!important}}
+@media(min-width:900px){nav{background:transparent!important}nav button.active{background:#063b66!important;border-left-color:#19bfff!important}
+
+ .app>.hero{width:190px!important;padding:14px 12px!important;align-items:flex-start!important}
+ .app>.hero>div:not(#globalLiveAccount){width:142px!important;height:56px!important;background-position:left top!important}
+ .app>.hero>#globalLiveAccount{position:absolute!important;top:85px!important;left:12px!important;right:12px!important;width:auto!important;max-width:none!important;margin:0!important;box-sizing:border-box!important;text-align:center!important;padding:10px 8px!important}
+ .app>nav{
+  position:fixed!important;left:0!important;top:230px!important;bottom:auto!important;
+  transform:none!important;right:auto!important;margin:0!important;
+  width:190px!important;height:auto!important;min-height:280px!important;
+  display:flex!important;flex-direction:column!important;align-items:stretch!important;
+  gap:8px!important;padding:10px 12px!important;overflow:visible!important;
+  background:#03111e!important;z-index:1000!important;
+ }
+ .app>nav>button{
+  display:block!important;visibility:visible!important;opacity:1!important;
+  width:100%!important;min-height:48px!important;height:auto!important;
+  padding:12px 14px!important;text-align:left!important;
+  font:800 13px/1.4 Arial,sans-serif!important;letter-spacing:.3px!important;
+  color:#c1d9e6!important;-webkit-text-fill-color:#c1d9e6!important;
+  background:#0a2133!important;border:1px solid #174057!important;border-radius:8px!important;
+  white-space:normal!important;filter:none!important;transform:none!important;
+ }
+ .app>nav>button.active{
+  color:#72e5ff!important;-webkit-text-fill-color:#72e5ff!important;
+  background:#073c62!important;border:1px solid #0789b5!important;
+ }
+ .app>nav>button br{display:none!important}
+ .app>nav>button .rewardNavIcon,.app>nav>button .settingsNavIcon{
+  display:inline!important;visibility:visible!important;opacity:1!important;
+  color:inherit!important;-webkit-text-fill-color:currentColor!important;
+  font-size:14px!important;margin-right:8px!important;
+ }
+
+}
 nav button.active{color:#6bdfff!important}
 #premiumDashboard .p2stat,#premiumDashboard .p2panel{background:#051522!important;border-color:#115070!important}
 #premiumDashboard .p2stat{box-shadow:inset 0 1px 0 rgba(42,194,255,.045)!important}
@@ -1021,38 +1054,4 @@ nav button.active{color:#6bdfff!important}
   overflow-wrap:anywhere!important;
  }
  #premiumDashboard .p2progressAxis span{font-size:10px!important}
-}
-
-/* Desktop sidebar visibility repair: restore readable navigation labels and icons. */
-@media (min-width:900px){
- .app>.hero{width:190px!important;padding:14px 12px!important;align-items:flex-start!important}
- .app>.hero>div:not(#globalLiveAccount){width:142px!important;height:56px!important;background-position:left top!important}
- .app>.hero>#globalLiveAccount{position:absolute!important;top:85px!important;left:12px!important;right:12px!important;width:auto!important;max-width:none!important;margin:0!important;box-sizing:border-box!important;text-align:center!important;padding:10px 8px!important}
- .app>nav{
-  position:fixed!important;left:0!important;top:230px!important;bottom:auto!important;
-  transform:none!important;right:auto!important;margin:0!important;
-  width:190px!important;height:auto!important;min-height:280px!important;
-  display:flex!important;flex-direction:column!important;align-items:stretch!important;
-  gap:8px!important;padding:10px 12px!important;overflow:visible!important;
-  background:#03111e!important;z-index:1000!important;
- }
- .app>nav>button{
-  display:block!important;visibility:visible!important;opacity:1!important;
-  width:100%!important;min-height:48px!important;height:auto!important;
-  padding:12px 14px!important;text-align:left!important;
-  font:800 13px/1.4 Arial,sans-serif!important;letter-spacing:.3px!important;
-  color:#c1d9e6!important;-webkit-text-fill-color:#c1d9e6!important;
-  background:#0a2133!important;border:1px solid #174057!important;border-radius:8px!important;
-  white-space:normal!important;filter:none!important;transform:none!important;
- }
- .app>nav>button.active{
-  color:#72e5ff!important;-webkit-text-fill-color:#72e5ff!important;
-  background:#073c62!important;border:1px solid #0789b5!important;
- }
- .app>nav>button br{display:none!important}
- .app>nav>button .rewardNavIcon,.app>nav>button .settingsNavIcon{
-  display:inline!important;visibility:visible!important;opacity:1!important;
-  color:inherit!important;-webkit-text-fill-color:currentColor!important;
-  font-size:14px!important;margin-right:8px!important;
- }
 }
