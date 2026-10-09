@@ -1089,3 +1089,20 @@ main > .screen:not(#journal) > .p2sharedAccountHeader{grid-column:1 / -1;grid-ro
 
 /* Journal history: preserve column alignment with both execution times. */
 #premiumDashboard .p2journalRow{grid-template-columns:44px 110px 105px 115px 115px 105px 105px 112px 112px 110px 100px!important;min-width:1260px!important}
+
+/* Unified journal trade details: execution, direction, and session share one Cyber Blue card. */
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox,
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm.syncedTradeEditing .manualBox{
+  display:block!important;background:#071b2b!important;border:1px solid #087ca5!important;border-radius:11px!important;padding:15px!important;margin:8px 0 14px!important;
+}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox>.label{color:#80dff1!important;margin:13px 0 9px!important;font-size:11px!important;letter-spacing:.08em}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox>.label:first-child{margin-top:0!important}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .detailFieldMiniLabel{color:#80dff1!important;font-size:10px!important}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .field{background:#061e30!important;border:1px solid #12678b!important;color:#e6f8ff!important;border-radius:9px!important;min-height:43px!important}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .single[data-k="direction"],
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .single[data-k="session"]{display:grid!important;gap:10px!important;margin:0!important}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .single button{background:#082537!important;border:1px solid #12678b!important;color:#8cdef1!important;border-radius:9px!important}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .single button.on{background:#00c5e8!important;border-color:#00c5e8!important;color:#00131c!important}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .fieldGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .detailFieldWrap{grid-column:auto!important;grid-row:auto!important;min-width:0!important}
+@media(max-width:440px){#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox{padding:11px!important}#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .fieldGrid{gap:9px!important}#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .field{font-size:12px!important}}
