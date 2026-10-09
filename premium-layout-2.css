@@ -1106,3 +1106,13 @@ main > .screen:not(#journal) > .p2sharedAccountHeader{grid-column:1 / -1;grid-ro
 #premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .fieldGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
 #premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .detailFieldWrap{grid-column:auto!important;grid-row:auto!important;min-width:0!important}
 @media(max-width:440px){#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox{padding:11px!important}#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .fieldGrid{gap:9px!important}#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .field{font-size:12px!important}}
+
+/* Journal is ONE unified Cyber Blue card: no secondary Trade Details panel. */
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox,
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm.syncedTradeEditing .manualBox{
+ background:transparent!important;border:0!important;border-radius:0!important;
+ box-shadow:none!important;padding:0!important;margin:0 0 12px!important;
+}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox>.label:first-child{
+ margin-top:0!important;padding-top:0!important;
+}
