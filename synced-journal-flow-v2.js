@@ -71,6 +71,22 @@
   }
 
   const editorNodes=[];let n=manual.nextElementSibling;while(n){editorNodes.push(n);n=n.nextElementSibling}
+  // Move the existing Result select to the end of trade analysis.
+  // Reparent the original node to preserve its value, listeners, and sync behavior.
+  const resultField=$('result');
+  const resultWrap=resultField?.closest('.detailFieldWrap');
+  const screenshotLabel=Array.from(card.children).find(el=>el.classList?.contains('label')&&el.textContent.trim().toUpperCase()==='SCREENSHOT');
+  if(resultWrap&&screenshotLabel){
+    const outcome=document.createElement('div');
+    outcome.className='journalOutcomeSection';
+    const heading=document.createElement('div');
+    heading.className='label';
+    heading.textContent='TRADE RESULT';
+    outcome.append(heading,resultWrap);
+    card.insertBefore(outcome,screenshotLabel);
+    resultWrap.style.gridColumn='';
+    resultWrap.style.gridRow='';
+  }
   const showEditor=show=>editorNodes.forEach(el=>el.style.display=show?'':'none');showEditor(false);
   function trades(){try{return JSON.parse(localStorage.getItem('casaBankoTrades')||'[]')}catch{return[]}}
   function write(a){localStorage.setItem('casaBankoTrades',JSON.stringify(a))}
