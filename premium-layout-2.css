@@ -1086,3 +1086,6 @@ main > .screen:not(#journal) > .p2sharedAccountHeader{grid-column:1 / -1;grid-ro
 #premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .detail-tradeDate,
 #premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .syncedCloseTimeWrap{grid-column:auto!important;grid-row:auto!important}
 }
+
+/* Journal history: preserve column alignment with both execution times. */
+#premiumDashboard .p2journalRow{grid-template-columns:44px 110px 105px 115px 115px 105px 105px 112px 112px 110px 100px!important;min-width:1260px!important}
