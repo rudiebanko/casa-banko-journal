@@ -2,7 +2,7 @@
 
 /* Settings — Cyber Blue V2; scoped to the Settings tab only. */
 #settings.screen.active{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
-#settings>.card{min-width:0;margin:0;background:linear-gradient(145deg,#09243b,#061a2d 65%,#061525);border:1px solid #087ca5;border-radius:10px;box-shadow:inset 0 1px 0 rgba(57,209,255,.08);padding:18px}
+#settings>.card{min-width:0;margin:0;background:linear-gradient(145deg,#09243b,#061a2d 65%,#061525)!important;border:1px solid #087ca5!important;border-radius:10px!important;box-shadow:inset 0 1px 0 rgba(57,209,255,.08)!important;padding:18px}
 #settings>.card .title{color:#d7f4ff;font-size:19px;letter-spacing:.3px;margin-bottom:12px}
 #settings .label{color:#8bdcf4;letter-spacing:.85px}
 #settings .hint{color:#a3bed0;line-height:1.5}
