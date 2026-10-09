@@ -1069,3 +1069,10 @@ main > .screen:not(#journal) > .p2sharedAccountHeader{grid-column:1 / -1;grid-ro
 .p2sharedAccountHeader .p2liveBox strong i{font:normal 10px Arial;color:#c7baa1}
 .p2sharedAccountHeader .p2liveBox span{display:block;font:800 11px Arial;margin-top:5px}
 @media(max-width:600px){main > .screen:not(#journal) > .p2sharedAccountHeader{gap:10px}.p2sharedAccountHeader > img{max-width:42%;max-height:65px}.p2sharedAccountHeader .p2liveBox{flex:0 1 58%;padding:7px 9px}.p2sharedAccountHeader .p2liveBox strong{font-size:16px}.p2sharedAccountHeader .p2liveBox small,.p2sharedAccountHeader .p2liveBox span{font-size:9px}}
+
+/* Journal detail visibility: show the existing execution fields and BUY/SELL selector
+   only while the Home journal editor is open. No trade data is changed. */
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox{display:block!important;visibility:visible!important}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .fieldGrid{display:grid!important}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .single[data-k="direction"]{display:grid!important}
+@media(max-width:700px){#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .fieldGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .detailFieldWrap{grid-column:auto!important;grid-row:auto!important}}
