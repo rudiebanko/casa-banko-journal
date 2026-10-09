@@ -1076,3 +1076,13 @@ main > .screen:not(#journal) > .p2sharedAccountHeader{grid-column:1 / -1;grid-ro
 #premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .fieldGrid{display:grid!important}
 #premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .single[data-k="direction"]{display:grid!important}
 @media(max-width:700px){#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .fieldGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .detailFieldWrap{grid-column:auto!important;grid-row:auto!important}}
+
+/* Journal execution timestamps: existing OPEN TIME and CLOSE TIME fields, side by side. */
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .detail-tradeDate,
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .syncedCloseTimeWrap{display:flex!important;visibility:visible!important;min-width:0!important}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .syncedCloseTimeWrap .field,
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .detail-tradeDate .field{display:block!important;visibility:visible!important;width:100%!important;box-sizing:border-box!important}
+@media(max-width:700px){
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .detail-tradeDate,
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .syncedCloseTimeWrap{grid-column:auto!important;grid-row:auto!important}
+}
