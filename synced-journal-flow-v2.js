@@ -31,6 +31,12 @@
   const directionGroup=document.querySelector('.single[data-k="direction"]');
   const sessionGroup=document.querySelector('.single[data-k="session"]');
 
+  // Keep execution details, direction and session in one unified trade-details card.
+  if(manualBox&&sessionGroup&&sessionGroup.parentElement!==manualBox){
+    const sessionLabel=sessionGroup.previousElementSibling;
+    if(sessionLabel?.classList.contains('label'))manualBox.appendChild(sessionLabel);
+    manualBox.appendChild(sessionGroup);
+  }
   const detailLabels={symbol:'SYMBOL',tradeDate:'OPEN TIME',entryPrice:'ENTRY',exitPrice:'CLOSE',stopLoss:'STOP LOSS',pnlInput:'P&L',rInput:'RISK $',result:'RESULT'};
   Object.entries(detailLabels).forEach(([id,text])=>{
     const input=$(id); if(!input||input.parentElement?.classList.contains('detailFieldWrap'))return;
