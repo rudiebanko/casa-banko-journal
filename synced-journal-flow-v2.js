@@ -86,7 +86,7 @@
   function fullCloseTime(t){return fullTime(rawCloseTime(t))}
   function updateRPreview(){const risk=Math.abs(parseFloat($('rInput')?.value));const pnl=parseFloat($('pnlInput')?.value);const out=$('autoRResult');if(!out)return null;if(!Number.isFinite(risk)||risk<=0||!Number.isFinite(pnl)){out.textContent='R RESULT: —';return null}const r=pnl/risk;out.textContent='R RESULT: '+(r>=0?'+':'')+r.toFixed(2)+'R';return +r.toFixed(4)}
   $('rInput')?.addEventListener('input',updateRPreview);
-  function sessionFromOpenTime(t){const d=openDate(t);if(!d)return t.session||'';const mins=d.getHours()*60+d.getMinutes();if(mins>=15*60&&mins<23*60)return'ASIA';if(mins>=23*60||mins<4*60)return'LONDON';if(mins>=4*60&&mins<14*60)return'NEW YORK';return t.session||''}
+  function sessionFromOpenTime(t){return window.casaBankoSessionFromEntry?.(t)||t.session||''}
   function openTrade(i){
     const a=trades(),t=a[i];if(!t)return;editingIndex=i;manualMode=false;showEditor(true);manual.style.display='none';card.classList.add('syncedTradeEditing');
     if(title)title.textContent='JOURNAL TRADE #'+(i+1)+' · '+(t.symbol||'TRADE')+' · '+(t.direction||'—')+' · '+(sessionFromOpenTime(t)||t.session||'—');
@@ -107,7 +107,7 @@
       const riskRaw=$('rInput')?.value??'', pnlRaw=$('pnlInput')?.value??'';
       const manualTrade={...S,source:'MANUAL',symbol:$('symbol')?.value.trim()||'',date:$('tradeDate')?.value||now,entry:$('entryPrice')?.value===''?null:+$('entryPrice').value,exit:$('exitPrice')?.value===''?null:+$('exitPrice').value,stopLoss:$('stopLoss')?.value===''?null:+$('stopLoss').value,pnl:pnlRaw===''?0:+pnlRaw,r:riskRaw===''?null:+riskRaw,result:$('result')?.value||'',notes:$('notes')?.value||'',screenshotName:$('shot')?.files?.[0]?.name||'',savedAt:now};
       if(activeId)manualTrade.tradeLockerAccountId=String(activeId);
-      const a=trades();a.push(manualTrade);write(a);
+      const autoSession=window.casaBankoSessionFromEntry?.(manualTrade);if(autoSession)manualTrade.session=autoSession;const a=trades();a.push(manualTrade);write(a);
       try{if(window.CasaBankoAccounts?.saveCurrent)await window.CasaBankoAccounts.saveCurrent()}catch(err){console.warn('CASA BANKO manual trade account persistence:',err)}
       $('status').textContent='✓ MANUAL TRADE SAVED';
       manualMode=false;showEditor(false);manual.style.display='';hint.textContent='Select a synced trade from Trade History to add your journal details.';
