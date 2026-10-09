@@ -1197,3 +1197,41 @@ main > .screen:not(#journal) > .p2sharedAccountHeader{grid-column:1 / -1;grid-ro
     grid-column:1 / -1!important;grid-row:auto!important;
   }
 }
+
+/* Trade Details: match the exact compact proportions of the existing journal questions. */
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .fieldGrid{
+  gap:9px 10px!important;
+}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .detailFieldMiniLabel,
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox>.label{
+  font-size:9px!important;line-height:1.3!important;letter-spacing:.055em!important;
+  color:#858e94!important;font-weight:800!important;
+}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .detailFieldMiniLabel{
+  margin:0 0 5px!important;
+}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox>.label{
+  margin:11px 0 6px!important;padding:0!important;
+}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .field{
+  height:34px!important;min-height:34px!important;max-height:34px!important;
+  padding:0 10px!important;font-size:10px!important;font-weight:500!important;
+  line-height:1.2!important;border-radius:7px!important;
+  background:#071e2d!important;border:1px solid #155773!important;
+}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .single button{
+  height:34px!important;min-height:34px!important;max-height:34px!important;
+  font-size:10px!important;font-weight:700!important;line-height:1.1!important;
+  border-radius:7px!important;padding:0 7px!important;
+}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .single{
+  gap:7px!important;
+}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .detailFieldWrap{
+  padding:0!important;margin:0!important;
+}
+@media(max-width:440px){
+  #premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .fieldGrid{gap:9px 10px!important}
+  #premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .field{font-size:10px!important;padding:0 8px!important}
+  #premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .single button{font-size:10px!important}
+}
