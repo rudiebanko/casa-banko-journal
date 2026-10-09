@@ -1235,3 +1235,11 @@ main > .screen:not(#journal) > .p2sharedAccountHeader{grid-column:1 / -1;grid-ro
   #premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .field{font-size:10px!important;padding:0 8px!important}
   #premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .single button{font-size:10px!important}
 }
+
+/* Tighten ONLY the label-to-input gap in Trade Details to match journal questions. */
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .detailFieldWrap{
+  row-gap:3px!important;gap:3px!important;
+}
+#premiumDashboard #p2journalFormMount:not([hidden]) .p2legacyJournalForm .manualBox .detailFieldMiniLabel{
+  margin:0!important;padding:0 0 0 2px!important;
+}
