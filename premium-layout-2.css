@@ -8,7 +8,7 @@ body:before,body:after{display:none!important}
 .hero>div:not(#globalLiveAccount){background-image:url("casa-banko-journal-logo.png?v=20260928-approved-logo-1")!important;background-repeat:no-repeat!important;background-position:center!important;background-size:contain!important}
 main{background:#020303!important}
 .screen{background:#020303!important}
-.screen .card{background:linear-gradient(180deg,var(--p2-card2),var(--p2-card))!important;border:1px solid var(--p2-border)!important;border-radius:11px!important;box-shadow:none!important}
+.screen:not(#settings) .card{background:linear-gradient(180deg,var(--p2-card2),var(--p2-card))!important;border:1px solid var(--p2-border)!important;border-radius:11px!important;box-shadow:none!important}
 .screen .title{font-family:Arial,sans-serif!important;color:var(--p2-text)!important;text-shadow:none!important;font-weight:800!important;letter-spacing:0!important}
 .screen .label,.screen .hint,.screen .rangeLabel{font-family:Arial,sans-serif!important}
 .screen .hint{color:var(--p2-muted)!important}
