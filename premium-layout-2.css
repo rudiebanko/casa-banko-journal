@@ -282,7 +282,7 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 #premiumDashboard .p2journalFilters{margin:8px 0 10px!important}
 #premiumDashboard .p2journalTable{width:100%!important;overflow-x:auto!important;border-top:1px solid #191b1b!important}
 #premiumDashboard .p2journalRows{max-height:220px!important;overflow-y:auto!important}
-#premiumDashboard .p2journalRow{display:grid!important;grid-template-columns:42px minmax(90px,1.2fr) 85px 100px 100px 90px 100px 90px!important;align-items:center!important;gap:10px!important;min-width:790px!important;padding:10px 6px!important;border-bottom:1px solid #191b1b!important;font:700 10px Arial!important;color:#aaa!important}
+#premiumDashboard .p2journalRow{display:grid!important;grid-template-columns:42px minmax(90px,1.2fr) 85px 100px 100px 90px 100px 90px!important;align-items:center!important;gap:10px!important;min-width:1100px!important;padding:10px 6px!important;border-bottom:1px solid #191b1b!important;font:700 10px Arial!important;color:#aaa!important}
 #premiumDashboard .p2journalRow b{color:#eee!important;font:900 11px Arial!important}
 #premiumDashboard .p2journalRow em,#premiumDashboard .p2journalRow i{font-style:normal!important}
 #premiumDashboard .p2journalRow strong{text-align:right!important}
@@ -341,7 +341,7 @@ nav button.active{color:var(--p2-gold-hi)!important;text-shadow:none!important}
 
 /* Journal history column balance — remove oversized PAIR gap. */
 #premiumDashboard .p2journalRow{
-grid-template-columns:44px 110px 105px 115px 115px 100px 110px 100px!important;
+grid-template-columns:44px 110px 105px 115px 115px 100px 112px 112px 110px 100px!important;
 justify-content:space-between!important;
 column-gap:16px!important;
 }
